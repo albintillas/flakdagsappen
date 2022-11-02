@@ -1,12 +1,12 @@
 // Joel - In progress
 // Denna fil utgör layouten av ett inlägg för 'flödet'
 
-function App() {
+function Feed() {
     return (
-      <div className="App">
+      <div className="Feed">
   
       </div>
     );
   }
   
-  export default App;
+  export default Feed;
