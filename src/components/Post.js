@@ -4,7 +4,7 @@
 function Post({ profilePicture, postContent, isImg }) {
     profilePicture = "sugmig";
     isImg = false;
-    postContent = "WWWWWWWWWWWWWWWWWWWW WWWWWWWWWWWWWWWWWWWW WWWWWWWWWWWWWWWWWWWW WWWWWWWWWWWWWWWWWWWW";
+    postContent = "WWWWWWWWWWWWWWWWWWWAAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWW";
     var contentPreview;
     if (isImg == true) {
 
@@ -31,8 +31,8 @@ function Post({ profilePicture, postContent, isImg }) {
                 </div>
                 <a>:</a>
             </div>
-            <div className="Content" style={{ display: "inline-block", width: "80%" }}>
-                <a>{contentPreview}</a>
+            <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
+                {contentPreview}
             </div>
 
 
