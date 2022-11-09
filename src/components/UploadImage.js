@@ -1,4 +1,5 @@
-//GK
+// GK
+// Klicka på den gråa cirkeln för att välja bild på enhet
 
 import '../App.css';
 import React, { useState } from "react";
@@ -27,8 +28,8 @@ const UploadImage = () => {
       {selectedImage && (
         <div>
         <img style={{
-            height: "50vw",
-            width: "50vw", 
+            height: "40vw",
+            width: "40vw", 
             display: "block",
             marginLeft: "auto",
             marginRight: "auto",
