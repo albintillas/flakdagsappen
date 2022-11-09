@@ -4,6 +4,7 @@
 import '../App.css';
 import React, { useState } from "react";
 
+
 const UploadImage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -12,7 +13,6 @@ const UploadImage = () => {
         height:'40vw', 
         width:'40vw', 
         backgroundColor:'lightgray',
-        backgroundImage: 'url(".//photos/plus.png")',
         borderRadius: '50%', 
         display: 'inline-block'
         }}>
@@ -20,7 +20,16 @@ const UploadImage = () => {
       <input
         type="file"
         name="myImage"
-        style={{boxSizing: 'border-box', opacity: '0.0', position: 'absolute', top: '0', left: '0', bottom: '0', right: '0'}}
+        style={{position: 'absolute', 
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          left: '0',
+          right: '0',
+          textAlign: 'center', 
+          opacity: '0.0', 
+          position: 'absolute', 
+          height:'40vw', 
+          width:'40vw'}}
         onChange={(event) => {
           console.log(event.target.files[0]);
           setSelectedImage(event.target.files[0]);
