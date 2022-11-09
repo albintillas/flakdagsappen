@@ -1,11 +1,10 @@
 //Teo
-const Name = " ";
 
 function Avatar({name, imageSrc}) {
     return (
       <div>
-          <img src={imageSrc} />
-        <p>
+          <img className="AvatarImg" src={imageSrc} />
+        <p className="AvatarText">
           {name}
         </p>
       </div>
