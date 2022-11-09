@@ -2,13 +2,13 @@
 //in progress
 import React from 'react'
 
-const Button = ({ text, buttoncolor, textcolor,textdecoration  }) =>{
+const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
 
     return(
-        <div style={{
-            backgroundColor: buttoncolor,
-            textDecoration: textdecoration,
-            color: textcolor,
+        <div onclick = {action} style={{
+            backgroundColor: buttonColor,
+            textDecoration: textDecoration,
+            color: textColor,
             padding: '2% 2% 2% 2%',
             fontSize: '170%',
             fontWeight: 'bold',
