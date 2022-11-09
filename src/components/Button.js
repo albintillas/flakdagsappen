@@ -1,16 +1,22 @@
-//Linus
+//Linus 
+//in progress
 import React from 'react'
 
-const Button = ({ text, color, width,length }) =>{
+const Button = ({ text, buttoncolor, textcolor,textdecoration  }) =>{
 
     return(
         <div style={{
-            backgroundColor: color,
-            padding: '10%',
-            width: width
-
+            backgroundColor: buttoncolor,
+            textDecoration: textdecoration,
+            color: textcolor,
+            padding: '2% 2% 2% 2%',
+            fontSize: '170%',
+            fontWeight: 'bold',
+            borderRadius: '36%',
+            textAlign: 'center',
+            boxShadow: '10px 10px 8px #888888'
           }}>
-
+            {text}
         </div>
     )
 }

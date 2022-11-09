@@ -1,8 +1,9 @@
 // Joel - In progress
 // Denna fil utgör layouten av ett inlägg för 'flödet'
 
-function Post({ profilePicture, postContent, isImg }) {
-    profilePicture = "sugmig";
+function Post({ imageSrc, postContent, isImg }) {
+    imageSrc = "images/pfpTest";
+    profilePicture = <img src={imageSrc} />;
     isImg = false;
     postContent = "WWWWWWWWWWWWWWWWWWWAAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWW";
     var contentPreview;
