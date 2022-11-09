@@ -1,12 +1,13 @@
 //Teo
-//import img from 'Images/test.jpeg'
 const Name = " ";
 
-function Avatar({player}) {
+function Avatar({name, imageSrc}) {
     return (
       <div>
-        {player.name}
-        <img> src="player.imageSrc </img>
+          <img src={imageSrc} />
+        <p>
+          {name}
+        </p>
       </div>
     );
   }
