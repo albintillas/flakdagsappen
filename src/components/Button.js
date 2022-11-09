@@ -5,7 +5,7 @@ import React from 'react'
 const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
 
     return(
-        <div onclick = {action} style={{
+        <button type='submit' onclick = {action} style={{
             backgroundColor: buttonColor,
             textDecoration: textDecoration,
             color: textColor,
@@ -17,7 +17,7 @@ const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
             boxShadow: '10px 10px 8px #888888'
           }}>
             {text}
-        </div>
+        </button>
     )
 }
 export default Button
