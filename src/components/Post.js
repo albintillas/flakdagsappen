@@ -10,7 +10,7 @@ function Post({ imageSrc, postContent, isImg }) {
         }} />;
     var contentPreview;
     if (isImg == true) {
-        contentPreview = <img src={postContent} alt='pfp' style={{borderRadius: "5%", width: "100%"}}/>
+        contentPreview = <img src={postContent} alt='pfp' style={{ borderRadius: "5%", width: "100%" }} />
     }
     else {
         if (postContent.length > 80) {
@@ -35,7 +35,15 @@ function Post({ imageSrc, postContent, isImg }) {
                 </div>
                 <a>:</a>
             </div>
-            <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
+            <div className="Content" style={{
+                display: "inline-block", 
+                width: "80%", 
+                maxHeight: "20px",
+                wordWrap: "break-word",
+                whiteSpace: "pre-wrap",
+                wordBreak: "break-word",
+                textOverflow: "hidden"
+            }}>
                 {contentPreview}
             </div>
 
