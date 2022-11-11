@@ -3,22 +3,21 @@ import TextInput from '../components/TextInput.js';
 import Button from '../components/Button.js';
 
 
-const upload = 
-<UploadImage
-
-/>
+const upload = <UploadImage/>
 
 const enterName = <TextInput/>
 
-const create =
-<Button
-
-/>
+const create =<Button/>
 
 function CreateGamePage(){
+return(
 
+<div>
     {upload}
-    
+    {enterName}
+    {create}
+</div>
+)
 }
 
 export default CreateGamePage;
