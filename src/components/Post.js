@@ -4,7 +4,7 @@
 function Post({ imageSrc, postContent, isImg }) {
 
     var profilePicture = <img src={imageSrc} alt='pfp'
-        style={{ maxHeight: "25px", width: "25px", borderRadius: "50%" }} />;
+        style={{ height: "25px", width: "25px", borderRadius: "50%" }} />;
 
     var contentPreview;
     if (isImg) {
