@@ -2,15 +2,19 @@
 // Denna fil utgör layouten av ett inlägg för 'flödet'
 
 function Post({ imageSrc, postContent, isImg }) {
+
     var profilePicture = <img src={imageSrc} alt='pfp'
-        style={{
-            height: "25px",
-            width: "25px",
-            borderRadius: "50%"
-        }} />;
+        style={{ height: "25px", width: "25px", borderRadius: "50%" }} />;
+
     var contentPreview;
-    if (isImg == true) {
-        contentPreview = <img src={postContent} alt='pfp' style={{ borderRadius: "5%", width: "100%" }} />
+    if (isImg) {
+        contentPreview = <img src={postContent} alt='pfp' style={{
+            width: "100%",
+            maxHeight: "30vh",
+            overflow: "hidden",
+            objectFit: "cover",
+            borderRadius: "5%"
+        }} />
     }
     else {
         if (postContent.length > 80) {
@@ -20,6 +24,7 @@ function Post({ imageSrc, postContent, isImg }) {
             contentPreview = <a>{postContent}</a>;
         }
     }
+
     return (
         <div className="Post"
             style={{
@@ -30,20 +35,12 @@ function Post({ imageSrc, postContent, isImg }) {
                 backgroundColor: "yellow"
             }}>
             <div className="User" style={{ display: "inline-block", width: "20%" }}>
-                <div className="Profilepicture" style={{ display: "inline-block", backgroundColor: "blue", margin: "0, auto" }}>
+                <div className="Profilepicture" style={{ display: "inline-block", backgroundColor: "blue"}}>
                     {profilePicture}
                 </div>
                 <a>:</a>
             </div>
-            <div className="Content" style={{
-                display: "inline-block", 
-                width: "80%", 
-                maxHeight: "20px",
-                wordWrap: "break-word",
-                whiteSpace: "pre-wrap",
-                wordBreak: "break-word",
-                textOverflow: "hidden"
-            }}>
+            <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
                 {contentPreview}
             </div>
 
