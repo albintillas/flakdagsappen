@@ -28,9 +28,6 @@ function StartPage(){
                     border:'1vw solid #000000',
                     zIndex:'2',
                     transform: 'rotate(-18deg)'
-
-                    
-
                 }}
                 
                 ></img>
@@ -46,7 +43,6 @@ function StartPage(){
                 zIndex:'1',
                 transform: 'rotate(-5deg)',
                 marginBottom:'5vw'
-
                 }}
 
                 ></img>
@@ -63,7 +59,6 @@ function StartPage(){
                 flexDirection:'column',
                 marginLeft:'20vw',
                 marginRight:'20vw'
-
             }}>
             <StartPageButton 
             text='Join Game' 
@@ -76,7 +71,9 @@ function StartPage(){
             <StartPageButton 
             text='Create Game' 
             buttonColor='#F9F3F3' 
-            textColor='#17D930'>       
+            textColor='#17D930' 
+            action='creategame'>
+     
             </StartPageButton>
             </div>
         </div>

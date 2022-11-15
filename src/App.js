@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react'
 import StartPage from './pages/StartPage.js';
 import JoinGamePage from './pages/JoinGamePage.js';
+import CreateGamePage from './pages/CreateGamePage.js';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
@@ -12,8 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<StartPage/>}/>
         <Route path="/joingame" element={<JoinGamePage/>}/>
-
-       
+        <Route path="/creategame" element={<CreateGamePage/>}/>
       </Routes>
     </BrowserRouter>
 

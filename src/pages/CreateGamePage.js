@@ -1,3 +1,4 @@
+import React from 'react'
 import UploadImage from '../components/UploadImage.js';
 import TextInput from '../components/TextInput.js';
 import Button from '../components/Button.js';
@@ -11,7 +12,6 @@ const create =
 <Button
 text = 'Create'
 buttonColor='#17D930'
-action='onclick'
 />
 
 function CreateGamePage(){
