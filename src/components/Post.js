@@ -4,7 +4,7 @@
 function Post({ imageSrc, postContent, isImg }) {
 
     var profilePicture = <img src={imageSrc} alt='pfp'
-        style={{ height: "25px", width: "25px", borderRadius: "50%" }} />;
+        style={{ maxHeight: "25px", width: "25px", borderRadius: "50%" }} />;
 
     var contentPreview;
     if (isImg) {
@@ -32,7 +32,8 @@ function Post({ imageSrc, postContent, isImg }) {
                 width: "80%",
                 padding: "2%",
                 textAlign: "left",
-                backgroundColor: "yellow"
+                backgroundColor: "yellow",
+                minHeight: "50px"
             }}>
             <div className="User" style={{ display: "inline-block", width: "20%" }}>
                 <div className="Profilepicture" style={{ display: "inline-block", backgroundColor: "blue"}}>
