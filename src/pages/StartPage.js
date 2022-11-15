@@ -2,9 +2,6 @@
 
 import React from 'react'
 import testimage from '../images/pfpTest.png'
-import StartPageButton from '../components/StartPageButton.js'
-
-
 
 function StartPage(){
 
@@ -49,7 +46,7 @@ function StartPage(){
 
                 }}
 
-                ></img>
+></img>
             </div>
 
             <h1 className='startMainText'>Flakdag</h1>
@@ -58,27 +55,6 @@ function StartPage(){
 
             <p className='startSubText'>09/11-2022</p>
 
-            <div style={{
-                display:'flex',
-                flexDirection:'column',
-                marginLeft:'20vw',
-                marginRight:'20vw'
-
-            }}>
-            <StartPageButton 
-            text='Join Game' 
-            buttonColor='#17D930' 
-            textColor='#F9F3F3'
-            action='joingame'
-            >
-            </StartPageButton>
-
-            <StartPageButton 
-            text='Create Game' 
-            buttonColor='#F9F3F3' 
-            textColor='#17D930'>       
-            </StartPageButton>
-            </div>
         </div>
     )
 
