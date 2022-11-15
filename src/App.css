@@ -57,3 +57,17 @@
   text-align: center;
   margin: 0vw;
 }
+
+.startPageButton {
+
+  height: 18vw;
+  width: 60vw;
+  font-size: 170%;
+  text-align: center;
+ 
+  border: 1vw solid #17D930;
+  border-radius: 15vw;
+  font-family: 'Noto Serif JP serif';
+  box-shadow: 1vw 2vw 3vw #888888;
+
+}

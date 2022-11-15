@@ -61,8 +61,8 @@ function StartPage(){
             <div style={{
                 display:'flex',
                 flexDirection:'column',
-                marginLeft:'20vw',
-                marginRight:'20vw'
+                alignItems: 'center'
+
 
             }}>
             <StartPageButton 
