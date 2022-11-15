@@ -7,7 +7,12 @@ const upload = <UploadImage/>
 
 const enterName = <TextInput/>
 
-const create =<Button/>
+const create =
+<Button
+text = 'Create'
+buttonColor='#17D930'
+action='onclick'
+/>
 
 function CreateGamePage(){
 return(
