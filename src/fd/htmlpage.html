@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="./bootstrap.min.js"></script>
+    <link href="./bootstrap.min.css" rel="stylesheet" />
+    <script src="./jquery.min.js"></script>
+    <script src="./fd.js"></script>
+    <script src="./sweetalert2@11.js"></script>
+</head>
+<body>
+
+    Current flakdagid: <span id="fid"></span>
+    <a href="#" onclick="ResetAllFlakData();$('#fid').text('');">Reset all data</a>
+
+    <div id="start-page" style="display:none">
+
+        <button class="btn btn-primary" onclick="NavTo('create-flakdag')">Create</button>
+        <button class="btn btn-primary" onclick="NavTo('signup-flakdag')">Sign up</button>
+        <button class="btn btn-primary" onclick="NavTo('login-flakdag')">Log in</button>
+
+    </div>
+
+    <div id="create-flakdag" style="display:none">
+        <h4>Create flakdag</h4>
+        <form data-action="lobby/CreateFlakdag">
+            <div class="col-4">
+                <label>flakdagname</label>
+                <input class="form-control" name="flakdagname" autocomplete="off" />
+                <label>pin</label>
+                <input class="form-control" type="number" name="pin" autocomplete="off" />
+                <label>Date</label>
+                <input class="form-control" type="date" name="fddate" autocomplete="off" />
+
+                <label>Admin password</label>
+                <input class="form-control" type="password" name="pw" autocomplete="off" />
+                <label>Namn (du som deltagare)</label>
+                <input class="form-control" name="name" />
+                <label>FOTO: ToDo</label>
+                <input type="button" class="btn btn-primary" onclick="CreateFlakdag($(this).closest('form'))" value="Create" />
+            </div>
+        </form>
+    </div>
+
+    <div id="signup-flakdag" style="display:none">
+        <h4>Sign up</h4>
+        <form data-action="lobby/SignUp">
+            <div class="col-4">
+                <label>pin</label>
+                <input class="form-control" name="pin" />
+                <label>Namn</label>
+                <input class="form-control" name="name" />
+                <label>Password</label>
+                <input class="form-control" type="password" name="pw" autocomplete="off" />
+                <input type="button" class="btn btn-primary" onclick="SignupFlakdag($(this).closest('form'))" value="Sign up" />
+            </div>
+        </form>
+    </div>
+
+    <div id="login-flakdag" style="display:none">
+        <h4>Log in</h4>
+        <div class="col-4">
+            <label>pin</label>
+            <input class="form-control" name="pin" />
+            <label>Password</label>
+            <input class="form-control" type="password" name="pw" autocomplete="off" />
+            <input type="button" class="btn btn-primary" onclick="LoginFlakdag()" value="Log in" />
+        </div>
+    </div>
+
+    <div id="lobby-flakdag" style="display:none">
+        <h5></h5>
+        <h4>LOBBY</h4>
+        <div id="lobby-players"></div>
+        <button class="btn btn-primary" style="display:none;" id="btn-start-flakdag">Start!</button>
+    </div>
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            LoadStart();
+        });
+
+
+    </script>
+
+
+</body>
+</html>

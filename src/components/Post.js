@@ -2,13 +2,19 @@
 // Denna fil utgör layouten av ett inlägg för 'flödet'
 
 function Post({ imageSrc, postContent, isImg }) {
-    imageSrc = "images/pfpTest";
-    profilePicture = <img src={imageSrc} />;
-    isImg = false;
-    postContent = "WWWWWWWWWWWWWWWWWWWAAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWW";
-    var contentPreview;
-    if (isImg == true) {
 
+    var profilePicture = <img src={imageSrc} alt='pfp'
+        style={{ height: "25px", width: "25px", borderRadius: "50%" }} />;
+
+    var contentPreview;
+    if (isImg) {
+        contentPreview = <img src={postContent} alt='pfp' style={{
+            width: "100%",
+            maxHeight: "30vh",
+            overflow: "hidden",
+            objectFit: "cover",
+            borderRadius: "5%"
+        }} />
     }
     else {
         if (postContent.length > 80) {
@@ -18,16 +24,19 @@ function Post({ imageSrc, postContent, isImg }) {
             contentPreview = <a>{postContent}</a>;
         }
     }
+
     return (
         <div className="Post"
             style={{
-                width: "100%",
+                marginRight: "20%",
+                width: "80%",
                 padding: "2%",
                 textAlign: "left",
-                backgroundColor: "yellow"
+                backgroundColor: "yellow",
+                minHeight: "50px"
             }}>
             <div className="User" style={{ display: "inline-block", width: "20%" }}>
-                <div className="Profilepicture" style={{ display: "inline-block", backgroundColor: "blue", borderRadius: "50%" }}>
+                <div className="Profilepicture" style={{ display: "inline-block", backgroundColor: "blue"}}>
                     {profilePicture}
                 </div>
                 <a>:</a>
