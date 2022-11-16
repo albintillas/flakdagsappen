@@ -3,8 +3,9 @@ function header({ onpage }) {
     return (
         <div class="header">
             <div class="counters"></div>
-            <div class="pages">
+            <div class="pages" style ={{textAlign: "center"}}>
                 <a style={{
+                    marginRight: "5vw",
                     ...(onpage == 1
                         ? { textDecoration: "underline" }
                         : {})
@@ -15,6 +16,7 @@ function header({ onpage }) {
                         : {})
                 }}>Lobby</a>
                 <a style={{
+                    marginLeft: "5vw",
                     ...(onpage == 3
                         ? { textDecoration: "underline" }
                         : {})
