@@ -1,29 +1,33 @@
+import {Link} from "react-router-dom";
 
 function header({ onpage }) {
     return (
         <div class="header" style ={{position: "fixed", top: "0", width: "100%"}}>
             <div class="counters"></div>
             <div class="pages" style ={{textAlign: "center", width: "100%"}}>
-                <a style={{
+                <Link to={"/statistics"} style={{
                     marginRight: "5vw",
+                    color: "black",
                     ...(onpage == 1
                         ? { textDecoration: "underline" }
                         : {})
-                }}>Statistik</a>
+                }}>Statistik</Link>
                 <a>l</a>
-                <a style={{
+                <Link to={"/lobby"} style={{
                     margin: "0 5vw 0 5vw",
+                    color: "black",
                     ...(onpage == 2
                         ? { textDecoration: "underline" }
                         : {})
-                }}>Lobby</a>
+                }}>Lobby</Link>
                 <a>l</a>
-                <a style={{
+                <Link to={"/feed"} style={{
                     marginLeft: "5vw",
+                    color: "black",
                     ...(onpage == 3
                         ? { textDecoration: "underline" }
                         : {})
-                }}>Flöde</a>
+                }}>Flöde</Link>
             </div>
         </div>
     );
