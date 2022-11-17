@@ -4,6 +4,7 @@ import img1 from '..//images/pfpTest.png';
 import img2 from '..//images/Test.png';
 import postImg1 from '..//images/test3.png';
 import postImg2 from '..//images/test2.png';
+import React from 'react';
 
 function FeedPage() {
     return (

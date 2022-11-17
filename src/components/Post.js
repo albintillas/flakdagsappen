@@ -1,5 +1,6 @@
 // Joel - Funktionellt klar, Fåtal stilpoäng kvar
 // Denna fil utgör layouten av ett inlägg för 'flödet'
+import React from 'react';
 
 function Post({ imageSrc, postContent, isImg }) {
 

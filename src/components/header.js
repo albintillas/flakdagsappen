@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
+import React from 'react';
 
-function header({ onpage }) {
+function Header({ onpage }) {
     return (
         <div class="header" style ={{position: "fixed", top: "0", width: "100%"}}>
             <div class="counters"></div>
@@ -33,4 +34,4 @@ function header({ onpage }) {
     );
 }
 
-export default header;
+export default Header;

@@ -1,4 +1,5 @@
 import Header from '../components/Header.js';
+import React from 'react';
 
 function StatisticsPage() {
     return (
