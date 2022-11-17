@@ -78,5 +78,22 @@ a:visited {
   border-radius: 15vw;
   font-family: 'Noto Serif JP serif';
   box-shadow: 1vw 2vw 3vw #888888;
+}
+
+.lobbyInfoPageImage {
+
+  width: 15vw;
+  height:15vw;
+  object-fit:cover;
+  border:0.8vw solid #000000;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.lobbyInfoPageText {
+
+  text-align: center;
 
 }

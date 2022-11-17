@@ -8,6 +8,7 @@ import FeedPage from './pages/FeedPage.js';
 import LobbyPage from './pages/LobbyPage.js';
 import StatisticsPage from './pages/StatisticsPage.js';
 import ReturnButton from './components/ReturnButton.js';
+import LobbyInfoPage from './pages/LobbyInfoPage';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
