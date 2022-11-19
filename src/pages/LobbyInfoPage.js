@@ -2,17 +2,20 @@
 
 import React from 'react';
 import testimage from '../images/pfpTest.png'
+import ReturnButton from '../components/ReturnButton';
 
 function LobbyInfoPage(){
 
     return (
 
         <div>
-
+     
             <div>
                 <h1 style={{
 
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontFamily: 'Noto Serif JP, serif'
+                    
 
                 }}>Lobby</h1>
             </div>
@@ -20,7 +23,8 @@ function LobbyInfoPage(){
             <div>
                 <h2 style={{
 
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontFamily: 'Kaushan Script'
 
                 }}>Game Pin: 1234</h2>
             </div>
@@ -64,7 +68,9 @@ function LobbyInfoPage(){
                 </div>
 
             </div>
-
+            
+    
+            
 
         </div>      
 
