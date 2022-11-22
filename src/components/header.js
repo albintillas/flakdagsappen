@@ -3,9 +3,9 @@ import React from 'react';
 
 function Header({ onpage }) {
     return (
-        <div class="header" style ={{position: "fixed", top: "0", width: "100%", marginBottom: "100px"}}>
-            <div class="counters"></div>
-            <div class="pages" style ={{textAlign: "center", width: "100%"}}>
+        <div className="header" style ={{position: "fixed", top: "0", width: "100%", fontSize: "7vw"}}>
+            <div className="counters"></div>
+            <div className="pages" style ={{textAlign: "center", width: "100%"}}>
                 <Link to={"/statistics"} style={{
                     marginRight: "5vw",
                     color: "black",
