@@ -1,4 +1,4 @@
-import Header from '../components/Header.js';
+import Header from '../components/header.js';
 import React from 'react';
 
 function LobbyPage() {

@@ -1,4 +1,4 @@
-import Header from '../components/Header.js';
+import Header from '../components/header.js';
 import Post from '../components/Post.js'
 import img1 from '..//images/pfpTest.png';
 import img2 from '..//images/Test.png';
