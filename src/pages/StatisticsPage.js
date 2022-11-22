@@ -6,7 +6,7 @@ function StatisticsPage() {
     return (
         <div>
             <Header onpage={1} />
-            <div class="main" style={{ marginTop: "1vw" }}>
+            <div class="main" style={{ marginTop: "2vh" }}>
 
             </div>
         </div>

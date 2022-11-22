@@ -6,7 +6,7 @@ function LobbyPage() {
     return (
         <div>
             <Header onpage={2} />
-            <div class="main" style={{ marginTop: "1vw" }}>
+            <div class="main" style={{ marginTop: "2vh" }}>
 
             </div>
             </div>

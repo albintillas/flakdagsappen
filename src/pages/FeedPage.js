@@ -11,7 +11,7 @@ function FeedPage() {
     return (
         <div>
             <Header onpage={3} />
-            <div class="main" style={{ marginTop: "1vw" }}>
+            <div class="main" style={{ marginTop: "2vh" }}>
                 <Post
                     imageSrc={img1}
                     postContent={"WWWWWWWWWWWWWWWWWWWAAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWW"}
