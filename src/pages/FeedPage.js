@@ -1,4 +1,4 @@
-import Header from '../components/header.js';
+import Header from '../components/Header.js';
 import Post from '../components/Post.js'
 import img1 from '..//images/pfpTest.png';
 import img2 from '..//images/Test.png';
@@ -11,7 +11,7 @@ function FeedPage() {
     return (
         <div>
             <Header onpage={3} />
-            <div class="main" style={{ marginTop: "1vw" }}>
+            <div class="main" style={{ marginTop: "2vh" }}>
                 <Post
                     imageSrc={img1}
                     postContent={"WWWWWWWWWWWWWWWWWWWAAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWW"}
