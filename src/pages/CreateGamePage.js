@@ -3,7 +3,7 @@ import UploadImage from '../components/UploadImage.js';
 import TextInput from '../components/TextInput.js';
 import Button from '../components/Button.js';
 import ReturnButton from '../components/ReturnButton.js';
-import React from 'react'
+
 
 const upload = <UploadImage/>
 

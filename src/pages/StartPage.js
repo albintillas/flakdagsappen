@@ -71,14 +71,8 @@ function StartPage(){
             <StartPageButton 
             text='Create Game' 
             buttonColor='#F9F3F3' 
-<<<<<<< HEAD
-            textColor='#17D930' 
-            action='creategame'>
-     
-=======
             textColor='#17D930'
-            action='creategame'>    
->>>>>>> e33948077071b5b9a6172aed88b0bfb42a05df9b
+            action='creategame' >   
             </StartPageButton>
             </div>
         </div>
