@@ -7,21 +7,26 @@ const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
 
     return(
 
-        <Link to={"/" + action}>
+       // <Link to={"/" + action}>
             <button type='submit' onclick = {action} style={{
+
                 backgroundColor: buttonColor,
-                textDecoration: textDecoration,
                 color: textColor,
-                padding: '5% 10% 5% 10%',
-                fontSize: '170%',
-                fontWeight: 'bold',
-                borderRadius: '45%',
-                textAlign: 'center',
-                boxShadow: '2px 2px 8px #888888'
+                textDecoration: textDecoration,
+                fontSize: "200%",
+                textTransform: "uppercase",
+                fontWeight: "700",
+                textDecoration: "none",
+                padding: "10%",
+                borderRadius: "50px",
+                border: "none",
+                cursor: "pointer",
+                height: "75%",
+                width: "55%"
             }}>
                 {text}
             </button>
-        </Link>
+       //<Link>
     )
 }
 export default Button
