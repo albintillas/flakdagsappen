@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Serif+JP:wght@300&display=swap');
 
+*{background-color: #F9F3F3;}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
- 
 }
 
 .App-logo {
@@ -56,4 +65,35 @@
   font-size: 4vw;
   text-align: center;
   margin: 0vw;
+}
+
+.startPageButton {
+
+  height: 18vw;
+  width: 60vw;
+  font-size: 170%;
+  text-align: center;
+ 
+  border: 1vw solid #17D930;
+  border-radius: 15vw;
+  font-family: 'Noto Serif JP serif';
+  box-shadow: 1vw 2vw 3vw #888888;
+}
+
+.lobbyInfoPageImage {
+
+  width: 15vw;
+  height:15vw;
+  object-fit:cover;
+  border:0.8vw solid #000000;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.lobbyInfoPageText {
+
+  text-align: center;
+
 }

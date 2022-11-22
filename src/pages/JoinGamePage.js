@@ -1,6 +1,7 @@
 import React from 'react'
 import PinInput from '../components/PinInput';
 import Button from '../components/Button';
+import ReturnButton from '../components/ReturnButton';
 
 //Linus 
 
@@ -17,6 +18,15 @@ function JoinGamePage(){
     <Button style={{
         marginRight:'300px' 
     }}  text='Join Game' buttonColor='#17D930' />
+
+
+  
+      <ReturnButton text='Return' 
+      buttonColor='#17D930' 
+      textColor='#FFFFFF'
+      action=''></ReturnButton>
+    
+
 </div>
    ) 
 }

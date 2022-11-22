@@ -6,25 +6,28 @@ import {Link} from "react-router-dom";
 const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
 
     return(
-        
-        <Link to={"/" + action}>
-            <button type='submit' onclick = {action} style={{
+        <div style={{
+            height: '18vw',
+            width: '60vw',
+            borderRadius: '15vw',
+            marginTop: '5vw'
+            }}>
+        <Link to={"/" + action} style={{
+
+            
+            
+        }}>
+            <button type='submit' onclick = {action} className='startPageButton' style={{
+
                 backgroundColor: buttonColor,
                 textDecoration: textDecoration,
                 color: textColor,
-                height: '18vw',
-                fontSize: '170%',
-                textAlign: 'center',
-                marginTop: '5vw',
-                border:'1vw solid #17D930',
-                borderRadius: '15vw',
-                fontFamily: 'Noto Serif JP serif',
-                boxShadow: '1vw 2vw 3vw #888888'
-            
+
             }}>
                 {text}
             </button>
         </Link>
+        </div>
     )
 }
 export default Button

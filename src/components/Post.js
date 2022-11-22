@@ -1,10 +1,11 @@
-// Joel - In progress
+// Joel - Funktionellt klar, Fåtal stilpoäng kvar
 // Denna fil utgör layouten av ett inlägg för 'flödet'
+import React from 'react';
 
 function Post({ imageSrc, postContent, isImg }) {
 
     var profilePicture = <img src={imageSrc} alt='pfp'
-        style={{ maxHeight: "25px", width: "25px", borderRadius: "50%" }} />;
+        style={{ height: "12vw", width: "12vw", objectFit: "cover", borderRadius: "50%" }} />;
 
     var contentPreview;
     if (isImg) {
@@ -30,18 +31,15 @@ function Post({ imageSrc, postContent, isImg }) {
             style={{
                 marginRight: "20%",
                 width: "80%",
-                padding: "2%",
-                textAlign: "left",
-                backgroundColor: "yellow",
-                minHeight: "50px"
+                padding: "2%"
             }}>
-            <div className="User" style={{ display: "inline-block", width: "20%" }}>
-                <div className="Profilepicture" style={{ display: "inline-block", backgroundColor: "blue"}}>
+            <div className="User" style={{ display: "inline-block", width: "20%"}}>
+                <div className="Profilepicture" style={{ display: "inline-block" }}>
                     {profilePicture}
                 </div>
                 <a>:</a>
             </div>
-            <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
+            <div className="Content" style={{display: "inline-block", width: "80%", wordWrap: "break-word"}}>
                 {contentPreview}
             </div>
 
