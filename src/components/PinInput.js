@@ -1,69 +1,43 @@
 //Laesker
 
-
 import React, {useState} from "react"
+import LobbyPage from "../pages/LobbyPage"
 import Button from "./Button"
+import {Route, Redirect} from "react-router-dom";
+import {Navigate} from 'react-router-dom';
 
-
-
-function PinInput(){
-    const [input, setInput] = useState(""); 
-
-const nums = document.querySelectorAll('.num')
-const form = document.querySelector('form')
-
-nums.forEach((num, index) => {
-    num.dataset.id = index
-    
-    num.addEventListener('keyup', () => {
-        if (num.value.length == 1) {
-            if (nums[nums.length - 1].value.length == 1)
-            nums[parseInt(num.dataset.id) + 1].focus()
-        }
+function PinInput() {
+    const [data,setData] = useState({
+      password:""
     })
-})
-
-function verifyPassword(event) {  
-   event.preventDefault(); 
-    let pw1 = event.target.value; 
-
-    if (pw1 != 1) {
-        alert ("Password incorrect");
-    }
-    else if (pw1 == 1) {
-        alert ("Password correct");
+    
+    const {password: pin} = data;
+    
+    const changeHandler = e => {
+      setData({...data,[e.target.name]:[e.target.value]});
     }
     
-}
-
-
-function validate(){
-    let password = document.getElementById("password").value;
-    if (password == "1"){
-        alert ("password CORRECT");
-        window.location = "passwordCORRECT";
-        return false;
-    } 
+    const submitHandler = e => {
+      e.preventDefault();
+      var correctPin="1234";
+        if (pin == correctPin){
+            window.location = "../pages/LobbyPage"
+        } else {
+            alert("Invalid room code")
+        }
+    }
     
-
-}
-
-    return(
-        <body style = {{display: 'grid', height: "216vw", backgroundColor: '#F9F3F3'}}>
-            <div style = {{marginTop: '40vw', height: '10vw', fontFamily: 'Brush Script MT', fontSize: '10vw', textDecoration: 'underline'}}>Enter Game Pin!</div>
-            <form style ={{height: "216vw"}}>
-                <div class="container" style ={{display: 'flex', marginTop: '10vw', marginLeft: '10vw', marginRight: '10vw'}}>
-                    
-                    <input type="text"  name="password" id="password" class="num" style = {{ color: '#17D930',  backgroundColor: 'white', height: '15vw', width: '15vw', textAlign: 'center',  outline: 'none', padding: '2vw 1vw',  margin: '0 1vw', fontSize: '10vw', border: '0.5vw solid black', borderRadius: '0.5vw'}} maxLength="1"></input>
-                   
-                </div>
-                <Button text = 'Join Game' type="submit" buttonColor="#17D930" action={validate}></Button>
+      return (
+        <div>
+          <center>
+            <form onSubmit={submitHandler}>
+                <input type="text" name="password" value={pin} onChange={changeHandler}/><br/>
+                <input type="submit" name="submit"/>
             </form>
-            
-        </body>
-    )
+          </center>
+        </div>
+      );
 }
-//   onChange={(e) => setInput(e.target.value)}
 
 export default PinInput
 
