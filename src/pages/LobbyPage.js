@@ -1,4 +1,4 @@
-import Header from '../components/header.js';
+import Header from '../components/Header.js';
 import React from 'react';
 
 // Ha allt av sidans innehåll i main diven
