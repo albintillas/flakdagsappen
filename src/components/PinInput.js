@@ -30,11 +30,24 @@ function PinInput() {
       return (
         <div>
           <center>
-            <p style={{marginTop: '30vw', fontFamily: 'Brush Script MT', textDecoration: 'underline', fontSize: '13vw'}}>Enter Game Pin!</p>
             <form onSubmit={submitHandler}>
                 <input style={{width: '60vw', height: '20vw', fontSize: '13vw', textAlign: 'center', letterSpacing: '2vw'}}
                 type="text" name="password" value={pin} onChange={changeHandler}/><br/>
-                <input type="submit" name="submit"/>
+                <input type="submit" name="submit" style={{
+                    backgroundColor: "#17D930",
+                    color: "black",
+                    textDecoration: "bold",
+                    fontSize: "200%",
+                    textTransform: "uppercase",
+                    fontWeight: "700",
+                    textDecoration: "none",
+                    padding: "10%",
+                    borderRadius: "50px",
+                    border: "none",
+                    cursor: "pointer",
+                    height: "75%",
+                    width: "55%"
+                    }}/>
             </form>
           </center>
         </div>
