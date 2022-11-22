@@ -30,14 +30,20 @@ function PinInput() {
       return (
         <div>
           <center>
+            <p style={{marginTop: '30vw', fontFamily: 'Brush Script MT', textDecoration: 'underline', fontSize: '13vw'}}>Enter Game Pin!</p>
             <form onSubmit={submitHandler}>
-                <input type="text" name="password" value={pin} onChange={changeHandler}/><br/>
+                <input style={{width: '60vw', height: '20vw', fontSize: '13vw', textAlign: 'center', letterSpacing: '2vw'}}
+                type="text" name="password" value={pin} onChange={changeHandler}/><br/>
                 <input type="submit" name="submit"/>
             </form>
           </center>
         </div>
+        
       );
+      
 }
+
+
 
 export default PinInput
 
