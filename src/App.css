@@ -20,6 +20,30 @@ a:visited {
   pointer-events: none;
 }
 
+
+.createGamePage{
+  flex-direction: column;
+  display: flex;  
+  align-items: center;
+}
+
+.createGameReturn{
+  margin: 2%;
+}
+
+.createGameImage{
+  justify-content: center;
+  width: 10vw;
+}
+
+.createGameInput{
+  padding: 10%;
+}
+
+.createGameButton{
+  padding: 0% !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
