@@ -1,5 +1,6 @@
 import Header from '../components/Header.js';
 import Post from '../components/Post.js'
+import UploadButton from '../components/UploadButton.js'
 import img1 from '..//images/pfpTest.png';
 import img2 from '..//images/Test.png';
 import postImg1 from '..//images/test3.png';
@@ -11,7 +12,23 @@ function FeedPage() {
     return (
         <div>
             <Header onpage={3} />
-            <div class="main" style={{ marginTop: "2vh" }}>
+            <div className="main" style={{ marginTop: "5vh" }}>
+                <div className="makingPosts" style={{width: "fit-content", margin: "0 auto"}}>
+                    <UploadButton
+                        text='Ta Foto'
+                        buttonColor='#F9F3F3'
+                        textDecoration="underline"
+                        textColor='#17D930'
+                        action='joingame'
+                    />
+                    <UploadButton
+                        text='Skriv Inlägg'
+                        buttonColor='#F9F3F3'
+                        textDecoration="underline"
+                        textColor='#17D930'
+                        action='joingame'
+                    />
+                </div>
                 <Post
                     imageSrc={img1}
                     postContent={"WWWWWWWWWWWWWWWWWWWAAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWW"}
