@@ -5,8 +5,9 @@ import '../App.css';
 import React, { useState } from "react";
 
 
-const UploadImage = () => {
+const UploadImage = ({size}) => {
   const [selectedImage, setSelectedImage] = useState(null);
+   
 
   return (
     <div style={{

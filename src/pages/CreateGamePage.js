@@ -3,33 +3,29 @@ import UploadImage from '../components/UploadImage.js';
 import TextInput from '../components/TextInput.js';
 import Button from '../components/Button.js';
 import ReturnButton from '../components/ReturnButton.js';
+import '../App.css';
 
-
-const upload = <UploadImage/>
-
-const enterName = <TextInput/>
-
-const create =
-<Button
-text = 'Create'
-buttonColor='#17D930'
-/>
 
 function CreateGamePage(){
 return(
+<div class="createGameContainer">
+  <div class="createGameReturn">
+    <ReturnButton 
+    text='Return' 
+    buttonColor='#17D930' 
+    textColor='#FFFFFF'
+    action=''></ReturnButton>
+  </div>
 
-<div>
-    {upload}
-    {enterName}
-    {create}
-
-    
-      <ReturnButton text='Return' 
-      buttonColor='#17D930' 
-      textColor='#FFFFFF'
-      action=''></ReturnButton>
-    
-
+  <div class = "createGamePage">
+      <UploadImage class = "createGameImage"
+      size = '60 %'/>
+      <TextInput class = "createGameInput"/>
+      <Button class = "createGameButton" 
+      text = 'Create'
+      buttonColor='#17D930'
+      />
+  </div>
 </div>
 )
 }
