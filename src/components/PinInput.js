@@ -48,8 +48,8 @@ function PinInput() {
                     border: "none",
                     cursor: "pointer",
                     height: "75%",
-                    width: "70%",
-                    marginTop: "5%",
+                    width: "65%",
+                    marginTop: "1vw",
                     boxShadow: "1vw 2vw 3vw #888888"
     
                     }}/>

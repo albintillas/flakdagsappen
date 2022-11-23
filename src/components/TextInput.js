@@ -11,14 +11,15 @@ function TextInput(){
         <div>
 
         <form>
-            <input className="TextInputBox" type="text" placeholder="Enter Name..." name="name" 
+            <input className="TextInputBox" type="text" placeholder="Enter Game Name..." name="name" 
             style={{
                 backgroundColor: 'transparent', 
                 width: '40vw', 
-                height: '5vw', 
+                height: '10vw', 
                 margintop: '5vw', 
                 bordercolor: '#00A300', 
-                fontfamily: 'system-ui'
+                fontfamily: 'system-ui',
+                marginBottom: '5vw'
             }}/>
            
          </form>
