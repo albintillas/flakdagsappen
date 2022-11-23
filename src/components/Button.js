@@ -7,7 +7,7 @@ const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
 
     return(
 
-       // <Link to={"/" + action}>
+       <Link to={"/" + action}>
             <button type='submit' onclick = {action} style={{
 
                 backgroundColor: buttonColor,
@@ -17,16 +17,17 @@ const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
                 textTransform: "uppercase",
                 fontWeight: "700",
                 textDecoration: "none",
-                padding: "10%",
-                borderRadius: "50px",
+                padding: "5%",
+                borderRadius: "15vw",
                 border: "none",
                 cursor: "pointer",
                 height: "75%",
-                width: "55%"
+                width: "55%",
+                boxShadow: "1vw 2vw 3vw #888888",
             }}>
                 {text}
             </button>
-       //<Link>
+        </Link>
     )
 }
 export default Button
