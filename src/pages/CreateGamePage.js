@@ -16,6 +16,7 @@ return(
     textColor='#FFFFFF'
     action=''></ReturnButton>
   </div>
+  <p>Create Flakdag!</p>
 
   <div class = "createGamePage">
       <UploadImage class = "createGameImage"
