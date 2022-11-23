@@ -10,7 +10,7 @@ function PostText({ profilePicture, username }) {
     var charactersLeft = 60 - textString.length
     var buttonColor = "#E5E6EA"
     var textColor = "#BEC1C5"
-    if(charactersLeft < 60) {
+    if (textString.split(" ").join("").length > 0) {
         buttonColor = "#4877CD"
         textColor = "#F9F3F3"
     }
@@ -28,7 +28,7 @@ function PostText({ profilePicture, username }) {
         <div class="MakePost">
             <ReturnButton
                 action='feed' />
-            <a style={{ fontSize: "6vw"}}>Skriv Inlägg</a>
+            <a style={{ fontSize: "6vw", position: "absolute", top: "1vh", marginLeft: "1vw" }}>Skriv Inlägg</a>
             <button type='submit' style={{
                 position: "absolute",
                 top: "1vh",
@@ -44,22 +44,35 @@ function PostText({ profilePicture, username }) {
                 PUBLICERA
             </button>
             <div style={{ width: "100%", height: "1px", backgroundColor: "black" }} />
-            <div className='userInfo' style={{ margin: "2vh 0 2vh 0" }}>
-                <img src={profilePicture} alt='pfp'
-                    style={{ height: "15vw", width: "15vw", objectFit: "cover", borderRadius: "50%" }} />
-                <a style={{ fontWeight: "bold" }}>{username}</a>
+
+            <div className="Post"
+                style={{
+                    margin: "1vh 20% 1vh 0",
+                    width: "80%",
+                    padding: "2%"
+                }}>
+                <div className="User" style={{ display: "inline-block", width: "20%" }}>
+                    <div className="Profilepicture" style={{ display: "inline-block" }}>
+                        <img src={profilePicture} alt='pfp'
+                            style={{ height: "15vw", width: "15vw", objectFit: "cover", borderRadius: "50%" }} />
+                    </div>
+                    <a>:</a>
+                </div>
+                <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
+                    <textarea rows='4' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
+                        width: "90%",
+                        marginTop: "4vh",
+                        marginLeft: "4vw",
+                        fontSize: "6vw",
+                        margin: "auto",
+                        border: "none",
+                        outline: "none"
+                    }} />
+                </div>
             </div>
-            <div className='contentOfPage' style={{ textAlign: "center" }}>
-                <textarea rows='4' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
-                    width: "90%",
-                    marginTop: "4vh",
-                    fontSize: "6vw",
-                    margin: "auto",
-                    border: "none",
-                    outline: "none"
-                }} />
-                <br/>
-                <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
+            <br />
+            <div style ={{textAlign: "center"}}>
+            <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
             </div>
         </div>
     )
