@@ -9,7 +9,7 @@ function PostImg() {
         <div class="MakePost">
             <ReturnButton
                 action='feed' />
-            <a style={{ fontSize: "6vw" }}>Ta Foto</a>
+            <a style={{ fontSize: "6vw", position: "absolute", top: "1vh", marginLeft: "1vw" }}>Ta Foto</a>
             <button type='submit' style={{
                 position: "absolute",
                 top: "1vh",

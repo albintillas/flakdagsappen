@@ -10,6 +10,8 @@ p{
     font-size: 13vw;
     text-align: center;
 }
+body {background-color: #F9F3F3;}
+
 a:link {
   text-decoration: none;
 }
@@ -123,4 +125,10 @@ a:visited {
 
   text-align: center;
 
+}
+
+.individualChart{
+  display: "flex";
+  flex-direction: row;
+  margin-top: "3vw";
 }

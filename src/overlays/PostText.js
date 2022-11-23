@@ -3,14 +3,18 @@ import '../App.css';
 import ReturnButton from '../components/ReturnButton.js';
 import { useState } from 'react'
 import postImg2 from '..//images/test2.png';
+import {useNavigate} from 'react-router-dom';
 // In Progress, Joel
 
 function PostText({ profilePicture, username }) {
+    const navigate = useNavigate();
     const [textString, setTextString] = useState('')
+    var textStringHasContent = textString.split(" ").join("").length > 0;
     var charactersLeft = 60 - textString.length
+    
     var buttonColor = "#E5E6EA"
     var textColor = "#BEC1C5"
-    if(charactersLeft < 60) {
+    if (textStringHasContent) {
         buttonColor = "#4877CD"
         textColor = "#F9F3F3"
     }
@@ -24,12 +28,18 @@ function PostText({ profilePicture, username }) {
         setTextString(event.target.value)
 
     }
+    function makePost(event) {
+        if(textStringHasContent) {
+        // Insert kod för ett inlägg
+        navigate("/feed")
+    }
+    }
     return (
         <div class="MakePost">
             <ReturnButton
                 action='feed' />
-            <a style={{ fontSize: "6vw"}}>Skriv Inlägg</a>
-            <button type='submit' style={{
+            <a style={{ fontSize: "6vw", position: "absolute", top: "1vh", marginLeft: "1vw" }}>Skriv Inlägg</a>
+            <button type='submit' onClick={makePost} style={{
                 position: "absolute",
                 top: "1vh",
                 right: "3vw",
@@ -44,22 +54,35 @@ function PostText({ profilePicture, username }) {
                 PUBLICERA
             </button>
             <div style={{ width: "100%", height: "1px", backgroundColor: "black" }} />
-            <div className='userInfo' style={{ margin: "2vh 0 2vh 0" }}>
-                <img src={profilePicture} alt='pfp'
-                    style={{ height: "15vw", width: "15vw", objectFit: "cover", borderRadius: "50%" }} />
-                <a style={{ fontWeight: "bold" }}>{username}</a>
+
+            <div className="Post"
+                style={{
+                    margin: "1vh 20% 1vh 0",
+                    width: "80%",
+                    padding: "2%"
+                }}>
+                <div className="User" style={{ display: "inline-block", width: "20%" }}>
+                    <div className="Profilepicture" style={{ display: "inline-block" }}>
+                        <img src={profilePicture} alt='pfp'
+                            style={{ height: "15vw", width: "15vw", objectFit: "cover", borderRadius: "50%" }} />
+                    </div>
+                    <a>:</a>
+                </div>
+                <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
+                    <textarea rows='4' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
+                        width: "90%",
+                        marginTop: "4vh",
+                        marginLeft: "4vw",
+                        fontSize: "6vw",
+                        margin: "auto",
+                        border: "none",
+                        outline: "none"
+                    }} />
+                </div>
             </div>
-            <div className='contentOfPage' style={{ textAlign: "center" }}>
-                <textarea rows='4' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
-                    width: "90%",
-                    marginTop: "4vh",
-                    fontSize: "6vw",
-                    margin: "auto",
-                    border: "none",
-                    outline: "none"
-                }} />
-                <br/>
-                <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
+            <br />
+            <div style ={{textAlign: "center"}}>
+            <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
             </div>
         </div>
     )
