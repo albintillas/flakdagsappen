@@ -11,18 +11,20 @@ function PostImg() {
                 action='feed' />
             <a style={{ fontSize: "6vw" }}>Ta Foto</a>
             <button type='submit' style={{
+                position: "absolute",
+                top: "1vh",
+                right: "3vw",
                 height: "10vw",
                 width: "35vw",
                 fontSize: "5vw",
                 backgroundColor: "#4877CD",
                 borderRadius: "10%",
                 color: "#F9F3F3"
-
             }}>
                 PUBLICERA
             </button>
             <div style={{ width: "100%", height: "1px", backgroundColor: "black" }} />
-            <UploadImage />
+            <UploadImage/>
         </div>
     )
 }

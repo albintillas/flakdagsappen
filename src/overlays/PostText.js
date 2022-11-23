@@ -6,8 +6,14 @@ import postImg2 from '..//images/test2.png';
 // In Progress, Joel
 
 function PostText({ profilePicture, username }) {
-    const [searchString, setSearchString] = useState('')
-    var charactersLeft = 60 - searchString.length;
+    const [textString, setTextString] = useState('')
+    var charactersLeft = 60 - textString.length
+    var buttonColor = "#E5E6EA"
+    var textColor = "#BEC1C5"
+    if(charactersLeft < 60) {
+        buttonColor = "#4877CD"
+        textColor = "#F9F3F3"
+    }
 
     /*Temporär lösning*/
     username = "Namn Namnsson"
@@ -15,21 +21,25 @@ function PostText({ profilePicture, username }) {
     /*Temporär lösning*/
 
     function changeInput(event) {
-        setSearchString(event.target.value)
+        setTextString(event.target.value)
+
     }
     return (
         <div class="MakePost">
             <ReturnButton
                 action='feed' />
-            <a style={{ fontSize: "6vw" }}>Skriv Inlägg</a>
+            <a style={{ fontSize: "6vw"}}>Skriv Inlägg</a>
             <button type='submit' style={{
+                position: "absolute",
+                top: "1vh",
+                right: "3vw",
                 height: "10vw",
                 width: "35vw",
                 fontSize: "5vw",
-                backgroundColor: "#4877CD",
-                borderRadius: "10%",
-                color: "#F9F3F3"
-
+                backgroundColor: buttonColor,
+                borderRadius: "5%",
+                color: textColor,
+                border: "none"
             }}>
                 PUBLICERA
             </button>
@@ -40,7 +50,7 @@ function PostText({ profilePicture, username }) {
                 <a style={{ fontWeight: "bold" }}>{username}</a>
             </div>
             <div className='contentOfPage' style={{ textAlign: "center" }}>
-                <textarea rows='5' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
+                <textarea rows='4' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
                     width: "90%",
                     marginTop: "4vh",
                     fontSize: "6vw",
@@ -48,6 +58,7 @@ function PostText({ profilePicture, username }) {
                     border: "none",
                     outline: "none"
                 }} />
+                <br/>
                 <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
             </div>
         </div>
