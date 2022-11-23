@@ -14,9 +14,7 @@ const Button = ({action }) =>{
 
         <Link to={"/" + action}>
             <img src={returnArrow} alt='Return' onclick = {action} style={{
-            
                 width: "12vw"
-            
             }}>
             </img>
         </Link>
