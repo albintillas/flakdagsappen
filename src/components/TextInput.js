@@ -11,7 +11,7 @@ function TextInput(){
         <div>
 
         <form>
-            <input className="TextInputBox" type="text" placeholder="Enter Game Name..." name="name" 
+            <input className="TextInputBox" type="text" placeholder="Enter Name..." name="name" 
             style={{
                 backgroundColor: 'transparent', 
                 width: '40vw', 
