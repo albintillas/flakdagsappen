@@ -19,11 +19,14 @@ function PostText() {
                 textColor='#FFFFFF'
                 action='feed' />
             <div className='contentOfPage' style={{ textAlign: "center" }}>
-                <input type='text' placeholder='Whrite text here..' onChange={changeInput} maxLength="60" style={{
-                    width: "80%",
-                    backgroundColor: "white",
-                    margin: "auto"
-                }} />
+                <textarea rows='5' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
+                    width: "90%",
+                    marginTop: "3vh",
+                    fontSize: "6vw",
+                    margin: "auto",
+                    border: "none",
+                    outline: "none"
+                }}/>
                 <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
             </div>
         </div>
