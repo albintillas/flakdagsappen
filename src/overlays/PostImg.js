@@ -8,11 +8,21 @@ function PostImg() {
     return (
         <div class="MakePost">
             <ReturnButton
-                text='Return'
-                buttonColor='#17D930'
-                textColor='#FFFFFF'
                 action='feed' />
-                <UploadImage/>
+            <a style={{ fontSize: "6vw" }}>Ta Foto</a>
+            <button type='submit' style={{
+                height: "10vw",
+                width: "35vw",
+                fontSize: "5vw",
+                backgroundColor: "#4877CD",
+                borderRadius: "10%",
+                color: "#F9F3F3"
+
+            }}>
+                PUBLICERA
+            </button>
+            <div style={{ width: "100%", height: "1px", backgroundColor: "black" }} />
+            <UploadImage />
         </div>
     )
 }
