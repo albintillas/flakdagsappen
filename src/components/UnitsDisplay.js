@@ -1,14 +1,12 @@
 // Laesker
 // In progress
-import React, {useState} from 'react';
+import React from 'react';
 
-function UnitsDisplay({count, setCount}) {
-
-    
+function UnitsDisplay({count}) {
 
     return(
         <div style={{display: "inline-block"}}>
-            <div style={{marginTop: "10vw", textAlign: "center", marginLeft: "2vw", fontSize: "25vw", color: "#17D930", width: "30vw", border: "0.5vw solid yellow"}}>
+            <div style={{marginTop: "7vw", textAlign: "center", marginLeft: "2vw", fontSize: "25vw", color: "#17D930", width: "30vw"}}>
                 {count}
             </div>           
         </div>

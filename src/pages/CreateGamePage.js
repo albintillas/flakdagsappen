@@ -16,15 +16,13 @@ return(
     textColor='#FFFFFF'
     action=''></ReturnButton>
   </div>
+  <p>Create Flakdag!</p>
 
   <div class = "createGamePage">
       <UploadImage class = "createGameImage"
       size = '60 %'/>
       <TextInput class = "createGameInput"/>
-      <Button class = "createGameButton" 
-      text = 'Create'
-      buttonColor='#17D930'
-      />
+      <Button text='Create Game' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'/>
   </div>
 </div>
 )

@@ -34,7 +34,7 @@ function PinInput() {
         <div>
           <center>
             <form onSubmit={submitHandler}>
-                <input style={{width: '60vw', height: '20vw', fontSize: '13vw', textAlign: 'center', letterSpacing: '2vw'}}
+                <input style={{width: '60vw',fontSize:'13vw',marginBottom:'2vw', height: '20vw', textAlign: 'center', letterSpacing: '2vw'}}
                 type="text" name="password" value={pin} onChange={changeHandler}/><br/>
                 
                 <input type="submit" name="submit" value="Join Game" style={{
@@ -48,8 +48,8 @@ function PinInput() {
                     border: "none",
                     cursor: "pointer",
                     height: "75%",
-                    width: "70%",
-                    marginTop: "5%",
+                    width: "65%",
+                    marginTop: "1vw",
                     boxShadow: "1vw 2vw 3vw #888888"
     
                     }}/>

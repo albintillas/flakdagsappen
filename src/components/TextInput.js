@@ -15,10 +15,11 @@ function TextInput(){
             style={{
                 backgroundColor: 'transparent', 
                 width: '40vw', 
-                height: '5vw', 
+                height: '10vw', 
                 margintop: '5vw', 
                 bordercolor: '#00A300', 
-                fontfamily: 'system-ui'
+                fontfamily: 'system-ui',
+                marginBottom: '5vw'
             }}/>
            
          </form>
