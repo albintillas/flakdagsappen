@@ -89,26 +89,24 @@ function LobbyPage() {
                 </div>
             </div>
             <div className="tableHeader" style={{textAlign: "center", marginTop: "5vw"}}>
-                XX Personer, XX Enheter
+                3 Personer, 41 Enheter
             </div>
-            <table className="table" style={{marginTop: "3vw", border: "0.5vw black solid", width: "80vw", marginLeft: "10vw", textAlign: "center"}}>
-                <tr  style={{border: "0.5vw solid black"}}>
-                    <td> 
-                        Namn:
-                    </td> 
-                    Antal enheter:
+            <table className="table" style={{marginTop: "3vw", width: "80vw", marginLeft: "10vw", textAlign: "center"}}>
+                <tr>
+                    <th style={{borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>Namn:</th> 
+                    <th style={{borderBottom: "0.5vw solid black"}}>Antal enheter:</th>
                 </tr>
                 <tr>
-                    <td> 
-                        Namn 1
-                    </td>
-                    17st
+                    <td style={{borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>Namn Ettsson</td>
+                    <td style={{borderBottom: "0.5vw solid black"}}>17st</td>
                 </tr>
                 <tr>
-                    <td> 
-                        Namn 2
-                    </td>
-                    13st
+                    <td style={{borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>Namn Tvåson</td>
+                    <td style={{borderBottom: "0.5vw solid black"}}>13st</td>
+                </tr>
+                <tr>
+                    <td style={{borderRight: "0.5vw solid black"}}>Namn Treson</td>
+                    <td>11st</td>
                 </tr>
             </table>
         </div>

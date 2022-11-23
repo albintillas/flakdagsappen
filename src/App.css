@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Serif+JP:wght@300&display=swap');
 
+*{background-color: #F9F3F3;}
+p{ 
+    margin-top: 10vw;
+    margin-bottom: 5vw;
+    font-family: Brush Script MT; 
+    text-decoration: underline; 
+    font-size: 13vw;
+    text-align: center;
+}
 body {background-color: #F9F3F3;}
 
 a:link {
@@ -38,10 +47,6 @@ a:visited {
 
 .createGameInput{
   padding: 10%;
-}
-
-.createGameButton{
-  padding: 0% !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {
