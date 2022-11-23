@@ -11,9 +11,9 @@ function LobbyPage() {
 
     const [count, setCount] = useState(0);
     return (
-        <div>
+        <div class="main">
             <Header onpage={2} />
-            <div class="main" style={{marginTop: "2vh", display: "flex", justifyContent: "center" }}>
+            <div class="PFPandUnitsDisplay" style={{marginTop: "2vh", display: "flex", justifyContent: "center" }}>
                 <div style={{
                     width: "30vw", 
                     height: "30vw"
@@ -35,7 +35,7 @@ function LobbyPage() {
                 </div>
                 
             </div>
-            <div style={{display: "flex"}}>
+            <div class="plusOneAndTiltedImages" style={{display: "flex"}}>
                 <button style={{
                         width: '60vw',
                         height: '20vw',
@@ -48,11 +48,11 @@ function LobbyPage() {
                         borderBottomRightRadius: '20vw',
                         fontSize: '18vw',
                         justifyContent: 'center',
-                        paddingBottom: '20vw'
+                        paddingBottom: '20vw',
                     }}
                     className="increase" onClick={() => setCount(count + 1)}>+1
                 </button>
-                <div classname="Container" style={{display: "flex", position: "relative", width: '35vw'}}>
+                <div className="imgContainer" style={{display: "flex", position: "relative", width: '35vw'}}>
                     <img src={testimage} style={{
                             marginLeft:'5vw',
                             marginTop: '5vw',
@@ -88,6 +88,29 @@ function LobbyPage() {
                     </img>
                 </div>
             </div>
+            <div className="tableHeader" style={{textAlign: "center", marginTop: "5vw"}}>
+                XX Personer, XX Enheter
+            </div>
+            <table className="table" style={{marginTop: "3vw", border: "0.5vw black solid", width: "80vw", marginLeft: "10vw", textAlign: "center"}}>
+                <tr  style={{border: "0.5vw solid black"}}>
+                    <td> 
+                        Namn:
+                    </td> 
+                    Antal enheter:
+                </tr>
+                <tr>
+                    <td> 
+                        Namn 1
+                    </td>
+                    17st
+                </tr>
+                <tr>
+                    <td> 
+                        Namn 2
+                    </td>
+                    13st
+                </tr>
+            </table>
         </div>
     );
 }
