@@ -2,13 +2,13 @@
 // Denna fil utgör layouten av ett inlägg för 'flödet'
 import React from 'react';
 
-function Post({ imageSrc, postContent, isImg }) {
+function Post({ profilePicture, postContent, contentIsImg }) {
 
-    var profilePicture = <img src={imageSrc} alt='pfp'
+    var profilePicture = <img src={profilePicture} alt='pfp'
         style={{ height: "12vw", width: "12vw", objectFit: "cover", borderRadius: "50%" }} />;
 
     var contentPreview;
-    if (isImg) {
+    if (contentIsImg) {
         contentPreview = <img src={postContent} alt='pfp' style={{
             width: "100%",
             maxHeight: "30vh",

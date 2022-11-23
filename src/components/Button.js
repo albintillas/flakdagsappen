@@ -3,24 +3,30 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 
-const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
+const Button = ({ text, buttonColor, textColor,textDecoration ,fontSize,action }) =>{
 
     return(
 
-        <Link to={"/" + action}>
-            <button type='submit' onclick = {action} style={{
+       <Link to={"/" + action}>
+            <button type='submit' Text={text} onclick = {action} style={{
+
                 backgroundColor: buttonColor,
-                textDecoration: textDecoration,
                 color: textColor,
-                padding: '5% 10% 5% 10%',
-                fontSize: '170%',
-                fontWeight: 'bold',
-                borderRadius: '45%',
-                textAlign: 'center',
-                boxShadow: '2px 2px 8px #888888'
+                textDecoration: textDecoration,
+                fontSize: fontSize,
+                fontFamily: 'Noto Serif JP serif',
+                fontWeight: "500",
+                padding: "5%",
+                borderRadius: "15vw",
+                border: "none",
+                cursor: "pointer",
+                height: "15vw",
+                width: "55vw",
+                boxShadow: "1vw 2vw 3vw #888888",
             }}>
-                {text}
-            </button>
+
+        {text}
+        </button>
         </Link>
     )
 }

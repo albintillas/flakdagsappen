@@ -1,36 +1,68 @@
 //Laesker
 
-import React from "react"
+//Klar
 
-const nums = document.querySelectorAll('.num')
-const form = document.querySelector('form')
+import React, {useState} from "react"
+import {useNavigate} from 'react-router-dom';
 
-nums.forEach((num, index) => {
-    num.dataset.id = index
-    
-    num.addEventListener('keyup', () => {
-        if (num.value.length == 1) {
-            if (nums[nums.length - 1].value.length == 1) form.submit()
-            nums[parseInt(num.dataset.id) + 1].focus()
-        }
+function PinInput() {
+    const [data,setData] = useState({
+      password:""
     })
-})
 
-
-
-
-function PinInput(){
-    return(
-        <body style = {{display: 'grid', placeItems: 'center', minHeight: "100vh", backgroundColor: 'rgb(0, 0, 15)'}}>
-            <form action="">
-                <div class="container" style ={{display: 'flex'}}>
-                    <input type="text" class="num" style = {{ color: '#fff',  backgroundColor: 'transparent', width: '100px', textAlign: 'center',  outline: 'none', padding: '2rem 1rem',  margin: '0 1rem', fontSize: '3rem', border: '1px solid rgba(255, 255, 255, .3)', borderRadius: '.5rem', color: 'rgba(0, 255, 0, .5)'}} maxLength="1" required></input>
-                    <input type="text" class="num" style = {{ color: '#fff',  backgroundColor: 'transparent', width: '100px', textAlign: 'center',  outline: 'none', padding: '2rem 1rem',  margin: '0 1rem', fontSize: '3rem', border: '1px solid rgba(255, 255, 255, .3)', borderRadius: '.5rem', color: 'rgba(0, 255, 0, .5)'}} maxLength="1" required></input>
-                    <input type="text" class="num" style = {{ color: '#fff',  backgroundColor: 'transparent', width: '100px', textAlign: 'center',  outline: 'none', padding: '2rem 1rem',  margin: '0 1rem', fontSize: '3rem', border: '1px solid rgba(255, 255, 255, .3)', borderRadius: '.5rem', color: 'rgba(0, 255, 0, .5)'}} maxLength="1" required></input>
-                    <input type="text" class="num" style = {{ color: '#fff',  backgroundColor: 'transparent', width: '100px', textAlign: 'center',  outline: 'none', padding: '2rem 1rem',  margin: '0 1rem', fontSize: '3rem', border: '1px solid rgba(255, 255, 255, .3)', borderRadius: '.5rem', color: 'rgba(0, 255, 0, .5)'}} maxLength="1" required></input>
-                </div>
+  // Navigate between views
+    const navigate = useNavigate();
+    
+    const {password: pin} = data;
+    
+    const changeHandler = e => {
+      setData({...data,[e.target.name]:[e.target.value]});
+    }
+    
+    const submitHandler = e => {
+      e.preventDefault();
+      var correctPin="1234";
+      
+        if (pin == correctPin){
+          navigate("/lobby")
+        } else {
+            alert("Invalid room code")
+        }
+    }
+    
+      return (
+        <div>
+          <center>
+            <form onSubmit={submitHandler}>
+                <input style={{width: '60vw',fontSize:'13vw',marginBottom:'2vw', height: '20vw', textAlign: 'center', letterSpacing: '2vw'}}
+                type="text" name="password" value={pin} onChange={changeHandler}/><br/>
+                
+                <input type="submit" name="submit" value="Join Game" style={{
+                    fontFamily: 'Noto Serif JP serif',
+                    backgroundColor: "#17D930",
+                    color:'#F9F3F3',
+                    fontSize: "200%",
+                    textDecoration: "none",
+                    padding: "5%",
+                    borderRadius: "15vw",
+                    border: "none",
+                    cursor: "pointer",
+                    height: "75%",
+                    width: "65%",
+                    marginTop: "1vw",
+                    boxShadow: "1vw 2vw 3vw #888888"
+    
+                    }}/>
             </form>
-        </body>
-    )
+          </center>
+        </div>
+        
+      );
+      
 }
+
+
+
 export default PinInput
+
+

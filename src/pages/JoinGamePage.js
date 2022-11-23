@@ -1,32 +1,17 @@
 import React from 'react'
 import PinInput from '../components/PinInput';
-import Button from '../components/Button';
 import ReturnButton from '../components/ReturnButton';
+import Button from '../components/Button.js';
 
 //Linus 
 
 function JoinGamePage(){
    return(
 <div>
-    <p style={{
-        backgroundColor: 'white',
-        fontSize:'300%',
-        textDecoration: 'underline',
-        textAlign: 'center'
-    }}>Enter Game Pin!</p>
-    <p>PinInput</p>
-    <Button style={{
-        marginRight:'300px' 
-    }}  text='Join Game' buttonColor='#17D930' />
+   <ReturnButton action=""></ReturnButton>
+    <p>Enter Game Pin!</p>
 
-
-  
-      <ReturnButton text='Return' 
-      buttonColor='#17D930' 
-      textColor='#FFFFFF'
-      action=''></ReturnButton>
-    
-
+    <PinInput></PinInput>
 </div>
    ) 
 }
