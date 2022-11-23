@@ -9,11 +9,7 @@ function JoinGamePage(){
    return(
 <div>
    <ReturnButton action=""></ReturnButton>
-    <p style={{marginLeft: '10vw', 
-    marginTop: '30vw', 
-    fontFamily: 'Brush Script MT', 
-    textDecoration: 'underline', 
-    fontSize: '13vw'}}>Enter Game Pin!</p>
+    <p>Enter Game Pin!</p>
 
     <PinInput></PinInput>
 </div>
