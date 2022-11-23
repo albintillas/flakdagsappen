@@ -3,14 +3,18 @@ import '../App.css';
 import ReturnButton from '../components/ReturnButton.js';
 import { useState } from 'react'
 import postImg2 from '..//images/test2.png';
+import {useNavigate} from 'react-router-dom';
 // In Progress, Joel
 
 function PostText({ profilePicture, username }) {
+    const navigate = useNavigate();
     const [textString, setTextString] = useState('')
+    var textStringHasContent = textString.split(" ").join("").length > 0;
     var charactersLeft = 60 - textString.length
+    
     var buttonColor = "#E5E6EA"
     var textColor = "#BEC1C5"
-    if (textString.split(" ").join("").length > 0) {
+    if (textStringHasContent) {
         buttonColor = "#4877CD"
         textColor = "#F9F3F3"
     }
@@ -24,12 +28,18 @@ function PostText({ profilePicture, username }) {
         setTextString(event.target.value)
 
     }
+    function makePost(event) {
+        if(textStringHasContent) {
+        // Insert kod för ett inlägg
+        navigate("/feed")
+    }
+    }
     return (
         <div class="MakePost">
             <ReturnButton
                 action='feed' />
             <a style={{ fontSize: "6vw", position: "absolute", top: "1vh", marginLeft: "1vw" }}>Skriv Inlägg</a>
-            <button type='submit' style={{
+            <button type='submit' onClick={makePost} style={{
                 position: "absolute",
                 top: "1vh",
                 right: "3vw",
