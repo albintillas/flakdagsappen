@@ -1,15 +1,15 @@
 //Laesker
 
 import React, {useState} from "react"
-import LobbyPage from "../pages/LobbyPage"
-import Button from "./Button"
-import {Route, Redirect} from "react-router-dom";
-import {Navigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 function PinInput() {
     const [data,setData] = useState({
       password:""
     })
+
+  // Navigate between views
+    const navigate = useNavigate();
     
     const {password: pin} = data;
     
@@ -20,8 +20,9 @@ function PinInput() {
     const submitHandler = e => {
       e.preventDefault();
       var correctPin="1234";
+      
         if (pin == correctPin){
-            window.location = "../pages/LobbyPage"
+          navigate("/lobby")
         } else {
             alert("Invalid room code")
         }
