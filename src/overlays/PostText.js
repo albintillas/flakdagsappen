@@ -3,15 +3,15 @@ import '../App.css';
 import ReturnButton from '../components/ReturnButton.js';
 import { useState } from 'react'
 import postImg2 from '..//images/test2.png';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // In Progress, Joel
 
-function PostText({ profilePicture, username }) {
+function PostText({ profilePicture }) {
     const navigate = useNavigate();
     const [textString, setTextString] = useState('')
     var textStringHasContent = textString.split(" ").join("").length > 0;
     var charactersLeft = 60 - textString.length
-    
+
     var buttonColor = "#E5E6EA"
     var textColor = "#BEC1C5"
     if (textStringHasContent) {
@@ -20,7 +20,6 @@ function PostText({ profilePicture, username }) {
     }
 
     /*Temporär lösning*/
-    username = "Namn Namnsson"
     profilePicture = postImg2
     /*Temporär lösning*/
 
@@ -29,10 +28,10 @@ function PostText({ profilePicture, username }) {
 
     }
     function makePost(event) {
-        if(textStringHasContent) {
-        // Insert kod för ett inlägg
-        navigate("/feed")
-    }
+        if (textStringHasContent) {
+            // Insert kod för ett inlägg
+            navigate("/feed")
+        }
     }
     return (
         <div class="MakePost">
@@ -71,6 +70,7 @@ function PostText({ profilePicture, username }) {
                 <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
                     <textarea rows='4' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
                         width: "90%",
+                        backgroundColor: "#F9F3F3",
                         marginTop: "4vh",
                         marginLeft: "4vw",
                         fontSize: "6vw",
@@ -81,8 +81,8 @@ function PostText({ profilePicture, username }) {
                 </div>
             </div>
             <br />
-            <div style ={{textAlign: "center"}}>
-            <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
+            <div style={{ textAlign: "center" }}>
+                <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
             </div>
         </div>
     )
