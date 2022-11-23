@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Serif+JP:wght@300&display=swap');
 
-*{background-color: #F9F3F3;}
+body {background-color: #F9F3F3;}
 
 a:link {
   text-decoration: none;
@@ -120,4 +120,10 @@ a:visited {
 
   text-align: center;
 
+}
+
+.individualChart{
+  display: "flex";
+  flex-direction: row;
+  margin-top: "3vw";
 }
