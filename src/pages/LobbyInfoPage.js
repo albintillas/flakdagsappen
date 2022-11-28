@@ -1,6 +1,6 @@
 // Albin - In progress
 
-import React,{useState, UseEffect, Profiler} from 'react';
+import React,{useState, useEffect, Profiler} from 'react';
 import testimage from '../images/pfpTest.png'
 import ReturnButton from '../components/ReturnButton';
 import Button from '../components/Button';
@@ -13,33 +13,37 @@ function LobbyInfoPage({}){
 
     const [players, setPlayers] = useState([]);
 
-    //let token = localStorage.getItem('token');    Ej hårdkodad
-
-    let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
-
-
-
-  
     const [isOwner, setIsOwner] = useState([]);
 
     const [pin, setPin] = useState([]);
 
-    //Hämta lobby pin från ett visst id
-    axios.post("https://flakdag.azurewebsites.net/api/data/GetFlakDagMeta", {id: token}).then(res => {
-    setPin(res.data.flakmeta.pin)
-    setIsOwner(res.data.isOwner || true)
-})
+    useEffect(()=>{
+        //let token = localStorage.getItem('token');    Ej hårdkodad
 
-    if(token) {
+        let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
 
-        axios.post("https://flakdag.azurewebsites.net/api/lobby/getlobby", {token}).then(res => {
-            //console.log(res)      Loopar i oändlighet
-        if(res.data.success){
-            setPlayers(res.data.players)
-        }
+        //Hämta lobby pin från ett visst id
+        axios.post("https://flakdag.azurewebsites.net/api/data/GetFlakDagMeta", {id: token}).then(res => {
+        setPin(res.data.flakmeta.pin)
+        setIsOwner(res.data.isOwner || true)
         })
+        
+        if(token) {
 
-    }
+            axios.post("https://flakdag.azurewebsites.net/api/lobby/getlobby", {token}).then(res => {
+
+                console.log(res)     
+                
+                if(res.data.success){
+                    setPlayers(res.data.players)
+                }
+            })
+    
+        }
+      }, [])
+    
+
+    
 
 
 
@@ -56,10 +60,8 @@ function LobbyInfoPage({}){
 
             <div>
                 <h2 style={{
-
                     textAlign: 'center',
                     fontFamily: 'Kaushan Script'
-
                 }}>Game Pin: {pin}</h2>
             </div>
 
