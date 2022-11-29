@@ -50,6 +50,7 @@ function LobbyInfoPage({}){
     return (
         <div>
             <div>
+                <ReturnButton action="creategame"></ReturnButton>
                 <h1 style={{
 
                     textAlign: 'center',
@@ -85,15 +86,16 @@ function LobbyInfoPage({}){
                 }
                
             </div>
-                
-            {isOwner == true? <Button style={{alignItems: 'center'}}action='/lobby' 
-                text='Start Game' 
-                buttonColor='#17D930' 
-                textDecoration='underline' 
-                textColor='#F9F3F3' 
-                fontSize='7vw'>
+
+               <div style={{display: 'flex',
+                            justifyContent: 'center'}}>
+            {isOwner == true? 
+            
+            
+            <Button action='lobby' text='Start Game' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw' >
 
             </Button>: null }
+            </div> 
         </div>      
     )
 
