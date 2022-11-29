@@ -152,7 +152,7 @@ function StatisticsPage() {
 
                     {console.log(players)}
 
-                    <div style={{display:"flex", flexWrap:"wrap"}}>
+                    <div style={{display:"flex", flexWrap:"wrap", flexDirection:'column'}}>
                         {players.map(p => (
                             
                             <div className='individualChart' style={{display: "flex", marginTop: "3vw"}}>
@@ -163,8 +163,8 @@ function StatisticsPage() {
                                     marginLeft: "8vw",
                                     borderRadius: '50%'
                             }}/>
-                            <p style={{margin: "0 0 0 3vw"}}> - </p>
-                            <p style={{margin: "0 0 0 3vw"}}>{p.name}</p>
+                            <h3 style={{margin: "0 0 0 3vw"}}> - </h3>
+                            <h3 style={{margin: "0 0 0 3vw"}}>{p.name}</h3>
                         </div>
                         ))
 
@@ -172,7 +172,7 @@ function StatisticsPage() {
                     
                     </div>
                         
-                        <div className='individualChart' style={{display: "flex", marginTop: "3vw"}}>
+                        {/* <div className='individualChart' style={{display: "flex", marginTop: "3vw"}}>
                             <div className='dot' style={{
                                     backgroundColor: "#c43a31",
                                     height: "5vw",
@@ -206,7 +206,7 @@ function StatisticsPage() {
                         }}/>
                         <p style={{margin: "0 0 0 3vw"}}> - </p>
                         <p style={{margin: "0 0 0 3vw"}}>Linus Palm</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
