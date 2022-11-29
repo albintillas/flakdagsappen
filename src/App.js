@@ -10,6 +10,7 @@ import PostImg from './overlays/PostImg';
 import PostText from './overlays/PostText';
 import StatisticsPage from './pages/StatisticsPage.js';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import LobbyInfoPage from './pages/LobbyInfoPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/statistics" element={<StatisticsPage/>}/>
         <Route path="/postImg" element={<PostImg/>}/>
         <Route path="/postText" element={<PostText/>}/>
+        <Route path="/lobbyInfoPage" element={<LobbyInfoPage/>}/>
       </Routes>
     </BrowserRouter>
 
