@@ -4,11 +4,13 @@
 
 import React, {useState} from "react"
 import {useNavigate} from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function PinInput() {
     const [data,setData] = useState({
       password:""
     })
+
 
   // Navigate between views
     const navigate = useNavigate();
@@ -22,11 +24,18 @@ function PinInput() {
     const submitHandler = e => {
       e.preventDefault();
       var correctPin="1234";
+
+    const Swal = require('sweetalert2')
       
         if (pin == correctPin){
           navigate("/lobby")
         } else {
-            alert("Invalid room code")
+          Swal.fire({
+            title: 'Wrong Game Pin!',
+            //text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Try Again'
+          })
         }
     }
     
