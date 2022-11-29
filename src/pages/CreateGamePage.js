@@ -22,7 +22,7 @@ return(
       <UploadImage class = "createGameImage"
       size = '60 %'/>
       <TextInput class = "createGameInput"/>
-      <Button text='Create Game' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'/>
+      <Button action='LobbyInfoPage' text='Create Game' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'/>
   </div>
 </div>
 )

@@ -80,7 +80,7 @@ function LobbyInfoPage({}){
                
             </div>
                 
-            {isOwner == true? <p>hej</p>: null }
+            {isOwner == true? <p>Start Game!</p>: null }
         </div>      
     )
 
