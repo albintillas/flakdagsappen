@@ -30,3 +30,7 @@ src/.vs/src/FileContentIndex/0e2d3a8e-5ac2-46fe-bea1-80c3256861b2.vsidx
 src/.vs/slnx.sqlite
 src/.vs/ProjectSettings.json
 src/App.js
+*.json
+package-lock.json
+package-lock.json
+package.json
