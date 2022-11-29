@@ -5,7 +5,9 @@ import Button from '../components/Button.js';
 import ReturnButton from '../components/ReturnButton.js';
 import '../App.css';
 import Swal from 'sweetalert2';
-import {useState} from 'react';
+import {useState, Link} from 'react';
+import StartPageButton from '../components/StartPageButton.js'
+
 
 function CreateGamePage(){
 
@@ -14,7 +16,6 @@ function CreateGamePage(){
   const [name, setName] = useState([]);
 
   const [password, setPassword] = useState([]);
-
 
   function createLobby(){
     
@@ -29,7 +30,7 @@ function CreateGamePage(){
           return;
       }
       else{
-
+        
       }
 
       /* SendForm($('#createForm'), (resp) => {
@@ -50,7 +51,7 @@ function CreateGamePage(){
     }
    
   
-
+    
 
   return(
   <div class="createGameContainer">
@@ -88,8 +89,9 @@ function CreateGamePage(){
       </div>
 
       {/* <button class = "createGameInput" id="submitButton" text="Create Game" onclick={createLobby} value="Create game" type='submit' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Create Game</button> */}
-      <input type="button" className = "createGameInput" id="submitButton" onClick={createLobby} value="Create" />
-
+            
+      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={createLobby} buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Create Game</button>
+        
   </form>
 
 
