@@ -14,6 +14,7 @@ function JoinGamePage(){
     <PinInput></PinInput>
 </div>
    ) 
+
 }
 
 export default JoinGamePage

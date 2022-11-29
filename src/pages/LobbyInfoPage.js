@@ -9,7 +9,7 @@ import axios from 'axios';
 
 
 
-function LobbyInfoPage({}){
+function LobbyInfoPage({}){ // Vet ej om {} behövs
 
     const [players, setPlayers] = useState([]);
 
