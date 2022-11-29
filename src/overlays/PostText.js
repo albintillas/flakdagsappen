@@ -2,28 +2,86 @@ import React from 'react'
 import '../App.css';
 import ReturnButton from '../components/ReturnButton.js';
 import { useState } from 'react'
+import postImg2 from '..//images/test2.png';
+import { useNavigate } from 'react-router-dom';
 // In Progress, Joel
 
-function PostText() {
-    const [searchString, setSearchString] = useState('')
-    var charactersLeft = 60 - searchString.length;
+function PostText({ profilePicture }) {
+    const navigate = useNavigate();
+    const [textString, setTextString] = useState('')
+    var textStringHasContent = textString.split(" ").join("").length > 0;
+    var charactersLeft = 60 - textString.length
+
+    var buttonColor = "#E5E6EA"
+    var textColor = "#BEC1C5"
+    if (textStringHasContent) {
+        buttonColor = "#4877CD"
+        textColor = "#F9F3F3"
+    }
+
+    /*Temporär lösning*/
+    profilePicture = postImg2
+    /*Temporär lösning*/
 
     function changeInput(event) {
-        setSearchString(event.target.value)
+        setTextString(event.target.value)
+
+    }
+    function makePost(event) {
+        if (textStringHasContent) {
+            // Insert kod för ett inlägg
+            navigate("/feed")
+        }
     }
     return (
         <div class="MakePost">
             <ReturnButton
-                text='Return'
-                buttonColor='#17D930'
-                textColor='#FFFFFF'
                 action='feed' />
-            <div className='contentOfPage' style={{ textAlign: "center" }}>
-                <input type='text' placeholder='Whrite text here..' onChange={changeInput} maxLength="60" style={{
+            <a style={{ fontSize: "6vw", position: "absolute", top: "1vh", marginLeft: "1vw" }}>Skriv Inlägg</a>
+            <button type='submit' onClick={makePost} style={{
+                position: "absolute",
+                top: "1vh",
+                right: "3vw",
+                height: "10vw",
+                width: "35vw",
+                fontSize: "5vw",
+                backgroundColor: buttonColor,
+                borderRadius: "5%",
+                color: textColor,
+                border: "none"
+            }}>
+                PUBLICERA
+            </button>
+            <div style={{ width: "100%", height: "1px", backgroundColor: "black" }} />
+
+            <div className="Post"
+                style={{
+                    margin: "1vh 20% 1vh 0",
                     width: "80%",
-                    backgroundColor: "white",
-                    margin: "auto"
-                }} />
+                    padding: "2%"
+                }}>
+                <div className="User" style={{ display: "inline-block", width: "20%" }}>
+                    <div className="Profilepicture" style={{ display: "inline-block" }}>
+                        <img src={profilePicture} alt='pfp'
+                            style={{ height: "15vw", width: "15vw", objectFit: "cover", borderRadius: "50%" }} />
+                    </div>
+                    <a>:</a>
+                </div>
+                <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
+                    <textarea rows='4' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
+                        width: "90%",
+                        backgroundColor: "#F9F3F3",
+                        marginTop: "4vh",
+                        marginLeft: "4vw",
+                        fontSize: "6vw",
+                        margin: "auto",
+                        border: "none",
+                        outline: "none"
+                    }} />
+                </div>
+            </div>
+            <br />
+            <div style={{ textAlign: "center" }}>
                 <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
             </div>
         </div>

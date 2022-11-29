@@ -1,5 +1,7 @@
 //Laesker
 
+//Klar
+
 import React, {useState} from "react"
 import {useNavigate} from 'react-router-dom';
 
@@ -32,22 +34,24 @@ function PinInput() {
         <div>
           <center>
             <form onSubmit={submitHandler}>
-                <input style={{width: '60vw', height: '20vw', fontSize: '13vw', textAlign: 'center', letterSpacing: '2vw'}}
+                <input style={{width: '60vw',fontSize:'13vw',marginBottom:'2vw', height: '20vw', textAlign: 'center', letterSpacing: '2vw'}}
                 type="text" name="password" value={pin} onChange={changeHandler}/><br/>
-                <input type="submit" name="submit" style={{
+                
+                <input type="submit" name="submit" value="Join Game" style={{
+                    fontFamily: 'Noto Serif JP serif',
                     backgroundColor: "#17D930",
-                    color: "black",
-                    textDecoration: "bold",
+                    color:'#F9F3F3',
                     fontSize: "200%",
-                    textTransform: "uppercase",
-                    fontWeight: "700",
                     textDecoration: "none",
-                    padding: "10%",
-                    borderRadius: "50px",
+                    padding: "5%",
+                    borderRadius: "15vw",
                     border: "none",
                     cursor: "pointer",
                     height: "75%",
-                    width: "55%"
+                    width: "65%",
+                    marginTop: "1vw",
+                    boxShadow: "1vw 2vw 3vw #888888"
+    
                     }}/>
             </form>
           </center>

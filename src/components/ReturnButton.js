@@ -6,29 +6,17 @@
 
 import React from 'react';
 import {Link} from "react-router-dom";
+import returnArrow from '..//images/backArrow.jpg';
 
-const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
+const Button = ({action }) =>{
 
     return(
 
         <Link to={"/" + action}>
-            <button type='submit' onclick = {action} style={{
-                backgroundColor: buttonColor,
-                textDecoration: textDecoration,
-                color: textColor,
-            
-                fontSize: '150%',
-                textAlign: 'center',
-                height: '10vw',
-                width: '25vw',
-                border: '1vw solid #17D930',
-                borderRadius: '15vw',
-                fontFamily: 'Noto Serif JP serif',
-            
-                
+            <img src={returnArrow} alt='Return' onclick = {action} style={{
+                width: "12vw"
             }}>
-                {text}
-            </button>
+            </img>
         </Link>
 
     
