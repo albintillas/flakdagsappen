@@ -63,6 +63,8 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
                     textAlign: 'center',
                     fontFamily: 'Kaushan Script'
                 }}>Game Pin: {pin}</h2>
+                <div style={{backgroundColor: 'black', marginLeft: '10vw', width: '80vw', border: '0.1vw solid black', height: '0.1vw', marginBottom: '4vw'}}>
+                </div>
             </div>
 
             <div style={{display:"flex", flexWrap:"wrap"}}>
@@ -71,7 +73,11 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
                     <div style={{width:"25%"}} key={p.name}>
 
                         <img src={p.profileImage} className='lobbyInfoPageImage'/>
-                        <p className='lobbyInfoPageText'>{p.name}</p>
+                        <p className='lobbyInfoPageText' style={{
+                            fontSize: '4vw',
+                            fontFamily: 'Noto Serif JP, serif',
+                            marginTop: '4vw'
+                        }}>{p.name}</p>
 
                     </div>
                 ))
@@ -80,7 +86,14 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
                
             </div>
                 
-            {isOwner == true? <p>Start Game!</p>: null }
+            {isOwner == true? <Button style={{alignItems: 'center'}}action='/lobby' 
+                text='Start Game' 
+                buttonColor='#17D930' 
+                textDecoration='underline' 
+                textColor='#F9F3F3' 
+                fontSize='7vw'>
+
+            </Button>: null }
         </div>      
     )
 
