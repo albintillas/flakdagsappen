@@ -51,7 +51,7 @@ return(
 
       <div class="row input-group-newsletter">
           <div class="formText">PIN</div>
-          <div class="formInput"><input onChange={event => setPin(event.target.value)} value={pin} class="form-control" name="pin" type="text" placeholder="Flakdag pin......" /></div>
+          <div class="formInput"><input onChange={event => setPin(event.target.value)} value={pin} class="form-control" name="pin" type="text" placeholder="Flakdag pin..." /></div>
         
       </div>
 
