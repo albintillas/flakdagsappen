@@ -10,9 +10,6 @@ import {Redirect} from "react-router-dom";
 import axios from 'axios';
 
 
-import StartPageButton from '../components/StartPageButton.js'
-
-
 function CreateGamePage(){
 
   const [pin, setPin] = useState([]);
@@ -43,7 +40,7 @@ function CreateGamePage(){
         axios.post("https://flakdag.azurewebsites.net/api/data/GetFlakDagMeta", {id: token}).then(res => {
           if(res.success){
             localStorage.setItem('token', token);
-            
+
           }
         })
       }
