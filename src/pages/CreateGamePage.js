@@ -5,8 +5,8 @@ import Button from '../components/Button.js';
 import ReturnButton from '../components/ReturnButton.js';
 import '../App.css';
 import Swal from 'sweetalert2';
-import {useState, Link} from 'react';
-import StartPageButton from '../components/StartPageButton.js'
+import {useState, Link, useNavigate} from 'react';
+import axios from 'axios';
 
 
 function CreateGamePage(){
@@ -17,8 +17,16 @@ function CreateGamePage(){
 
   const [password, setPassword] = useState([]);
 
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
+  {console.log(date)}
+
+
   function createLobby(){
+
     
+
     if (pin == "" ||
         name == "" ||
         password == "") {
@@ -30,8 +38,23 @@ function CreateGamePage(){
           return;
       }
       else{
-        
+
+        axios.post("https://flakdag.azurewebsites.net/api/lobby/createflakdag", {flakdagname: "flakdag", pin: pin, pw: password, fddate: "2022-11-30", name: name}).then(res => {
+          if(res.data.success){
+            localStorage.setItem('token', res.data.userToken);
+            window.location.href= '/lobbyInfoPage';
+
+          }
+          else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Kan inte skapa flakdag',
+                text: res.message
+            });
+          }
+        })
       }
+      
 
       /* SendForm($('#createForm'), (resp) => {
           if (resp.success) {

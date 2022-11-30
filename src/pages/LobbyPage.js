@@ -1,7 +1,9 @@
 import Header from '../components/Header.js';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import UnitsDisplay from '../components/UnitsDisplay'
 import testimage from '../images/pfpTest.png'
+import axios from 'axios';
+
 
 //Laesker
 
@@ -10,6 +12,29 @@ import testimage from '../images/pfpTest.png'
 function LobbyPage() {
 
     const [count, setCount] = useState(0);
+
+    const [players, setPlayers] = useState([]);
+
+    let units = 0;
+
+    useEffect(()=>{
+        let token = localStorage.getItem('token');    //Ej hårdkodad
+
+        //let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
+
+        if(token) {
+        
+            axios.post("https://flakdag.azurewebsites.net/api/lobby/getlobby", { token }).then(res => {
+                console.log(res) 
+                if(res.data.success){
+                    setPlayers(res.data.players)
+                }
+            })
+        }
+      }, [])
+
+      units = players.reduce((u,p) =>  u = u + p.units , 0 )
+
     return (
         <div class="main">
             <Header onpage={2} />
@@ -89,25 +114,25 @@ function LobbyPage() {
                 </div>
             </div>
             <div className="tableHeader" style={{textAlign: "center", marginTop: "5vw"}}>
-                3 Personer, 41 Enheter
+                {players.length} Personer, {units} Enheter
             </div>
             <table className="table" style={{marginTop: "3vw", width: "80vw", marginLeft: "10vw", textAlign: "center"}}>
-                <tr>
+            <tr>
                     <th style={{borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>Namn:</th> 
                     <th style={{borderBottom: "0.5vw solid black"}}>Antal enheter:</th>
-                </tr>
-                <tr>
-                    <td style={{borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>Namn Ettsson</td>
-                    <td style={{borderBottom: "0.5vw solid black"}}>17st</td>
-                </tr>
-                <tr>
-                    <td style={{borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>Namn Tvåson</td>
-                    <td style={{borderBottom: "0.5vw solid black"}}>13st</td>
-                </tr>
-                <tr>
-                    <td style={{borderRight: "0.5vw solid black"}}>Namn Treson</td>
-                    <td>11st</td>
-                </tr>
+            </tr>
+                {players.map(p => (
+                    <tr>
+                        <td style={{borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>{p.name}</td>
+                        <td style={{borderBottom: "0.5vw solid black"}}>{p.units}</td>
+                    </tr>
+                            
+                            
+                        ))
+
+                        }
+                
+                
             </table>
         </div>
     );

@@ -21,11 +21,12 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
         //let token = localStorage.getItem('token');    Ej hårdkodad
 
         let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
+        localStorage.setItem('token', token);
 
         //Hämta lobby pin från ett visst id
         axios.post("https://flakdag.azurewebsites.net/api/data/GetFlakDagMeta", {id: token}).then(res => {
-        setPin(res.data.flakmeta.pin)
-        setIsOwner(res.data.isOwner || true)
+            setPin(res.data.flakmeta.pin)
+            setIsOwner(res.data.isOwner || true)
         })
         
         if(token) {
@@ -50,6 +51,7 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
     return (
         <div>
             <div>
+                <ReturnButton action="creategame"></ReturnButton>
                 <h1 style={{
 
                     textAlign: 'center',
@@ -72,11 +74,12 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
                     
                     <div style={{width:"25%"}} key={p.name}>
 
-                        <img src={p.profileImage} className='lobbyInfoPageImage'/>
+                        <img src={p.profileImage} className='lobbyInfoPageImage' style={{ borderRadius:'50%'}}/>
                         <p className='lobbyInfoPageText' style={{
                             fontSize: '4vw',
                             fontFamily: 'Noto Serif JP, serif',
-                            marginTop: '4vw'
+                            marginTop: '4vw',
+                            textDecoration:'none'
                         }}>{p.name}</p>
 
                     </div>
@@ -85,15 +88,16 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
                 }
                
             </div>
-                
-            {isOwner == true? <Button style={{alignItems: 'center'}}action='/lobby' 
-                text='Start Game' 
-                buttonColor='#17D930' 
-                textDecoration='underline' 
-                textColor='#F9F3F3' 
-                fontSize='7vw'>
+
+               <div style={{display: 'flex',
+                            justifyContent: 'center'}}>
+            {isOwner == true? 
+            
+            
+            <Button action='lobby' text='Start Game' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw' >
 
             </Button>: null }
+            </div> 
         </div>      
     )
 
