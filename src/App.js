@@ -11,6 +11,9 @@ import PostText from './overlays/PostText';
 import StatisticsPage from './pages/StatisticsPage.js';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import LobbyInfoPage from './pages/LobbyInfoPage';
+import Login from './pages/Login';
+import Choose from './pages/Choose';
+
 
 function App() {
   return (
@@ -18,7 +21,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<StartPage/>}/>
-        <Route path="/joingame" element={<JoinGamePage/>}/>
+        <Route path="joingame" element={<JoinGamePage/>}/>
         <Route path="/creategame" element={<CreateGamePage/>}/>
         <Route path="/feed" element={<FeedPage/>}/>
         <Route path="/lobby" element={<LobbyPage/>}/>
@@ -26,10 +29,10 @@ function App() {
         <Route path="/postImg" element={<PostImg/>}/>
         <Route path="/postText" element={<PostText/>}/>
         <Route path="/lobbyInfoPage" element={<LobbyInfoPage/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/choose" element={<Choose/>}/>
       </Routes>
     </BrowserRouter>
-
-
   );
 }
 

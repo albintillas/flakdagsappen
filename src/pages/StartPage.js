@@ -64,7 +64,7 @@ function StartPage(){
             text='Join Game' 
             buttonColor='#17D930' 
             textColor='#F9F3F3'
-            action='joingame'
+            action='choose'
             >
             </StartPageButton>
 

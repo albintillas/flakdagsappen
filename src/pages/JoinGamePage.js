@@ -8,7 +8,7 @@ import Button from '../components/Button.js';
 function JoinGamePage(){
    return(
 <div>
-   <ReturnButton action=""></ReturnButton>
+   <ReturnButton action="Choose"></ReturnButton>
    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
       <h2 style={{fontSize: '5vw', width: '40vw'}}>Enter Name:</h2>
       <input className="playerNameInput" style={{
