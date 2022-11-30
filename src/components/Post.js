@@ -1,6 +1,8 @@
 // Joel - Funktionellt klar, Fåtal stilpoäng kvar
 // Denna fil utgör layouten av ett inlägg för 'flödet'
 import React from 'react';
+import FullImg from '../overlays/FullImg';
+import { Link } from "react-router-dom";
 
 function Post({ profilePicture, postContent, contentIsImg }) {
 
@@ -9,13 +11,16 @@ function Post({ profilePicture, postContent, contentIsImg }) {
 
     var contentPreview;
     if (contentIsImg) {
-        contentPreview = <img src={postContent} alt='pfp' style={{
-            width: "100%",
-            maxHeight: "30vh",
-            overflow: "hidden",
-            objectFit: "cover",
-            borderRadius: "5%"
-        }} />
+        contentPreview =
+            <Link to={"/fullImg"}>
+                <img src={postContent} alt='pfp' style={{
+                    width: "100%",
+                    maxHeight: "30vh",
+                    overflow: "hidden",
+                    objectFit: "cover",
+                    borderRadius: "5%",
+                }} />
+            </Link>
     }
     else {
         if (postContent.length > 80) {
@@ -33,13 +38,13 @@ function Post({ profilePicture, postContent, contentIsImg }) {
                 width: "80%",
                 padding: "2%"
             }}>
-            <div className="User" style={{ display: "inline-block", width: "20%"}}>
+            <div className="User" style={{ display: "inline-block", width: "20%" }}>
                 <div className="Profilepicture" style={{ display: "inline-block" }}>
                     {profilePicture}
                 </div>
                 <a>:</a>
             </div>
-            <div className="Content" style={{display: "inline-block", width: "80%", wordWrap: "break-word"}}>
+            <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
                 {contentPreview}
             </div>
 
