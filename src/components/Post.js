@@ -12,7 +12,7 @@ function Post({ profilePicture, postContent, contentIsImg }) {
     var contentPreview;
     if (contentIsImg) {
         contentPreview =
-            <Link to={"/fullImg"}>
+            <Link to={"/fullImg/123"}>
                 <img src={postContent} alt='pfp' style={{
                     width: "100%",
                     maxHeight: "30vh",
