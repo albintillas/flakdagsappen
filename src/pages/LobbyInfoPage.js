@@ -77,7 +77,8 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
                         <p className='lobbyInfoPageText' style={{
                             fontSize: '4vw',
                             fontFamily: 'Noto Serif JP, serif',
-                            marginTop: '4vw'
+                            marginTop: '4vw',
+                            textDecoration:'none'
                         }}>{p.name}</p>
 
                     </div>
