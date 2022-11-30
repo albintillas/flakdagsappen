@@ -34,7 +34,9 @@ function PinInput() {
             title: 'Wrong Game Pin!',
             //text: 'Do you want to continue',
             icon: 'error',
-            confirmButtonText: 'Try Again'
+            confirmButtonText: 'Try Again',
+            confirmButtonColor: '#17D930',
+            borderBox: 'none'
           })
         }
     }
