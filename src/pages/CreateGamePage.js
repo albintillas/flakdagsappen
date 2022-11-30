@@ -113,7 +113,23 @@ function CreateGamePage(){
 
       {/* <button class = "createGameInput" id="submitButton" text="Create Game" onclick={createLobby} value="Create game" type='submit' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Create Game</button> */}
             
-      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={createLobby} buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Create Game</button>
+      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={createLobby} 
+      style={{
+             fontFamily: 'Noto Serif JP serif',
+             backgroundColor: "#17D930",
+             color:'#F9F3F3',
+             fontSize: "200%",
+             textDecoration: "none",
+             padding: "5%",
+             borderRadius: "15vw",
+             border: "none",
+             cursor: "pointer",
+             height: "75%",
+             width: "65%",
+             marginTop: "5vw",
+             boxShadow: "1vw 2vw 3vw #888888"
+      }}>Create Game</button>
+
         
   </form>
 
