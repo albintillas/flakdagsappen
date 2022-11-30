@@ -60,9 +60,6 @@ function JoinGamePage(){
    return(
 <div>
    <ReturnButton action=""></ReturnButton>
-
-   <p>Join a lobby!</p>
-
    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
       <h2 style={{fontSize: '5vw', width: '40vw'}}>Enter Name:</h2>
       <input onChange={event => setName(event.target.value)} value={name} className="playerNameInput" style={{
