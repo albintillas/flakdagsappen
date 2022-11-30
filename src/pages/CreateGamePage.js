@@ -5,7 +5,11 @@ import Button from '../components/Button.js';
 import ReturnButton from '../components/ReturnButton.js';
 import '../App.css';
 import Swal from 'sweetalert2';
-import {useState, Link} from 'react';
+import {useState, Link, useNavigate} from 'react';
+import {Redirect} from "react-router-dom";
+import axios from 'axios';
+
+
 import StartPageButton from '../components/StartPageButton.js'
 
 
@@ -17,8 +21,12 @@ function CreateGamePage(){
 
   const [password, setPassword] = useState([]);
 
+
   function createLobby(){
     
+    let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"  
+
+
     if (pin == "" ||
         name == "" ||
         password == "") {
@@ -30,7 +38,14 @@ function CreateGamePage(){
           return;
       }
       else{
-        
+        window.location.href= '/lobby';
+
+        axios.post("https://flakdag.azurewebsites.net/api/data/GetFlakDagMeta", {id: token}).then(res => {
+          if(res.success){
+            localStorage.setItem('token', token);
+            
+          }
+        })
       }
 
       /* SendForm($('#createForm'), (resp) => {
