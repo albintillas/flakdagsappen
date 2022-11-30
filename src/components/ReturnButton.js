@@ -8,7 +8,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import returnArrow from '..//images/backArrow.jpg';
 
-const Button = ({ action }) => {
+const Button = () => {
     const navigate = useNavigate();
     return (
 
