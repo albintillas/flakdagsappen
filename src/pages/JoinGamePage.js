@@ -38,14 +38,14 @@ function JoinGamePage(){
             localStorage.setItem('token', token);
             window.location.href= '/lobbyInfoPage';
 
-            console.log("Hello World");
+           
 
           } else {
 
             Swal.fire({
                icon: 'error',
                title: 'Deltagare existerar redan',
-               text: 'Använd logga in fuktione istället'
+               text: 'Använd logga in funktionen istället'
            });
 
           }
@@ -60,6 +60,9 @@ function JoinGamePage(){
    return(
 <div>
    <ReturnButton action=""></ReturnButton>
+
+<p>Join a lobby!</p>
+
    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
       <h2 style={{fontSize: '5vw', width: '40vw'}}>Enter Name:</h2>
       <input onChange={event => setName(event.target.value)} value={name} className="playerNameInput" style={{
