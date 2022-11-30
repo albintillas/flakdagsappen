@@ -8,6 +8,7 @@ import FeedPage from './pages/FeedPage.js';
 import LobbyPage from './pages/LobbyPage.js';
 import PostImg from './overlays/PostImg';
 import PostText from './overlays/PostText';
+import FullImg from './overlays/FullImg';
 import StatisticsPage from './pages/StatisticsPage.js';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import LobbyInfoPage from './pages/LobbyInfoPage';
@@ -28,6 +29,7 @@ function App() {
         <Route path="/statistics" element={<StatisticsPage/>}/>
         <Route path="/postImg" element={<PostImg/>}/>
         <Route path="/postText" element={<PostText/>}/>
+        <Route path="/fullImg" element={<FullImg/>}/>
         <Route path="/lobbyInfoPage" element={<LobbyInfoPage/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/choose" element={<Choose/>}/>
