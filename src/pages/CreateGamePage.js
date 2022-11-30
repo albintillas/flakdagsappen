@@ -6,7 +6,6 @@ import ReturnButton from '../components/ReturnButton.js';
 import '../App.css';
 import Swal from 'sweetalert2';
 import {useState, Link, useNavigate} from 'react';
-import {Redirect} from "react-router-dom";
 import axios from 'axios';
 
 
@@ -18,11 +17,15 @@ function CreateGamePage(){
 
   const [password, setPassword] = useState([]);
 
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
+  {console.log(date)}
+
 
   function createLobby(){
-    
-    let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"  
 
+    
 
     if (pin == "" ||
         name == "" ||
@@ -35,15 +38,23 @@ function CreateGamePage(){
           return;
       }
       else{
-        window.location.href= '/lobby';
 
-        axios.post("https://flakdag.azurewebsites.net/api/data/GetFlakDagMeta", {id: token}).then(res => {
-          if(res.success){
-            localStorage.setItem('token', token);
+        axios.post("https://flakdag.azurewebsites.net/api/lobby/createflakdag", {flakdagname: "flakdag", pin: pin, pw: password, fddate: "2022-11-30", name: name}).then(res => {
+          if(res.data.success){
+            localStorage.setItem('token', res.data.userToken);
+            window.location.href= '/lobby';
 
+          }
+          else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Kan inte skapa flakdag',
+                text: res.message
+            });
           }
         })
       }
+      
 
       /* SendForm($('#createForm'), (resp) => {
           if (resp.success) {
