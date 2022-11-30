@@ -3,13 +3,9 @@ import React from 'react'
 import image from '..//images/test2.png';
 import ReturnButton from '../components/ReturnButton.js';
 import downloadSymbol from '..//images/download.png';
-import {
-    useParams
-} from 'react-router-dom'
 import { saveAs } from 'file-saver'
 
 function FullImg() {
-    const { cca3 } = useParams()
     let img = new Image();
     img.src = image;
     let fixedHeight = (img.height / img.width) * 100;
@@ -27,7 +23,6 @@ function FullImg() {
             <div style={{ position: "absolute", top: "1vh", left: "1vw", height: "12vw", width: "12vw", backgroundColor: "white", borderRadius: "50%", zIndex: "1" }}>
                 <ReturnButton
                     action='feed' />
-                <a>{innerWidth}</a>
             </div>
             <div style={{ position: "absolute", top: "1vh", right: "1vw", height: "12vw", width: "12vw", backgroundColor: "white", borderRadius: "50%", zIndex: "1" }}>
                 <img src={downloadSymbol} alt='Return' onClick={downloadImage} style={{
