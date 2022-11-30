@@ -42,7 +42,7 @@ function CreateGamePage(){
         axios.post("https://flakdag.azurewebsites.net/api/lobby/createflakdag", {flakdagname: "flakdag", pin: pin, pw: password, fddate: "2022-11-30", name: name}).then(res => {
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
-            window.location.href= '/lobbyInfoPage';
+            window.location.href= '/lobby';
 
           }
           else {
@@ -94,34 +94,26 @@ function CreateGamePage(){
       <input type="hidden" name="fddate" value="2022-11-19T15:30:18.733Z" />
 
       <div class="row input-group-newsletter">
-          <div class="formText">PIN:</div>
+          <div class="formText">PIN</div>
           <div class="formInput"><input onChange={event => setPin(event.target.value)} value={pin} class="form-control" name="pin" type="text" placeholder="Flakdag pin......" /></div>
         
       </div>
 
       <div class="row input-group-newsletter">
-          <div class="formText">Ditt namn:</div>
-          <div class="formInput"><input onChange={event => setName(event.target.value)} value={name} class="form-control" name="name" type="text" placeholder="Ditt flakdagsnamn..." />
-          <span class="enter"></span>
-          </div>
+          <div class="formText">Ditt namn</div>
+          <div class="formInput"><input onChange={event => setName(event.target.value)} value={name} class="form-control" name="name" type="text" placeholder="Ditt flakdagsnamn..." /></div>
         
       </div>
 
       <div class="row input-group-newsletter">
-          <div class="formText">Ditt lösenord:</div>
+          <div class="formText">Ditt lösenord</div>
           <div class="formInput"><input onChange={event => setPassword(event.target.value)} value={password} class="form-control" name="pw" type="password" placeholder="Lösenord..." /></div>
         
       </div>
 
       {/* <button class = "createGameInput" id="submitButton" text="Create Game" onclick={createLobby} value="Create game" type='submit' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Create Game</button> */}
-
-      <div style={{display: 'flex',justifyContent:'center',marginTop:'5vw'}}>
-      <Button action='lobby' onClick={createLobby} text='Create Game' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>
-        style={{
-          textAlign: 'center',
-        }}
-      </Button>
-      </div>
+            
+      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={createLobby} buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Create Game</button>
         
   </form>
 
