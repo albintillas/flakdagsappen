@@ -50,10 +50,10 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
 
     return (
         <div>
-            <div>
+            <div style={{display: "flex"}}>
                 <ReturnButton action="creategame"></ReturnButton>
                 <h1 style={{
-
+                    width: "78%",
                     textAlign: 'center',
                     fontFamily: 'Noto Serif JP, serif',
                     
