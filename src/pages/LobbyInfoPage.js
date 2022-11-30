@@ -74,7 +74,7 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
                     
                     <div style={{width:"25%"}} key={p.name}>
 
-                        <img src={p.profileImage} className='lobbyInfoPageImage'/>
+                        <img src={p.profileImage} className='lobbyInfoPageImage' style={{ borderRadius:'50%'}}/>
                         <p className='lobbyInfoPageText' style={{
                             fontSize: '4vw',
                             fontFamily: 'Noto Serif JP, serif',
