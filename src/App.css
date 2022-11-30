@@ -47,10 +47,6 @@ a:visited {
   width: 10vw;
 }
 
-.createGameInput{
-  padding: 10%;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -139,7 +135,22 @@ a:visited {
 .createGameForm{
  
   text-align: center;
- 
+}
 
- 
+.formText{
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+  font-family: Noto Serif JP serif;
+  font-weight: bold;
+  font-size: 5vw;
+}
+
+.form-control{
+  width: 60vw;
+  height: 10vw;
+  font-family: Noto Serif JP serif;
+  font-size: 6vw;
+  border: 1vw solid;
+  border-radius: 1vw;
+  font-weight: bold;
 }
