@@ -18,10 +18,10 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
     const [pin, setPin] = useState([]);
 
     useEffect(()=>{
-        //let token = localStorage.getItem('token');    Ej hårdkodad
+        let token = localStorage.getItem('token');    //Ej hårdkodad
 
-        let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
-        localStorage.setItem('token', token);
+        //let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
+        //localStorage.setItem('token', token);
 
         //Hämta lobby pin från ett visst id
         axios.post("https://flakdag.azurewebsites.net/api/data/GetFlakDagMeta", {id: token}).then(res => {

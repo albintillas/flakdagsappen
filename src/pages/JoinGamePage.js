@@ -18,7 +18,7 @@ function JoinGamePage(){
 
    function joinLobby(){
 
-      let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"  //Hårdkodad
+      //let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"  //Hårdkodad
 
 
     if (pin == "" ||
@@ -35,7 +35,7 @@ function JoinGamePage(){
 
         axios.post("https://flakdag.azurewebsites.net/api/lobby/signup", {pin:pin, name:name, pw:pw}).then(res => {
           if(res.data.success){
-            localStorage.setItem('token', token);
+            localStorage.setItem('token', res.data.userToken);
             window.location.href= '/lobbyInfoPage';
 
            

@@ -27,45 +27,14 @@ time[12] = startTime + 12;
 //let token = localStorage.getItem('token');    Ej hårdkodad
 
 
-function AddLine({color}){
-
-    return(
-        <V.VictoryLine 
-            style={{
-                data: { stroke: color },
-                parent: { border: "1px solid #ccc"}
-            }}
-            data={[ // Uppdaterad varje timme. Kanske fixa så det kan läggas in när som, även mellan hela timmar?
-                { x: time[0], y: 0 },
-                { x: time[1], y: 2 },
-                { x: time[2], y: 5 },
-                { x: time[3], y: 7 },
-                { x: time[4], y: 7 },
-                { x: time[5], y: 10 },
-                { x: time[6], y: 13 },
-                { x: time[7], y: 14 },
-                { x: time[8], y: 16 },
-                { x: time[9], y: 17 },
-                { x: time[10], y: 19 },
-                { x: time[11], y: 22 },
-                { x: time[12], y: 24 },
-            ]}
-            interpolation="natural"
-            domain= {{ x: [time[0], time[12]], y: [0, 24] }}
-
-        />
-    )
-    
-}
-
 function StatisticsPage() {
 
     const [players, setPlayers] = useState([]);
 
     useEffect(()=>{
-        //let token = localStorage.getItem('token');    //Ej hårdkodad
+        let token = localStorage.getItem('token');    //Ej hårdkodad
 
-        let token = "4a617950-3811-4367-b986-d94097132ece"
+        //let token = "4a617950-3811-4367-b986-d94097132ece"
 
         if(token) {
         

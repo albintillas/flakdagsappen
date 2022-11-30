@@ -18,9 +18,9 @@ function LobbyPage() {
     let units = 0;
 
     useEffect(()=>{
-        // let token = localStorage.getItem('token');    //Ej hårdkodad
+        let token = localStorage.getItem('token');    //Ej hårdkodad
 
-        let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
+        //let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
 
         if(token) {
         
