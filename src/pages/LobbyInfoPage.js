@@ -17,15 +17,11 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
 
     const [pin, setPin] = useState([]);
 
-    function goToLobby(){
-
-        window.location.href= '/lobby';
-   
-    }
-
-
     useEffect(()=>{
-        let token = localStorage.getItem('token');
+        //let token = localStorage.getItem('token');    Ej hårdkodad
+
+        let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
+        localStorage.setItem('token', token);
 
         //Hämta lobby pin från ett visst id
         axios.post("https://flakdag.azurewebsites.net/api/data/GetFlakDagMeta", {id: token}).then(res => {
@@ -54,12 +50,12 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
 
     return (
         <div>
-            <div>
+            <div style={{display: "flex"}}>
                 <ReturnButton action="creategame"></ReturnButton>
                 <h1 style={{
-
+                    width: "78%",
                     textAlign: 'center',
-                    fontFamily: 'Noto Serif JP, serif'
+                    fontFamily: 'Noto Serif JP, serif',
                     
                 }}>Lobby</h1>
             </div>
@@ -94,14 +90,14 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
             </div>
 
                <div style={{display: 'flex',
-                            justifyContent: 'center'}}>
+                            justifyContent: 'center',
+                            marginBottom:'5%'}}>
             {isOwner == true? 
             
-            <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={goToLobby} buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Starta</button>
+            
+            <Button action='lobby' text='Start Game' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>
 
-
-            // <Button action='lobby' text='Start Game' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw' ></Button>
-            : null }
+            </Button>: null }
             </div> 
         </div>      
     )

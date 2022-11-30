@@ -113,21 +113,21 @@ function LobbyPage() {
                     </img>
                 </div>
             </div>
-            <div className="tableHeader" style={{textAlign: "center", marginTop: "5vw"}}>
+            <div className="tableHeader" style={{textAlign: "center", marginTop: "5vw",}}>
                 {players.length} Personer, {units} Enheter
             </div>
-            <table className="table" style={{marginTop: "3vw", width: "80vw", marginLeft: "10vw", textAlign: "center"}}>
+            <table className="table" style={{marginTop: "3vw", width: "90vw", marginLeft: "5vw"}}>
             <tr>
-                    <th style={{width: "50vw", borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}><h3>Namn:</h3></th> 
+                    <th style={{width: "50vw", borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}><h3>Deltagare:</h3></th> 
                     <th style={{borderBottom: "0.5vw solid black"}}><h3>Enheter:</h3></th>
             </tr>
                 {players.map(p => (
                     <tr>
-                        <td style={{padding: "1vw", width: "50vw", borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black", display: "flex"}}>
-                            <img src={p.profileImage} className='lobbyInfoPageImage' style={{ borderRadius:'50%'}}/>
-                            <h4 style={{top: "50%", marginRight: "20%"}}>{p.name}</h4>
+                        <td style={{alignItems:"center", display: "flex", textAlign: "left", padding: "1vw", height: "17vw", width: "60vw", borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>
+                            <img src={p.profileImage} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>
+                            <h4 style={{marginRight: "10%"}}>{p.name}</h4>
                             </td>
-                        <td style={{borderBottom: "0.5vw solid black"}}>{p.units}</td>
+                        <td style={{borderBottom: "0.5vw solid black", fontSize: "5vw", fontWeight: "bold"}}>{p.units}</td>
                     </tr>
                             
                             
