@@ -90,7 +90,6 @@ function StatisticsPage() {
                                     parent: { border: "1px solid #ccc" }
 
                                 }}
-                                key={p.name}
                                 data={[ // Uppdaterad varje timme. Kanske fixa så det kan läggas in när som, även mellan hela timmar?
                                     { x: time[0], y: 0 },
                                     { x: time[1], y: Math.random() * (3 - 1) + 1 },
@@ -103,8 +102,8 @@ function StatisticsPage() {
                                     { x: time[8], y: Math.random() * (16 - 15) + 15 },
                                     { x: time[9], y: Math.random() * (18 - 16) + 16 },
                                     { x: time[10], y: Math.random() * (20 - 18) + 18 },
-                                    { x: time[11], y: Math.random() * (22 - 20) + 20 },
-                                    { x: time[12], y: Math.random() * (24 - 22) + 22 },
+                                    { x: time[11], y: null },
+                                    { x: time[12], y: null },
 
                                 ]}
                                 interpolation="natural"

@@ -2,11 +2,18 @@
 // Klicka på den gråa cirkeln för att välja bild på enhet
 
 import '../App.css';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 const UploadImage = ({size}) => {
+
+
   const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    
+  },[selectedImage]
+  )
    
 
   return (
