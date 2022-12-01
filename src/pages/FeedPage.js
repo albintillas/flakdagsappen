@@ -5,15 +5,38 @@ import img1 from '..//images/pfpTest.png';
 import img2 from '..//images/Test.png';
 import postImg1 from '..//images/test3.png';
 import postImg2 from '..//images/test2.png';
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+
 
 // In progress, Joel
 function FeedPage() {
+
+    /* ----- Code below implemented for swipe function ----- */
+    const navigate = useNavigate();
+    const [touchStart, setTouchStart] = useState(null)
+    const [touchEnd, setTouchEnd] = useState(null)
+    // the required distance between touchStart and touchEnd to be detected as a swipe
+    const minSwipeDistance = 100
+    const onTouchStart = (e) => {
+        setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
+        setTouchStart(e.targetTouches[0].clientX)
+    }
+    const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return
+        const distance = touchStart - touchEnd
+        const isRightSwipe = distance < -minSwipeDistance
+        // add your conditional logic here
+        if (isRightSwipe) navigate("/lobby")
+    }
+    /* ----- Code above implemented for swipe function ----- */
+
     return (
-        <div>
+        <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header onpage={3} />
-            <div className="main" style={{ marginTop: "5vh" }}>
-                <div className="makingPosts" style={{width: "fit-content", margin: "0 auto"}}>
+            <div className="main" style={{ marginTop: "6vh" }}>
+                <div className="makingPosts" style={{ width: "fit-content", margin: "0 auto" }}>
                     <UploadButton
                         text='Ta Foto'
                         buttonColor='#F9F3F3'
