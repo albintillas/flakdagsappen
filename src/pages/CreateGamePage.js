@@ -18,7 +18,7 @@ function CreateGamePage(){
   const [password, setPassword] = useState([]);
 
   const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+  const date = `${current.getFullYear()}-${current.getMonth()+1}-${current.getDate()}`;
 
   {console.log(date)}
 
@@ -39,7 +39,7 @@ function CreateGamePage(){
       }
       else{
 
-        axios.post("https://flakdag.azurewebsites.net/api/lobby/createflakdag", {flakdagname: "flakdag", pin: pin, pw: password, fddate: "2022-11-30", name: name}).then(res => {
+        axios.post("https://flakdag.azurewebsites.net/api/lobby/createflakdag", {flakdagname: "flakdag", pin: pin, pw: password, fddate: date, name: name}).then(res => {
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
             window.location.href= '/lobby';
@@ -53,32 +53,15 @@ function CreateGamePage(){
             });
           }
         })
-      }
-      
-
-      /* SendForm($('#createForm'), (resp) => {
-          if (resp.success) {
-              localStorage.setItem('token', resp.userToken);
-              location.href = "lobby.html";
-          }
-          else {
-              Swal.fire({
-                  icon: 'error',
-                  title: 'Kan inte skapa flakdag',
-                  text: resp.message
-              });
-            }
-        }) */
-        //const formData = new FormData(thisForm[0]).entries();
-        //console.log(formData);
+      }      
     }
    
   
     
 
   return(
-  <div class="createGameContainer">
-    <div class="createGameReturn">
+  <div className="createGameContainer">
+    <div className="createGameReturn">
       <ReturnButton 
       text='Return' 
       buttonColor='#17D930' 
@@ -88,26 +71,25 @@ function CreateGamePage(){
     <p>Create Flakdag!</p>
 
     <form className="createGameForm" id="createForm">
-      <UploadImage class = "createGameImage" size = '60 %'/>
+      <UploadImage id = "createGameImage" size = '60 %'/>
 
-      <input type="hidden" name="flakdagname" value="asd" />
-      <input type="hidden" name="fddate" value="2022-11-19T15:30:18.733Z" />
+      
 
-      <div class="row input-group-newsletter">
-          <div class="formText">PIN</div>
-          <div class="formInput"><input onChange={event => setPin(event.target.value)} value={pin} class="form-control" name="pin" type="text" placeholder="Flakdag pin......" /></div>
+      <div>
+          <div>PIN</div>
+          <div><input onChange={event => setPin(event.target.value)} value={pin} name="pin" type="text" placeholder="Flakdag pin......" /></div>
         
       </div>
 
-      <div class="row input-group-newsletter">
-          <div class="formText">Ditt namn</div>
-          <div class="formInput"><input onChange={event => setName(event.target.value)} value={name} class="form-control" name="name" type="text" placeholder="Ditt flakdagsnamn..." /></div>
+      <div >
+          <div >Ditt namn</div>
+          <div ><input onChange={event => setName(event.target.value)} value={name} name="name" type="text" placeholder="Ditt flakdagsnamn..." /></div>
         
       </div>
 
-      <div class="row input-group-newsletter">
-          <div class="formText">Ditt lösenord</div>
-          <div class="formInput"><input onChange={event => setPassword(event.target.value)} value={password} class="form-control" name="pw" type="password" placeholder="Lösenord..." /></div>
+      <div>
+          <div>Ditt lösenord</div>
+          <div><input onChange={event => setPassword(event.target.value)} value={password} name="pw" type="password" placeholder="Lösenord..." /></div>
         
       </div>
 

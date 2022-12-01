@@ -72,7 +72,7 @@ function JoinGamePage(){
    </div>
    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
       <h2 style={{fontSize: '5vw', width: '40vw'}}>Enter Password:</h2>
-      <input onChange={event => setPw(event.target.value)} value={pw} classname="playerPasswordInput" style={{
+      <input onChange={event => setPw(event.target.value)} value={pw} className="playerPasswordInput" style={{
          width: '40vw'
       }}></input>
 
@@ -80,7 +80,7 @@ function JoinGamePage(){
     
     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
       <h2 style={{fontSize: '5vw', width: '40vw'}}>Enter lobby pin:</h2>
-      <input onChange={event => setPin(event.target.value)} value={pin} classname="playerPinInput" style={{
+      <input onChange={event => setPin(event.target.value)} value={pin} className="playerPinInput" style={{
          width: '40vw'
       }}></input>
 
