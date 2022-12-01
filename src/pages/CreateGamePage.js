@@ -42,7 +42,7 @@ function CreateGamePage(){
         axios.post("https://flakdag.azurewebsites.net/api/lobby/createflakdag", {flakdagname: "flakdag", pin: pin, pw: password, fddate: date, name: name}).then(res => {
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
-            window.location.href= '/lobby';
+            window.location.href= '/lobbyInfoPage';
 
           }
           else {

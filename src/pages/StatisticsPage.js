@@ -86,7 +86,7 @@ function StatisticsPage() {
 
                             <V.VictoryLine
                                 style={{
-                                    data: { stroke: randomColor() },
+                                    data: { stroke: p.color },
                                     parent: { border: "1px solid #ccc" }
 
                                 }}
@@ -129,7 +129,7 @@ function StatisticsPage() {
 
                             <div className='individualChart' style={{ display: "flex", marginTop: "3vw" }}>
                                 <div className='dot' style={{
-                                    backgroundColor: "#c43a31",
+                                    backgroundColor: p.color,
                                     height: "5vw",
                                     width: "5vw",
                                     marginLeft: "8vw",
