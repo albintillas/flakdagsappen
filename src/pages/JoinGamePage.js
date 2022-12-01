@@ -63,11 +63,10 @@ function JoinGamePage(){
 
 <p>Join a lobby!</p>
 
-   <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-      <h2 style={{fontSize: '5vw', width: '40vw'}}>Enter Name:</h2>
-      <input onChange={event => setName(event.target.value)} value={name} className="playerNameInput" style={{
-         width: '40vw'
-      }}>
+<form className="createGameForm" id="createForm">
+   <div class="row input-group-newsletter">
+      <div class='formText'>Enter Name:</div>
+      <input onChange={event => setName(event.target.value)} value={name} className="form-control" placeholder="Name...">
       </input>
    </div>
    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
@@ -87,6 +86,8 @@ function JoinGamePage(){
    </div>
 
          <button type="button" className = "joinGameInput" id="submitButton" action='lobby' onClick={joinLobby} buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Join Game</button>
+
+</form>
 
 
 </div>
