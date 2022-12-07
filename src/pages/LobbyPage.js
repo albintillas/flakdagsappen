@@ -4,6 +4,7 @@ import React, {useEffect, useState} from 'react';
 import UnitsDisplay from '../components/UnitsDisplay'
 import testimage from '../images/pfpTest.png'
 import axios from 'axios';
+import Swal from 'sweetalert2'
 
 
 //Laesker
@@ -41,6 +42,20 @@ function LobbyPage() {
     const [players, setPlayers] = useState([]);
 
     let units = 0;
+
+    function removeUnit(){
+        Swal.fire({  
+            title: 'Ta bort en enhet?',  
+            showCancelButton: true,  
+            confirmButtonText: `Ja`,  
+            cancelButtonText: 'Nej'
+          }).then((result) => {  
+              if (result.isConfirmed) {    
+                setCount(count - 1)  
+               }
+          });
+          
+    }
 
     useEffect(()=>{
         let token = localStorage.getItem('token');    //Ej hårdkodad
@@ -85,7 +100,7 @@ function LobbyPage() {
                 </div>
                 
             </div>
-            <div class="plusOneAndTiltedImages" style={{display: "flex"}}>
+            <div class="plusAndMinus" style={{display: "flex"}}>
                 <button style={{
                         width: '60vw',
                         height: '20vw',
@@ -102,40 +117,21 @@ function LobbyPage() {
                     }}
                     className="increase" onClick={() => setCount(count + 1)}>+1
                 </button>
-                <div className="imgContainer" style={{display: "flex", position: "relative", width: '35vw'}}>
-                    <img src={testimage} style={{
-                            marginLeft:'5vw',
-                            marginTop: '5vw',
-                            width:'15vw',
-                            height:'15vw',
-                            objectFit:'cover',
-                            border:'0.5vw solid #000000',
-                            zIndex:'2',
-                            transform: 'rotate(-20deg)',
-                            position: 'absolute'
-                        }}>
-                    </img>
-                    <img src={testimage} style={{
-                            marginLeft:'13vw',
-                            marginTop: '1vw',
-                            width:'15vw',
-                            height:'15vw',
-                            objectFit:'cover',
-                            border:'0.5vw solid #000000',
-                            zIndex:'1',
-                            transform: 'rotate(-10deg)',
-                            position: 'absolute'
-                        }}>
-                    </img>
-                    <img src={testimage} style={{
-                            marginLeft:'21vw',
-                            width:'15vw',
-                            height:'15vw',
-                            objectFit:'cover',
-                            border:'0.5vw solid #000000',
-                            zIndex:'0',
-                        }}>
-                    </img>
+                <div className="removeUnitButton" style={{display: "flex", position: "relative",  width: '35vw'}}>
+                    <button style={{
+                        fontSize: "12vw", 
+                        marginLeft: "8vw", 
+                        height: "15vw",
+                        width: "25vw",
+                        backgroundColor: "red",
+                        borderTopLeftRadius: '20vw',
+                        borderBottomLeftRadius: '20vw',
+                        borderTopRightRadius: '20vw',
+                        borderBottomRightRadius: '20vw',
+                    }}
+                    className="decrease" onClick={(removeUnit)}>-1
+                    </button>
+                    
                 </div>
             </div>
             <div className="tableHeader" style={{textAlign: "center", marginTop: "5vw",}}>
