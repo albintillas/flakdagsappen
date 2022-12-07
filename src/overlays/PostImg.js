@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../App.css';
 import ReturnButton from '../components/ReturnButton.js';
 import UploadImage from '../components/UploadImage';
@@ -7,14 +7,14 @@ import { useNavigate } from 'react-router-dom';
 
 function PostImg() {
     const navigate = useNavigate();
-
+    const [uploadStatus, setUploadStatus] = useState(false);
     function makePost(event) {
         // Insert kod för ett inlägg
-        navigate("/feed")
+        setUploadStatus(true);
     }
 
     return (
-        <div class="MakePost">
+        <div className="MakePost">
             <ReturnButton
                 action='feed' />
             <a style={{ fontSize: "6vw", position: "absolute", top: "1vh", marginLeft: "1vw" }}>Ta Foto</a>
@@ -32,7 +32,7 @@ function PostImg() {
                 PUBLICERA
             </button>
             <div style={{ width: "100%", height: "1px", backgroundColor: "black" }} />
-            <UploadImage />
+            <UploadImage uploadNow={uploadStatus}/>
         </div>
     )
 }
