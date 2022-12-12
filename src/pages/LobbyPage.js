@@ -59,7 +59,13 @@ function LobbyPage() {
             cancelButtonText: 'Nej'
           }).then((result) => {  
               if (result.isConfirmed) {    
-                setUnits(units - 1)  
+                axios.post("https://flakdag.azurewebsites.net/api/data/undounit", { token }).then(res => {})
+                
+                axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
+                    if(res.data.success){
+                        setUnits(res.data.units.length);
+                    }
+                })  
                }
           });
     }
@@ -105,7 +111,7 @@ function LobbyPage() {
         }
         
     } 
-
+/* 
     useEffect(()=>{
         if(token) {
         
@@ -129,8 +135,8 @@ function LobbyPage() {
             })
         }
       }, [])
-
-      const WAIT_TIME = 1000;
+ */
+      const WAIT_TIME = 300;
 
       useEffect(() => {
         const id = setInterval(() => {
