@@ -21,12 +21,17 @@ const Button = ({ text, buttonColor, textDecoration, textColor ,action }) =>{
                 height: "10vw",
                 width: "35vw",
                 fontSize: "5vw",
-                backgroundColor: buttonColor,
-                textDecoration: textDecoration,
-                color: textColor,
                 border: "2px solid " + textColor,
-                boxShadow: "none"
-
+                boxShadow: "none",
+                textAlign: "center",
+                fontFamily: 'Merriweather Sans',
+                color: '#EEEEEE',
+                background: 'rgba(26, 40, 73, 0.3)',
+                borderRadius: '10vw',
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.2)',
+                backdropFilter: 'blur(10px)',
+                webkitBackdropFilter: 'blur(10px)',
+                border: '3px solid rgba(238, 238, 238, 0.5)'
             }}>
                 {text}
             </button>
