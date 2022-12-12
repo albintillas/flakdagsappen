@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Serif+JP:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
 
-body{
-  background-color: #F9F3F3;
+body, html{
+  background: rgb(134,203,236);
+  background: linear-gradient(130deg, rgba(134,203,236,1) 0%, rgba(234,119,242,1) 100%);
+
+  height: 100vh;
+
+  touch-action: none;
+
 }
+
+
 p{ 
     margin-top: 10vw;
     margin-bottom: 5vw;
     font-family: Brush Script MT; 
-    text-decoration: underline; 
     font-size: 13vw;
     text-align: center;
 }
-body {background-color: #F9F3F3;}
 
 a:link {
   text-decoration: none;
@@ -79,7 +87,7 @@ a:visited {
 }
 .startMainText {
   font-family: 'Kaushan Script', cursive;
-  color: #17D930;
+  color: #EEEEEE;
   font-size: 25vw;
   text-align: center;
   margin-top: 0vw;
@@ -88,7 +96,7 @@ a:visited {
 
 .startSubText {
   font-family: 'Noto Serif JP', serif;
-  color: black;
+  color: #EEEEEE;
   font-size: 4vw;
   text-align: center;
   margin: 0vw;
@@ -100,11 +108,16 @@ a:visited {
   width: 60vw;
   font-size: 170%;
   text-align: center;
- 
-  border: 1vw solid #17D930;
-  border-radius: 15vw;
-  font-family: 'Noto Serif JP serif';
-  box-shadow: 1vw 2vw 3vw #888888;
+  
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #EEEEEE;
+
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10vw;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 253, 208, 0.5);
 }
 
 .lobbyInfoPageImage {
@@ -112,7 +125,7 @@ a:visited {
   width: 15vw;
   height:15vw;
   object-fit:cover;
-  border:0.8vw solid #000000;
+  border: 3px solid rgba(255, 253, 208, 1);
   display:block;
   margin-left: auto;
   margin-right: auto;
@@ -140,7 +153,9 @@ a:visited {
 .formText{
   margin-bottom: 2vw;
   margin-top: 2vw;
-  font-family: Noto Serif JP serif;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #EEEEEE;
+  
   font-weight: bold;
   font-size: 5vw;
 }
@@ -148,12 +163,12 @@ a:visited {
 .form-control{
   width: 55vw;
   height: 10vw;
-  font-family: Noto Serif JP serif;
-  font-size: 6vw;
-  border: 1vw solid;
-  border-radius: 1vw;
-  font-weight: bold;
-  border:none;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #EEEEEE;
+  
+  font-size: 5vw;
+  border: none;
+  background-color: transparent;
   
 }
 
@@ -164,12 +179,211 @@ a:visited {
   width: 60vw;
   font-size: 170%;
   text-align: center;
-  color: white;
+  color: #EEEEEE;
   border: none;
-  border-radius: 15vw;
-  font-family: 'Noto Serif JP serif';
-  box-shadow: 1vw 2vw 3vw #888888;
-  background-color: #17D930;
+
+  color: #EEEEEE;
+  font-family: 'Merriweather Sans', sans-serif;
+
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10vw;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 253, 208, 0.5);
+}
+
+/*-------------NEW-------------*/
+
+
+#headers{
+
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #EEEEEE;
+  
+}
+
+.enterText{
+
+  margin: auto;
+  margin-top: 3vw;
+  width: 75vw;
+
+
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10vw;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 253, 208, 0.5);
+
+}
+
+#lobbyText{
+
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #EEEEEE;
+
 }
 
 
+.header{
+
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 7vw;
+  opacity: 0.9;
+
+
+}
+
+.topBar{
+
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  font-size: 7vw;
+  opacity: 0.9;
+  z-index: 100;
+  color: #EEEEEE
+
+}
+
+#inLobbyPin{
+
+ 
+  color: #EEEEEE;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+#inLobbyPinText{
+
+  font-family: 'Merriweather Sans';
+  color: #EEEEEE;
+  font-size: 9vw;
+  margin-left: 22vw;
+  margin-top: 15vw;
+
+}
+
+.PFPandUnitsDisplay{
+
+  background: transparent;
+  display: flex;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+
+#lobbyImage{
+
+  margin-top: -5.2vh;
+  margin-left: 6vw;
+  margin-right: 4vw;
+  width: 28vw;
+  height: 28vw;
+  object-fit: cover;
+  border: 1vw solid #EEEEEE;
+  border-radius: 50%;
+
+}
+
+#unitsAmount{
+
+  margin-top: -3vw;
+  font-family: 'Merriweather Sans';
+  font-size: 20vw;
+  color: #EEEEEE;
+}
+
+#unitsText{
+
+  font-size: 7.5vw;
+  margin-top: 0;
+  margin-left: 5vw;
+  width: 44vw;
+  font-family: 'Merriweather Sans';
+  color: #EEEEEE;
+
+}
+
+#increase{
+
+width: 50vw;
+height: 20vw;
+border: 1vw solid #EEEEEE;
+font-family: 'Merriweather Sans';
+
+color: #EEEEEE;
+font-size: 15vw;
+border-radius: 10vw;
+margin-left: 6vw;
+
+background: rgba(0, 255, 0, 0.4);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+
+}
+
+#decrease{
+
+  font-size: 10vw;
+  height: 15vw;
+  width: 25vw;
+  border-radius: 10vw;
+  border: 1vw solid #EEEEEE;
+  font-family: 'Merriweather Sans';
+
+  background: rgba(255, 0, 0, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: 8vw;
+
+}
+
+.tableHeader{
+
+  text-align: center;
+  margin-top: 5vw;
+
+  font-family: 'Merriweather Sans';
+  color: #EEEEEE;
+  font-size: 5vw;
+}
+
+#divUsers{
+
+margin-top: 2vw;
+height: 54.5vh;
+overflow-y: scroll;
+
+}
+
+.table{
+
+  margin-left: 5vw;
+  width: 90vw;
+  color: #EEEEEE;
+  font-family: 'Merriweather Sans';
+  font-size: 5vw;
+}
+
+.pages{
+
+ font-family: 'Merriweather Sans';
+ margin-top: 2vw;
+ margin-left: 2vw;
+}

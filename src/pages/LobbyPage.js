@@ -143,90 +143,48 @@ function LobbyPage() {
     return (
         <div class = 'main' onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header onpage={2} />
-            <div style={{marginTop: "22vh", fontSize: "10vw", color: "#17D930", height: "40vh", width: "100vw", display: "flex", justifyContent: "center" }}>
-                <p style={{}}>Pin: {pin}</p>
+            <div id='inLobbyPin'>
+                <p id='inLobbyPinText'>Pin: {pin}</p>
             </div>
-            <div className="PFPandUnitsDisplay" style={{display: "flex", justifyContent: "center" }}>
-                <div style={{
-                    width: "30vw", 
-                    height: "30vw"
-                    }}>
-                    <img src={testimage} style={{
-                        marginTop:'0vh', 
-                        marginLeft: '5vw',    
-                        width:'20vw',
-                        height:'20vw',
-                        objectFit:'cover',
-                        border:'0.5vw solid #000000',
-                        borderRadius: '50%'
-                        }}>
-                    </img>
-                </div>
+            <div className="PFPandUnitsDisplay">
+             
+                    <img src={testimage} id='lobbyImage'></img>
+             
                     <UnitsDisplay count={units}/>
-                <div style={{fontSize: "8vw", marginTop: "4vh", marginLeft: "3vw", width: "30vw", fontFamily: "Noto Serif JP serif", fontStyle: "bold"}}>
-                    Enheter druckna
-                </div>
+                <div id='unitsText'>Cans opened</div>
                 
             </div>
-            <div class="plusAndMinus" style={{display: "flex"}}>
-                <button style={{
-                        width: '60vw',
-                        height: '20vw',
-                        border: '1vw solid #17D930',
-                        backgroundColor: '#17D930',
-                        color: 'white',
-                        borderTopLeftRadius: '20vw',
-                        borderBottomLeftRadius: '20vw',
-                        borderTopRightRadius: '20vw',
-                        borderBottomRightRadius: '20vw',
-                        fontSize: '18vw',
-                        justifyContent: 'center',
-                        paddingBottom: '20vw',
-                    }}
-                    className="increase" onClick={addUnit}>+1 {/* onClick={() => setCount(count + 1)} */}
+            <div style={{display: "flex"}}>
+                <button id="increase" onClick={addUnit}>+1 {/* onClick={() => setCount(count + 1)} */}
                 </button>
                 <div className="removeUnitButton" style={{display: "flex", position: "relative",  width: '35vw'}}>
-                    <button style={{
-                        fontSize: "12vw", 
-                        marginLeft: "8vw", 
-                        marginTop: "2vh", 
-                        height: "15vw",
-                        width: "25vw",
-                        backgroundColor: "red",
-                        borderTopLeftRadius: '20vw',
-                        borderBottomLeftRadius: '20vw',
-                        borderTopRightRadius: '20vw',
-                        borderBottomRightRadius: '20vw',
-                    }}
-                    className="decrease" onClick={(removeUnit)}>-1
+                    <button id="decrease" onClick={(removeUnit)}>-1
                     </button>
                     
                 </div>
             </div>
 
-            <div className="tableHeader" style={{textAlign: "center", marginTop: "5vw",}}>
-                {players.length} Personer, {unitsTotal} Enheter
+            <div className="tableHeader">Lobby total:
+                {players.length} Players, {unitsTotal} Units
             </div>
-            <div style={{
-                marginTop: "3vw", height:"60vh", overflowY:"scroll",
-            }}>
-            <table className="table" style={{width: "90vw", marginLeft: "5vw"}}>
+           
+            <div id='divUsers'>
+           
+            <table className="table">
             <tr style={{position: 'sticky',
-                backgroundColor:'#F9F3F3',
+                backgroundColor:'transparent',
                 zIndex: 1,
                 top: -3}}>
-                    <th style={{width: "50vw", borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}><h3>Deltagare:</h3></th> 
-                    <th style={{borderBottom: "0.5vw solid black"}}><h3>Enheter:</h3></th>
+                    <th style={{width: "40vw", borderBottom: "1vw solid #EEEEEE", borderRight: "1vw solid #EEEEEE"}}><h3>Players:</h3></th> 
+                    <th style={{borderBottom: "1vw solid #EEEEEE"}}>Enheter:</th>
             </tr>
             
 
                 {players.map(p => (
                     <tr>
-                        <td style={{alignItems:"center", display: "flex", textAlign: "left", height: "17vw", width: "60vw", borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>
-                            <img src={p.profileImage} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>
-                            <h4 style={{marginRight: "10%"}}>{p.name}</h4>
-                            </td>
-                        <td style={{textAlign:"center", borderBottom: "0.5vw solid black", fontSize: "5vw", fontWeight: "bold"}}>{p.units.length}</td>
+                        <td style={{alignItems:"center", display: "flex", textAlign: "left", height: "18vw", width: "60vw", borderBottom: "1vw solid #EEEEEE", borderRight: "1vw solid #EEEEEE"}}>
+                            <img src={p.profileImage} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>{p.name}</td>
+                        <td style={{textAlign:"center", borderBottom: "1vw solid #EEEEEE", fontSize: "5vw", fontFamily:'Merriweather Sans'}}>{p.units.length}</td>
                     </tr>
                             
                             

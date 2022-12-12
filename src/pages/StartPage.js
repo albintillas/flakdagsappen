@@ -10,7 +10,8 @@ function StartPage(){
 
     return (
 
-        <div>
+        <body>
+        <div id='body'>
             <div style={{ 
             
                 marginTop:'15vw',
@@ -62,20 +63,18 @@ function StartPage(){
             }}>
             <StartPageButton 
             text='Join Game' 
-            buttonColor='#17D930' 
-            textColor='#F9F3F3'
             action='choose'
             >
             </StartPageButton>
 
             <StartPageButton 
             text='Create Game' 
-            buttonColor='#F9F3F3' 
-            textColor='#17D930'
             action='creategame' >   
             </StartPageButton>
             </div>
         </div>
+
+        </body>
     )
 
 }

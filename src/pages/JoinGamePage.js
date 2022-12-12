@@ -26,8 +26,8 @@ function JoinGamePage(){
         pw == "") {
           Swal.fire({
               icon: 'error',
-              title: 'Saknas data',
-              text: 'Alla fält måste fyllas i'
+              title: 'Error',
+              text: 'Please fill all fields!'
           });
           return;
       }
@@ -44,8 +44,8 @@ function JoinGamePage(){
 
             Swal.fire({
                icon: 'error',
-               title: 'Deltagare existerar redan',
-               text: 'Använd logga in funktionen istället'
+               title: 'User already existing',
+               text: 'Use Reconnect function instead'
            });
 
           }
@@ -61,31 +61,27 @@ function JoinGamePage(){
 <div>
    <ReturnButton action=""></ReturnButton>
 
-<p>Join a lobby!</p>
+   <p id='headers'>Join a lobby!</p>
 
 <form className="createGameForm" id="createForm">
-   <div class="row input-group-newsletter">
+   <div class="enterText">
       <div class='formText'>Enter Name:</div>
       <input onChange={event => setName(event.target.value)} value={name} className="form-control" placeholder="Name...">
       </input>
    </div>
-   <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-      <h2 style={{fontSize: '5vw', width: '40vw'}}>Enter Password:</h2>
-      <input onChange={event => setPw(event.target.value)} value={pw} className="playerPasswordInput" style={{
-         width: '40vw'
-      }}></input>
+   <div class='enterText'>
+      <div class='formText'>Enter Password:</div>
+      <input onChange={event => setPw(event.target.value)} value={pw} className="form-control" placeholder="Password..."></input>
 
    </div>
     
-    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-      <h2 style={{fontSize: '5vw', width: '40vw'}}>Enter lobby pin:</h2>
-      <input onChange={event => setPin(event.target.value)} value={pin} className="playerPinInput" style={{
-         width: '40vw'
-      }}></input>
+   <div class="enterText">
+      <div class='formText'>Enter lobby pin:</div>
+      <input onChange={event => setPin(event.target.value)} value={pin} className="form-control" placeholder="Lobby pin..."></input>
 
    </div>
 
-         <button type="button" className = "joinGameInput" id="submitButton" action='lobby' onClick={joinLobby} buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Join Game</button>
+         <button type="button" className = "joinGameInput" id="submitButton" action='lobby' onClick={joinLobby} textDecoration='none' fontSize='7vw'>Join Game</button>
 
 </form>
 

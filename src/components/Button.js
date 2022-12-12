@@ -2,6 +2,7 @@
 //in progress
 import React from 'react'
 import {Link} from "react-router-dom";
+import { Background } from 'victory';
 
 const Button = ({ text, buttonColor, textColor,textDecoration ,fontSize,action }) =>{
 
@@ -14,7 +15,7 @@ const Button = ({ text, buttonColor, textColor,textDecoration ,fontSize,action }
                 color: textColor,
                 textDecoration: textDecoration,
                 fontSize: fontSize,
-                fontFamily: 'Noto Serif JP serif',
+                fontFamily: 'Merriweather Sans, sans-serif',
                 fontWeight: "500",
                 padding: "5%",
                 borderRadius: "15vw",
@@ -22,7 +23,21 @@ const Button = ({ text, buttonColor, textColor,textDecoration ,fontSize,action }
                 cursor: "pointer",
                 height: "15vw",
                 width: "55vw",
-                boxShadow: "1vw 2vw 3vw #888888",
+
+                marginTop: '5vw',
+                height: '18vw',
+                width: '60vw',
+                textAlign: 'center',
+                border: 'none',
+
+
+
+                background: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: '10vw',
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '3px solid rgba(255, 253, 208, 0.5)'
+
             }}>
 
         {text}

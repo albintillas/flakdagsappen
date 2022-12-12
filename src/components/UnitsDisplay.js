@@ -6,7 +6,7 @@ function UnitsDisplay({count}) {
 
     return(
         <div style={{display: "inline-block"}}>
-            <div style={{marginTop: "7vw", textAlign: "center", marginLeft: "2vw", fontSize: "25vw", color: "#17D930", width: "30vw"}}>
+            <div id='unitsAmount'>
                 {count}
             </div>           
         </div>

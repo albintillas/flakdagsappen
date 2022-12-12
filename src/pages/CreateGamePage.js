@@ -30,9 +30,9 @@ function CreateGamePage(){
     if (name == "" ||
         password == "") {
           Swal.fire({
-              icon: 'error',
-              title: 'Saknas data',
-              text: 'Alla fält måste fyllas i'
+            icon: 'error',
+            title: 'Error',
+            text: 'Please fill all fields!'
           });
           return;
       }
@@ -47,7 +47,7 @@ function CreateGamePage(){
           else {
             Swal.fire({
                 icon: 'error',
-                title: 'Kan inte skapa flakdag',
+                title: 'Can not create Flakdag',
                 text: res.message
             });
           }
@@ -64,13 +64,15 @@ function CreateGamePage(){
       <ReturnButton 
       text='Return' 
       buttonColor='#17D930' 
-      textColor='#FFFFFF'
+      textColor='#EEEEEE'
       action=''></ReturnButton>
     </div>
-    <p>Create Flakdag!</p>
+    <p id='headers' style={{
+      fontSize:'10vw'
+    }}>Create Flakdag!</p>
 
     <form className="createGameForm" id="createForm">
-      <UploadImage id = "createGameImage" size = '60 %'/>
+      <UploadImage class = "createGameImage" size = '60 %'/>
 
       
 
@@ -80,36 +82,21 @@ function CreateGamePage(){
         
       </div> */}
 
-      <div >
-          <div >Ditt namn</div>
-          <div ><input onChange={event => setName(event.target.value)} value={name} name="name" type="text" placeholder="Ditt flakdagsnamn..." /></div>
+      <div class='enterText'>
+          <div class='formText'>Ditt namn</div>
+          <div class='formInput'><input onChange={event => setName(event.target.value)} value={name} class="form-control" name="name" type="text" placeholder="Ditt flakdagsnamn..." /></div>
         
       </div>
 
-      <div>
-          <div>Ditt lösenord</div>
-          <div><input onChange={event => setPassword(event.target.value)} value={password} name="pw" type="password" placeholder="Lösenord..." /></div>
+      <div class='enterText'>
+          <div class='formText'>Ditt lösenord</div>
+          <div class='formInput'><input onChange={event => setPassword(event.target.value)} value={password} class="form-control" name="pw" type="password" placeholder="Lösenord..." /></div>
         
       </div>
 
       {/* <button class = "createGameInput" id="submitButton" text="Create Game" onclick={createLobby} value="Create game" type='submit' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Create Game</button> */}
             
-      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={createLobby} 
-      style={{
-             fontFamily: 'Noto Serif JP serif',
-             backgroundColor: "#17D930",
-             color:'#F9F3F3',
-             fontSize: "200%",
-             textDecoration: "none",
-             padding: "5%",
-             borderRadius: "15vw",
-             border: "none",
-             cursor: "pointer",
-             height: "75%",
-             width: "65%",
-             marginTop: "5vw",
-             boxShadow: "1vw 2vw 3vw #888888"
-      }}>Create Game</button>
+      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={createLobby}>Create Game</button>
 
         
   </form>

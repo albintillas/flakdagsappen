@@ -16,18 +16,16 @@ return(
         flexDirection:'column',
         alignItems: 'center'
         }}>
+
+            <p id='headers'>How do you want to join?</p>
         
         <StartPageButton 
-        text='Join Game' 
-        buttonColor='#17D930' 
-        textColor='#F9F3F3'
+        text='New Lobby' 
         action='joingame'
         />
 
         <StartPageButton 
         text='Reconnect' 
-        buttonColor='#F9F3F3' 
-        textColor='#17D930'
         action='Login' 
         />
         </div>

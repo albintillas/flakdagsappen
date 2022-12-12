@@ -19,8 +19,8 @@ function Login(){
           password == "") {
             Swal.fire({
                 icon: 'error',
-                title: 'Saknas data',
-                text: 'Alla fält måste fyllas i'
+                title: 'Error',
+                text: 'Please fill all fields!'
             });
             return;
         }
@@ -29,12 +29,12 @@ function Login(){
           axios.post("https://flakdag.azurewebsites.net/api/lobby/login", {pin: pin, pw: password}).then(res => {
             if(res.data.success){
               localStorage.setItem('token', res.data.userToken);
-              window.location.href= '/lobbyInfoPage';  
+              window.location.href= '/lobby';  
             }
             else {
               Swal.fire({
                   icon: 'error',
-                  title: 'Flakdag finns ej',
+                  title: 'Flakdag does not exist',
                   text: res.message
               });
             }
@@ -44,21 +44,21 @@ function Login(){
 return(
     <div class='createGameContainer'>
        <ReturnButton action="Choose"></ReturnButton>
-       <p>Reconnect to flakdag</p>
+       <p id='headers'>Reconnect to flakdag</p>
 
     <form className="createGameForm" id="createForm">
 
-      <div class="row input-group-newsletter">
+      <div class="enterText">
           <div class="formText">PIN</div>
           <div class="formInput"><input onChange={event => setPin(event.target.value)} value={pin} class="form-control" name="pin" type="text" placeholder="Flakdag pin..." /></div>
         
       </div>
 
-      <div class="row input-group-newsletter">
+      <div class="enterText">
           <div class="formText">Ditt lösenord</div>
           <div class="formInput"><input onChange={event => setPassword(event.target.value)} value={password} class="form-control" name="pw" type="password" placeholder="Lösenord..." /></div>
       </div>
-      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={Reconnect} buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Reconnect</button>
+      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={Reconnect} textDecoration='none' textColor='#EEEEEE' fontSize='7vw'>Reconnect</button>
     </form>
     </div>
        )

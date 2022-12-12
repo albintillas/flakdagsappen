@@ -52,20 +52,12 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
         <div>
             <div style={{display: "flex"}}>
                 <ReturnButton action="creategame"></ReturnButton>
-                <h1 style={{
-                    width: "78%",
-                    textAlign: 'center',
-                    fontFamily: 'Noto Serif JP, serif',
-                    
-                }}>Lobby</h1>
+                <p id='headers'>Lobby</p>
             </div>
 
             <div>
-                <h2 style={{
-                    textAlign: 'center',
-                    fontFamily: 'Kaushan Script'
-                }}>Game Pin: {pin}</h2>
-                <div style={{backgroundColor: 'black', marginLeft: '10vw', width: '80vw', border: '0.1vw solid black', height: '0.1vw', marginBottom: '4vw'}}>
+             <h2 id='lobbyText' style={{textAlign: 'center'}}>Game Pin: {pin}</h2>
+                <div style={{backgroundColor: '#EEEEEE', marginLeft: '10vw', width: '80vw', border: '0.5vw #EEEEEE', height: '1vw', marginBottom: '4vw'}}>
                 </div>
             </div>
 
@@ -75,11 +67,10 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
                     <div style={{width:"25%"}} key={p.name}>
 
                         <img src={p.profileImage} className='lobbyInfoPageImage' style={{ borderRadius:'50%'}}/>
-                        <p className='lobbyInfoPageText' style={{
-                            fontSize: '4vw',
-                            fontFamily: 'Noto Serif JP, serif',
-                            marginTop: '4vw',
-                            textDecoration:'none'
+                        <p id='lobbyText' style={{
+                          fontSize: '4vw',
+                          marginTop: '2vw',
+                          textDecoration:'none'
                         }}>{p.name}</p>
 
                     </div>
@@ -95,9 +86,12 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
             {isOwner == true? 
             
             
-            <Button action='lobby' text='Start Game' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>
+            <Button id='submitButton' action='lobby' text='Start Game' textDecoration='none' textColor= '#EEEEEE' fontSize='170%'>
 
             </Button>: null }
+
+                
+
             </div> 
         </div>      
     )
