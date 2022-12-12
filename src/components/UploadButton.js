@@ -20,7 +20,7 @@ const Button = ({ text, buttonColor, textDecoration, textColor ,action }) =>{
             <button type='submit' onclick = {action} className='startPageButton' style={{
                 height: "10vw",
                 width: "35vw",
-                fontSize: "5vw",
+                fontSize: "3.5vw",
                 border: "2px solid " + textColor,
                 boxShadow: "none",
                 textAlign: "center",
