@@ -41,6 +41,7 @@ function Login(){
           })
         }
     }
+    
 return(
     <div class='createGameContainer'>
        <ReturnButton action="Choose"></ReturnButton>
@@ -55,7 +56,7 @@ return(
       </div>
 
       <div class="enterText">
-          <div class="formText">Ditt lösenord</div>
+          <div class="formText">Personligt lösenord</div>
           <div class="formInput"><input onChange={event => setPassword(event.target.value)} value={password} class="form-control" name="pw" type="password" placeholder="Lösenord..." /></div>
       </div>
       <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={Reconnect} textDecoration='none' textColor='#EEEEEE' fontSize='7vw'>Återanslut</button>

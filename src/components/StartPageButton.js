@@ -8,7 +8,7 @@ const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
     return(
         <div style={{
             height: '18vw',
-            width: '60vw',
+            width: '70vw',
             borderRadius: '15vw',
             marginTop: '5vw'
             }}>

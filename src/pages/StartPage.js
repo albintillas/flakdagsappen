@@ -1,7 +1,7 @@
 // Albin
 
 import React from 'react'
-import testimage from '../images/pfpTest.png'
+import logo from '../images/logo.png'
 import StartPageButton from '../components/StartPageButton.js'
 
 
@@ -19,34 +19,19 @@ function StartPage(){
                 display:'flex'
 
             }} >
-                <img src={testimage} style={{
+                <img src={logo} style={{
 
-                    marginLeft:'17vw',
+                    marginLeft:'18vw',
                     
-                    width:'35vw',
-                    height:'35vw',
-                    objectFit:'cover',
-                    border:'1vw solid #000000',
-                    zIndex:'2',
-                    transform: 'rotate(-18deg)'
+                    width:'63vw',
+                    height:'40vw',
+                    objectFit:'cover'
+                   
                 }}
                 
                 ></img>
 
-                <img src={testimage} style={{
-
-                marginRight:'40vw',
                 
-                width:'30vw',
-                height:'30vw',
-                objectFit:'cover',
-                border:'1vw solid #000000',
-                zIndex:'1',
-                transform: 'rotate(-5deg)',
-                marginBottom:'5vw'
-                }}
-
-                ></img>
             </div>
 
             <h1 className='startMainText'>Flakdag</h1>
@@ -58,8 +43,8 @@ function StartPage(){
             <div style={{
                 display:'flex',
                 flexDirection:'column',
-                marginLeft:'20vw',
-                marginRight:'20vw'
+                marginLeft:'19vw',
+                marginRight:'19vw'
             }}>
             <StartPageButton 
             text='Gå Med' 

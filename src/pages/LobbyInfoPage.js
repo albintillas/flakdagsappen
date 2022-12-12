@@ -51,7 +51,9 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
     return (
         <div>
             <div style={{display: "flex"}}>
-                <ReturnButton action="creategame"></ReturnButton>
+                <div style={{width:'30%'}}>
+                    <ReturnButton action="creategame"></ReturnButton>
+                </div>
                 <p id='headers'>Lobby</p>
             </div>
 
@@ -60,6 +62,8 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
                 <div style={{backgroundColor: '#EEEEEE', marginLeft: '10vw', width: '80vw', border: '0.5vw #EEEEEE', height: '1vw', marginBottom: '4vw'}}>
                 </div>
             </div>
+
+            <div id='lobbyInfoHolder'>
 
             <div style={{display:"flex", flexWrap:"wrap"}}>
                 {players.map(p => (
@@ -86,9 +90,12 @@ function LobbyInfoPage({}){ // Vet ej om {} behövs
             {isOwner == true? 
             
             
-            <Button id='submitButton' action='lobby' text='Start Game' textDecoration='none' textColor= '#EEEEEE' fontSize='170%'>
+            <Button id='submitButton' action='lobby' text='Start Game' textDecoration='none' textColor= '#EEEEEE' fontSize='170%' style={{marginBottom:'5vw'}}>
 
             </Button>: null }
+
+
+            </div>
 
                 
 
