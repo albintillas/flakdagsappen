@@ -6,20 +6,36 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
 
-const UploadImage = ({ size, uploadNow }) => {
+const UploadImage = ({ size, uploadNow, isPost }) => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   useEffect(() => {
 
   }, [selectedImage])
 
-  console.log("Upload Bool: " + uploadNow)
+  console.log("MakePost button has been hit: " + uploadNow)
   if (uploadNow) {
-    console.log("test1")
-    axios.post("https://flakdag.azurewebsites.net/api/data/uploadfilebytes", { selectedImage }).then(res => {
-      console.log("test2")
-      console.log("Upload Status: " + res.data.success)
-    })
+    // API, based on whether image is to be profile picture or post
+    let ApiLink;
+    if (isPost) {
+      ApiLink = 'https://flakdag.azurewebsites.net/api/Data/UploadFileFormFile'
+    } else {
+      ApiLink = ''
+    }
+    // Create a FormData object to store the file
+    const formData = new FormData();
+    // Add the file to the FormData object
+    formData.append('file', selectedImage);
+    // Upload the image to server
+    axios.post(ApiLink, formData)
+      .then((response) => {
+        // Handle the successful response from the API
+        console.log("Upload successfull: " + response.data.success)
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the request
+        console.log("An error has occured on upload, error type:\n" + error)
+      });
   }
 
   return (

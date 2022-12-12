@@ -19,7 +19,7 @@ function FullImg() {
     }
 
     return (
-        <div class="FullImg" style={{ position: "absolute", height: "100vh", width: "100vw", backgroundColor: "black", color: "white" }}>
+        <div className="FullImg" style={{ position: "absolute", height: "100vh", width: "100vw", backgroundColor: "black", color: "white" }}>
             <div style={{ position: "absolute", top: "1vh", left: "1vw", height: "12vw", width: "12vw", backgroundColor: "white", borderRadius: "50%", zIndex: "1" }}>
                 <ReturnButton
                     action='feed' />
@@ -27,7 +27,7 @@ function FullImg() {
             <div style={{ position: "absolute", top: "1vh", right: "1vw", height: "12vw", width: "12vw", backgroundColor: "white", borderRadius: "50%", zIndex: "1" }}>
                 <img src={downloadSymbol} alt='Return' onClick={downloadImage} style={{
                     width: "10vw",
-                    margin: "auto"
+                    margin: "0 auto"
                 }}>
                 </img>
             </div>
