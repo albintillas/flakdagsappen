@@ -54,7 +54,7 @@ function FeedPage() {
                 </div>
                 <Post
                     profilePicture={img1}
-                    postContent={"WWWWWWWWWWWWWWWWWWWAAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWW"}
+                    postContent={"Kud vad kul det är med flakdag!"}
                     contentIsImg={false}
                 />
                 <Post
@@ -64,7 +64,7 @@ function FeedPage() {
                 />
                 <Post
                     profilePicture={img2}
-                    postContent={'"Ligma Balls" -Big Dick Teo'}
+                    postContent={'"Nioende för dagen" -Teo Hedelin'}
                     contentIsImg={false}
                 />
                 <Post
@@ -74,12 +74,12 @@ function FeedPage() {
                 />
                 <Post
                     profilePicture={img1}
-                    postContent={"llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll"}
+                    postContent={"Lär ju lira lite fotboll och inte skada oss senare"}
                     contentIsImg={false}
                 />
                 <Post
                     profilePicture={img1}
-                    postContent={"WWWWWWWWWWWWWWWWWWWAAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWAAAWWWWWWWWWWWWWWWWWWW"}
+                    postContent={"#minnesluckaefter20"}
                     contentIsImg={false}
                 />
                 <Post
@@ -89,7 +89,7 @@ function FeedPage() {
                 />
                 <Post
                     profilePicture={img2}
-                    postContent={'"Ligma Balls" -Big Dick Teo'}
+                    postContent={'Ja hej'}
                     contentIsImg={false}
                 />
                 <Post
@@ -99,7 +99,7 @@ function FeedPage() {
                 />
                 <Post
                     profilePicture={img1}
-                    postContent={"llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll"}
+                    postContent={"Hhahahahahahahahahahahhahahaha"}
                     contentIsImg={false}
                 />
             </div>
