@@ -61,7 +61,7 @@ function JoinGamePage(){
 <div>
    <ReturnButton action=""></ReturnButton>
 
-   <p id='headers'>Join a lobby!</p>
+   <p id='headers'>Gå med i lobby!</p>
 
 <form className="createGameForm" id="createForm">
    <div class="enterText">
