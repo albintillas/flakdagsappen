@@ -190,7 +190,7 @@ function LobbyPage() {
                 backgroundColor:'transparent',
                 zIndex: 1,
                 top: -3}}>
-                    <th style={{width: "40vw", borderBottom: "1vw solid #EEEEEE", borderRight: "1vw solid #EEEEEE"}}><h3>Players:</h3></th> 
+                    <th style={{width: "40vw", borderBottom: "1vw solid #EEEEEE", borderRight: "1vw solid #EEEEEE"}}><h3>Spelare:</h3></th> 
                     <th style={{borderBottom: "1vw solid #EEEEEE"}}>Enheter:</th>
             </tr>
             
