@@ -19,8 +19,8 @@ function Login(){
           password == "") {
             Swal.fire({
                 icon: 'error',
-                title: 'Error',
-                text: 'Please fill all fields!'
+                title: 'Saknas Data',
+                text: 'Fyll i alla fält!'
             });
             return;
         }
@@ -34,7 +34,7 @@ function Login(){
             else {
               Swal.fire({
                   icon: 'error',
-                  title: 'Flakdag does not exist',
+                  title: 'Flakdag finns ej',
                   text: res.message
               });
             }
@@ -44,7 +44,7 @@ function Login(){
 return(
     <div class='createGameContainer'>
        <ReturnButton action="Choose"></ReturnButton>
-       <p id='headers'>Reconnect to flakdag</p>
+       <p id='headers'>Återanslut till Flakdag</p>
 
     <form className="createGameForm" id="createForm">
 
@@ -58,7 +58,7 @@ return(
           <div class="formText">Ditt lösenord</div>
           <div class="formInput"><input onChange={event => setPassword(event.target.value)} value={password} class="form-control" name="pw" type="password" placeholder="Lösenord..." /></div>
       </div>
-      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={Reconnect} textDecoration='none' textColor='#EEEEEE' fontSize='7vw'>Reconnect</button>
+      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={Reconnect} textDecoration='none' textColor='#EEEEEE' fontSize='7vw'>Återanslut</button>
     </form>
     </div>
        )

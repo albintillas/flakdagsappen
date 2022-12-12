@@ -17,15 +17,15 @@ return(
         alignItems: 'center'
         }}>
 
-            <p id='headers'>How do you want to join?</p>
+            <p id='headers'>Hur vill du gå med?</p>
         
         <StartPageButton 
-        text='New Lobby' 
+        text='Ny Lobby' 
         action='joingame'
         />
 
         <StartPageButton 
-        text='Reconnect' 
+        text='Återanslut' 
         action='Login' 
         />
         </div>

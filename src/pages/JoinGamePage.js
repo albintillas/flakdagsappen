@@ -26,8 +26,8 @@ function JoinGamePage(){
         pw == "") {
           Swal.fire({
               icon: 'error',
-              title: 'Error',
-              text: 'Please fill all fields!'
+              title: 'Saknas Data',
+              text: 'Fyll i alla fält!'
           });
           return;
       }
@@ -44,8 +44,8 @@ function JoinGamePage(){
 
             Swal.fire({
                icon: 'error',
-               title: 'User already existing',
-               text: 'Use Reconnect function instead'
+               title: 'Användare Finns Redan',
+               text: 'Använd "Återanslut" istället'
            });
 
           }
@@ -65,23 +65,23 @@ function JoinGamePage(){
 
 <form className="createGameForm" id="createForm">
    <div class="enterText">
-      <div class='formText'>Enter Name:</div>
-      <input onChange={event => setName(event.target.value)} value={name} className="form-control" placeholder="Name...">
+      <div class='formText'>Namn:</div>
+      <input onChange={event => setName(event.target.value)} value={name} className="form-control" placeholder="Namn...">
       </input>
    </div>
    <div class='enterText'>
-      <div class='formText'>Enter Password:</div>
-      <input onChange={event => setPw(event.target.value)} value={pw} className="form-control" placeholder="Password..."></input>
+      <div class='formText'>Personligt Lösenord:</div>
+      <input onChange={event => setPw(event.target.value)} value={pw} className="form-control" placeholder="Lösen..."></input>
 
    </div>
     
    <div class="enterText">
-      <div class='formText'>Enter lobby pin:</div>
+      <div class='formText'>Lobby Pin:</div>
       <input onChange={event => setPin(event.target.value)} value={pin} className="form-control" placeholder="Lobby pin..."></input>
 
    </div>
 
-         <button type="button" className = "joinGameInput" id="submitButton" action='lobby' onClick={joinLobby} textDecoration='none' fontSize='7vw'>Join Game</button>
+         <button type="button" className = "joinGameInput" id="submitButton" input='number' action='lobby' onClick={joinLobby} textDecoration='none' fontSize='7vw'>Gå Med!</button>
 
 </form>
 

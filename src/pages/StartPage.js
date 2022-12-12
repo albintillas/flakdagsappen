@@ -62,13 +62,13 @@ function StartPage(){
                 marginRight:'20vw'
             }}>
             <StartPageButton 
-            text='Join Game' 
+            text='Gå Med' 
             action='choose'
             >
             </StartPageButton>
 
             <StartPageButton 
-            text='Create Game' 
+            text='Skapa Flakdag' 
             action='creategame' >   
             </StartPageButton>
             </div>

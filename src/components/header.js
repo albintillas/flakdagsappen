@@ -12,7 +12,7 @@ function Header({ onpage }) {
                     ...(onpage == 1
                         ? { textDecoration: "underline" }
                         : {})
-                }}>Statistics</Link>
+                }}>Statistik</Link>
                 <a>l</a>
                 <Link to={"/lobby"} style={{
                     margin: "0 3vw 0 3vw",
@@ -29,7 +29,7 @@ function Header({ onpage }) {
                     ...(onpage == 3
                         ? { textDecoration: "underline" }
                         : {})
-                }}>Feed</Link>
+                }}>Flöde</Link>
             </div>
         </div>
     );

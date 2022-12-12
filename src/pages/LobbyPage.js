@@ -147,7 +147,7 @@ function LobbyPage() {
                     <img src={testimage} id='lobbyImage'></img>
              
                     <UnitsDisplay count={units}/>
-                <div id='unitsText'>Cans opened</div>
+                <div id='unitsText'>Enheter</div>
                 
             </div>
             <div style={{display: "flex"}}>
@@ -160,8 +160,8 @@ function LobbyPage() {
                 </div>
             </div>
 
-            <div className="tableHeader">Lobby total:
-                {players.length} Players, {unitsTotal} Units
+            <div className="tableHeader">Lobby: 
+                {players.length} Spelare, {unitsTotal} Enheter
             </div>
            
             <div id='divUsers'>

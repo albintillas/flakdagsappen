@@ -309,7 +309,8 @@ a:visited {
   width: 44vw;
   font-family: 'Merriweather Sans';
   color: #EEEEEE;
-
+  align-items: center;
+  display: flex;
 }
 
 #increase{
