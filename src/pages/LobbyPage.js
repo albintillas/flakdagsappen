@@ -164,9 +164,7 @@ function LobbyPage() {
     return (
         <div class = 'main' onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header onpage={2} />
-            <div id='inLobbyPin'>
-                <p id='inLobbyPinText'>Pin: {pin}</p>
-            </div>
+            
             <div className="PFPandUnitsDisplay">
              
                     <img src={testimage} id='lobbyImage'></img>
@@ -185,8 +183,8 @@ function LobbyPage() {
                 </div>
             </div>
 
-            <div className="tableHeader">Lobby: 
-                {players.length} Spelare, {unitsTotal} Enheter
+            <div className="tableHeader">
+                Lobby: {players.length} Spelare, {unitsTotal} Enheter
             </div>
            
             <div id='divUsers'>
@@ -216,6 +214,9 @@ function LobbyPage() {
 
                 
             </table>
+            </div>
+            <div id='inLobbyPin'>
+                <p id='inLobbyPinText'>Pin: {pin}</p>
             </div>
         </div>
     );
