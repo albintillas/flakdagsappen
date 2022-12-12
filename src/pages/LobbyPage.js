@@ -143,13 +143,16 @@ function LobbyPage() {
     return (
         <div class = 'main' onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header onpage={2} />
-            <div class="PFPandUnitsDisplay" style={{marginTop: "2vh", display: "flex", justifyContent: "center" }}>
+            <div style={{marginTop: "22vh", fontSize: "10vw", color: "#17D930", height: "40vh", width: "100vw", display: "flex", justifyContent: "center" }}>
+                <p style={{}}>Pin: {pin}</p>
+            </div>
+            <div className="PFPandUnitsDisplay" style={{display: "flex", justifyContent: "center" }}>
                 <div style={{
                     width: "30vw", 
                     height: "30vw"
                     }}>
                     <img src={testimage} style={{
-                        marginTop:'15vw', 
+                        marginTop:'0vh', 
                         marginLeft: '5vw',    
                         width:'20vw',
                         height:'20vw',
@@ -158,10 +161,9 @@ function LobbyPage() {
                         borderRadius: '50%'
                         }}>
                     </img>
-                    {pin}
                 </div>
                     <UnitsDisplay count={units}/>
-                <div style={{fontSize: "8vw", marginTop: "15vw", marginLeft: "3vw", width: "30vw", fontFamily: "Noto Serif JP serif", fontStyle: "bold"}}>
+                <div style={{fontSize: "8vw", marginTop: "4vh", marginLeft: "3vw", width: "30vw", fontFamily: "Noto Serif JP serif", fontStyle: "bold"}}>
                     Enheter druckna
                 </div>
                 
@@ -187,6 +189,7 @@ function LobbyPage() {
                     <button style={{
                         fontSize: "12vw", 
                         marginLeft: "8vw", 
+                        marginTop: "2vh", 
                         height: "15vw",
                         width: "25vw",
                         backgroundColor: "red",
