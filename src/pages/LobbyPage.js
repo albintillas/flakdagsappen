@@ -120,7 +120,6 @@ function LobbyPage() {
                 if(res.data.success){
                     setPlayers(res.data.players)
                 }
-            
             })
             axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
                 if(res.data.success){
@@ -130,12 +129,11 @@ function LobbyPage() {
             axios.post("https://flakdag.azurewebsites.net/api/data/getflakdagmeta", { id: token }).then(res => {
                 if(res.data.success){
                     setPin(res.data.flakmeta.pin);
-
                 }
             })
         }
       }, [])
- */
+  */
       const WAIT_TIME = 300;
 
       useEffect(() => {
@@ -145,11 +143,15 @@ function LobbyPage() {
                 if(res.data.success){
                     setPlayers(res.data.players)
                 }
-            
             })
             axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
                 if(res.data.success){
                     setUnits(res.data.units.length);
+                }
+            })
+            axios.post("https://flakdag.azurewebsites.net/api/data/getflakdagmeta", { id: token }).then(res => {
+                if(res.data.success){
+                    setPin(res.data.flakmeta.pin);
                 }
             })
         }, WAIT_TIME);

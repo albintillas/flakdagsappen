@@ -123,7 +123,7 @@ function StatisticsPage() {
 
                     {console.log(players)}
 
-                    <div style={{ display: "flex", flexWrap: "wrap", flexDirection: 'column' }}>
+                    <div style={{ overflowY: "scroll", height:"30vh", display: "flex", flexDirection: 'column', borderStyle:'ridge', borderColor:'gray'}}>
                         {players.map(p => (
 
                             <div className='individualChart' style={{ display: "flex", marginTop: "3vw" }}>
@@ -142,42 +142,6 @@ function StatisticsPage() {
                         }
 
                     </div>
-
-                    {/* <div className='individualChart' style={{display: "flex", marginTop: "3vw"}}>
-                            <div className='dot' style={{
-                                    backgroundColor: "#c43a31",
-                                    height: "5vw",
-                                    width: "5vw",
-                                    marginLeft: "8vw",
-                                    borderRadius: '50%'
-                            }}/>
-                            <p style={{margin: "0 0 0 3vw"}}> - </p>
-                            <p style={{margin: "0 0 0 3vw"}}>Gustaf Kronholm</p>
-                        </div>
-                    
-                    <div className='individualChart' style={{display: "flex", marginTop: "3vw"}}>
-                        <div className='dot' style={{
-                            backgroundColor: "#5dc437",
-                            height: "5vw",
-                            width: "5vw",
-                            marginLeft: "8vw",
-                            borderRadius: '50%'
-                        }}/>
-                        <p style={{margin: "0 0 0 3vw"}}> - </p>
-                        <p style={{margin: "0 0 0 3vw"}}>Daniel Laesker</p>
-                    </div>
-                    
-                    <div className='individualChart' style={{display: "flex", marginTop: "3vw"}}>
-                        <div className='dot' style={{
-                            backgroundColor: "#48a0f7",
-                            height: "5vw",
-                            width: "5vw",
-                            marginLeft: "8vw",
-                            borderRadius: '50%'
-                        }}/>
-                        <p style={{margin: "0 0 0 3vw"}}> - </p>
-                        <p style={{margin: "0 0 0 3vw"}}>Linus Palm</p>
-                    </div> */}
                 </div>
             </div>
         </div>

@@ -85,6 +85,12 @@ a:visited {
     transform: rotate(360deg);
   }
 }
+
+.chartPeople{
+  width: 80vw;
+  margin-left: 10vw;
+}
+
 .startMainText {
   font-family: 'Kaushan Script', cursive;
   color: #EEEEEE;
