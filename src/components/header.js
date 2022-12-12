@@ -4,7 +4,7 @@ import { Background } from "victory";
 
 function Header({ onpage }) {
     return (
-        <div className="topBar">
+        <div className="topBar" style={{position: "fixed", top: "0"}}>
             <div className="pages" style ={{textAlign: "center", width: "100%"}}>
                 <Link to={"/statistics"} style={{
                     marginRight: "3vw",
