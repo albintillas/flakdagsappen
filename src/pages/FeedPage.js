@@ -53,12 +53,12 @@ function FeedPage() {
                     />
                 </div>
                 <Post
-                    profilePicture={img1}
+                    profilePicture={img2}
                     postContent={"Kud vad kul det är med flakdag!"}
                     contentIsImg={false}
                 />
                 <Post
-                    profilePicture={img1}
+                    profilePicture={img2}
                     postContent={postImg1}
                     contentIsImg={true}
                 />
@@ -68,22 +68,22 @@ function FeedPage() {
                     contentIsImg={false}
                 />
                 <Post
-                    profilePicture={img1}
+                    profilePicture={img2}
                     postContent={postImg2}
                     contentIsImg={true}
                 />
                 <Post
-                    profilePicture={img1}
+                    profilePicture={img2}
                     postContent={"Lär ju lira lite fotboll och inte skada oss senare"}
                     contentIsImg={false}
                 />
                 <Post
-                    profilePicture={img1}
+                    profilePicture={img2}
                     postContent={"#minnesluckaefter20"}
                     contentIsImg={false}
                 />
                 <Post
-                    profilePicture={img1}
+                    profilePicture={img2}
                     postContent={postImg1}
                     contentIsImg={true}
                 />
@@ -93,12 +93,12 @@ function FeedPage() {
                     contentIsImg={false}
                 />
                 <Post
-                    profilePicture={img1}
+                    profilePicture={img2}
                     postContent={postImg2}
                     contentIsImg={true}
                 />
                 <Post
-                    profilePicture={img1}
+                    profilePicture={img2}
                     postContent={"Hhahahahahahahahahahahhahahaha"}
                     contentIsImg={false}
                 />
