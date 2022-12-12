@@ -37,8 +37,6 @@ function LobbyPage() {
 
 
 
-    const [count, setCount] = useState(0);
-
     const [units, setUnits] = useState(0);
 
     const [pin, setPin] = useState(0);
@@ -53,8 +51,7 @@ function LobbyPage() {
     let unitsTotal = 0;
 
 
-    function removeUnit(){
-        /*         
+    function removeUnit(){     
         Swal.fire({  
             title: 'Ta bort en enhet?',  
             showCancelButton: true,  
@@ -62,10 +59,9 @@ function LobbyPage() {
             cancelButtonText: 'Nej'
           }).then((result) => {  
               if (result.isConfirmed) {    
-                setCount(count - 1)  
+                setUnits(units - 1)  
                }
           });
-         */  
     }
 
     function addUnit(){
