@@ -34,7 +34,7 @@ function Login(){
             else {
               Swal.fire({
                   icon: 'error',
-                  title: 'Flakdag does not exist',
+                  title: 'Error joining flakdag',
                   text: res.message
               });
             }

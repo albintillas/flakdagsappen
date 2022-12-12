@@ -117,23 +117,42 @@ function LobbyPage() {
                 //console.log(res) 
                 if(res.data.success){
                     setPlayers(res.data.players)
-
-                    axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
-                        if(res.data.success){
-                            setUnits(res.data.units.length);
-
-                        }
-                })
+                }
+            
+            })
+            axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
+                if(res.data.success){
+                    setUnits(res.data.units.length);
                 }
             })
             axios.post("https://flakdag.azurewebsites.net/api/data/getflakdagmeta", { id: token }).then(res => {
-                        if(res.data.success){
-                            setPin(res.data.flakmeta.pin);
+                if(res.data.success){
+                    setPin(res.data.flakmeta.pin);
 
-                        }
-                })
+                }
+            })
         }
       }, [])
+
+      const WAIT_TIME = 1000;
+
+      useEffect(() => {
+        const id = setInterval(() => {
+            axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
+                //console.log(res) 
+                if(res.data.success){
+                    setPlayers(res.data.players)
+                }
+            
+            })
+            axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
+                if(res.data.success){
+                    setUnits(res.data.units.length);
+                }
+            })
+        }, WAIT_TIME);
+        return () => clearInterval(id);
+      }, [units]); 
       
       players.map(p => (
         unitsTotal += p.units.length
@@ -164,8 +183,8 @@ function LobbyPage() {
                 </div>
             </div>
 
-            <div className="tableHeader">Lobby total:
-                {players.length} Players, {unitsTotal} Units
+            <div className="tableHeader"> 
+            Lobby total: {players.length} Players, {unitsTotal} Units
             </div>
            
             <div id='divUsers'>
