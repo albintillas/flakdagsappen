@@ -6,14 +6,14 @@
 
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import returnArrow from '..//images/backArrow.jpg';
+import returnArrow from '..//images/hej.png';
 
 const Button = () => {
     const navigate = useNavigate();
     return (
 
         <img src={returnArrow} alt='Return' onClick={() => navigate(-1)} style={{
-            width: "12vw"
+            width: "20vw"
         }}>
         </img>
 
