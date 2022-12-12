@@ -214,10 +214,11 @@ function LobbyPage() {
 
                 
             </table>
-            </div>
             <div id='inLobbyPin'>
                 <p id='inLobbyPinText'>Pin: {pin}</p>
             </div>
+            </div>
+            
         </div>
     );
 }
