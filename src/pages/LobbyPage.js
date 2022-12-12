@@ -39,11 +39,22 @@ function LobbyPage() {
 
     const [count, setCount] = useState(0);
 
+    const [units, setUnits] = useState(0);
+
+    const [pin, setPin] = useState(0);
+
     const [players, setPlayers] = useState([]);
 
-    let units = 0;
+    let token = localStorage.getItem('token');  
+
+
+    let lon = 10;
+    let lat = 30;
+    let unitsTotal = 0;
+
 
     function removeUnit(){
+        /*         
         Swal.fire({  
             title: 'Ta bort en enhet?',  
             showCancelButton: true,  
@@ -54,26 +65,80 @@ function LobbyPage() {
                 setCount(count - 1)  
                }
           });
-          
+         */  
     }
 
+    function addUnit(){
+        if(units < 23){
+            if(token) {
+        
+                axios.post("https://flakdag.azurewebsites.net/api/data/addunit", { token }).then(res => {})
+                
+                axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
+                    if(res.data.success){
+                        setUnits(res.data.units.length);
+                    }
+                })
+            }
+        }
+        else if (units == 23){
+            if(token) {
+        
+                axios.post("https://flakdag.azurewebsites.net/api/data/addunit", { token }).then(res => {})
+                
+                axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
+                    if(res.data.success){
+                        setUnits(res.data.units.length);
+                    }
+                })
+            }
+            Swal.fire({
+                icon: 'success',
+                title: 'Grattis!',
+                text: 'Bra jobbat, du har klarat flakdagen!'
+            });
+            return;  
+        }
+        else{
+            Swal.fire({
+                icon: 'success',
+                title: 'Grattis!',
+                text: 'Bra jobbat, du har klarat flakdagen!'
+            });
+            return;  
+        }
+        
+    } 
+
     useEffect(()=>{
-        let token = localStorage.getItem('token');    //Ej hårdkodad
-
-        //let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"
-
         if(token) {
         
-            axios.post("https://flakdag.azurewebsites.net/api/lobby/getlobby", { token }).then(res => {
-                console.log(res) 
+            axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
+                //console.log(res) 
                 if(res.data.success){
                     setPlayers(res.data.players)
+
+                    axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
+                        if(res.data.success){
+                            setUnits(res.data.units.length);
+
+                        }
+                })
                 }
             })
+            axios.post("https://flakdag.azurewebsites.net/api/data/getflakdagmeta", { id: token }).then(res => {
+                        if(res.data.success){
+                            setPin(res.data.flakmeta.pin);
+
+                        }
+                })
         }
       }, [])
-
-      units = players.reduce((u,p) =>  u = u + p.units , 0 )
+      
+      players.map(p => (
+        unitsTotal += p.units.length
+    ))
+    
 
     return (
         <div class = 'main' onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
@@ -93,8 +158,9 @@ function LobbyPage() {
                         borderRadius: '50%'
                         }}>
                     </img>
+                    {pin}
                 </div>
-                    <UnitsDisplay count={count} setCount={setCount} />
+                    <UnitsDisplay count={units}/>
                 <div style={{fontSize: "8vw", marginTop: "15vw", marginLeft: "3vw", width: "30vw", fontFamily: "Noto Serif JP serif", fontStyle: "bold"}}>
                     Enheter druckna
                 </div>
@@ -115,7 +181,7 @@ function LobbyPage() {
                         justifyContent: 'center',
                         paddingBottom: '20vw',
                     }}
-                    className="increase" onClick={() => setCount(count + 1)}>+1
+                    className="increase" onClick={addUnit}>+1 {/* onClick={() => setCount(count + 1)} */}
                 </button>
                 <div className="removeUnitButton" style={{display: "flex", position: "relative",  width: '35vw'}}>
                     <button style={{
@@ -134,30 +200,41 @@ function LobbyPage() {
                     
                 </div>
             </div>
+
             <div className="tableHeader" style={{textAlign: "center", marginTop: "5vw",}}>
-                {players.length} Personer, {units} Enheter
+                {players.length} Personer, {unitsTotal} Enheter
             </div>
-            <table className="table" style={{marginTop: "3vw", width: "90vw", marginLeft: "5vw"}}>
-            <tr>
+            <div style={{
+                marginTop: "3vw", height:"60vh", overflowY:"scroll",
+            }}>
+            <table className="table" style={{width: "90vw", marginLeft: "5vw"}}>
+            <tr style={{position: 'sticky',
+                backgroundColor:'#F9F3F3',
+                zIndex: 1,
+                top: -3}}>
                     <th style={{width: "50vw", borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}><h3>Deltagare:</h3></th> 
                     <th style={{borderBottom: "0.5vw solid black"}}><h3>Enheter:</h3></th>
             </tr>
+            
+
                 {players.map(p => (
                     <tr>
-                        <td style={{alignItems:"center", display: "flex", textAlign: "left", padding: "1vw", height: "17vw", width: "60vw", borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>
+                        <td style={{alignItems:"center", display: "flex", textAlign: "left", height: "17vw", width: "60vw", borderBottom: "0.5vw solid black", borderRight: "0.5vw solid black"}}>
                             <img src={p.profileImage} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>
                             <h4 style={{marginRight: "10%"}}>{p.name}</h4>
                             </td>
-                        <td style={{borderBottom: "0.5vw solid black", fontSize: "5vw", fontWeight: "bold"}}>{p.units}</td>
+                        <td style={{textAlign:"center", borderBottom: "0.5vw solid black", fontSize: "5vw", fontWeight: "bold"}}>{p.units.length}</td>
                     </tr>
                             
                             
                         ))
 
                         }
-                
+            
+
                 
             </table>
+            </div>
         </div>
     );
 }

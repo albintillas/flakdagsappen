@@ -29,8 +29,7 @@ function Login(){
           axios.post("https://flakdag.azurewebsites.net/api/lobby/login", {pin: pin, pw: password}).then(res => {
             if(res.data.success){
               localStorage.setItem('token', res.data.userToken);
-              window.location.href= '/lobby';
-  
+              window.location.href= '/lobbyInfoPage';  
             }
             else {
               Swal.fire({

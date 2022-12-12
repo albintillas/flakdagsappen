@@ -27,8 +27,7 @@ function CreateGamePage(){
 
     
 
-    if (pin == "" ||
-        name == "" ||
+    if (name == "" ||
         password == "") {
           Swal.fire({
               icon: 'error',
@@ -75,11 +74,11 @@ function CreateGamePage(){
 
       
 
-      <div>
+      {/* <div>
           <div>PIN</div>
           <div><input onChange={event => setPin(event.target.value)} value={pin} name="pin" type="text" placeholder="Flakdag pin......" /></div>
         
-      </div>
+      </div> */}
 
       <div >
           <div >Ditt namn</div>
