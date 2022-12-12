@@ -24,10 +24,11 @@ function FullImg() {
                 <ReturnButton
                     action='feed' />
             </div>
-            <div style={{ position: "absolute", top: "1vh", right: "1vw", height: "12vw", width: "12vw", backgroundColor: "white", borderRadius: "50%", zIndex: "1" }}>
+            <div style={{ position: "absolute", top: "1vh", right: "1vw", height: "12vw", width: "12vw", backgroundColor: "white", borderRadius: "50%", zIndex: "1", display: "flex" }}>
                 <img src={downloadSymbol} alt='Return' onClick={downloadImage} style={{
-                    width: "10vw",
-                    margin: "0 auto"
+                    width: "8vw",
+                    height: "8vw",
+                    margin: "auto auto"
                 }}>
                 </img>
             </div>
