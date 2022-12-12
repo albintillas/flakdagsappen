@@ -24,15 +24,34 @@ function PostText({ profilePicture }) {
     /*Temporär lösning*/
 
     function changeInput(event) {
-        setTextString(event.target.value)
+        const text = event.target.value
+        const updatedText = text.replace(/\s{10,}/g, '')
+        event.target.value = updatedText
+        setTextString(updatedText)
 
     }
-    function makePost(event) {
+
+    console.log("TextString has content: " + textStringHasContent)
+    function makePost() {
         if (textStringHasContent) {
             // Insert kod för ett inlägg
             navigate("/feed")
         }
     }
+
+    // Select the textarea and form elements
+    const textarea = document.querySelector('textarea');
+    if (textarea != null) {
+        // Listen for the keydown event on the textarea
+        textarea.addEventListener('keydown', (event) => {
+            // Check if the enter key was pressed
+            if (event.key === 'Enter') {
+                // Make a Post
+                makePost();
+            }
+        })
+    }
+
     return (
         <div class="MakePost">
             <ReturnButton

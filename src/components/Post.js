@@ -1,7 +1,6 @@
 // Joel - Funktionellt klar, Fåtal stilpoäng kvar
 // Denna fil utgör layouten av ett inlägg för 'flödet'
 import React from 'react';
-import FullImg from '../overlays/FullImg';
 import { Link } from "react-router-dom";
 
 function Post({ profilePicture, postContent, contentIsImg }) {

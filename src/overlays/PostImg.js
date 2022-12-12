@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 function PostImg() {
     const navigate = useNavigate();
     const [uploadStatus, setUploadStatus] = useState(false);
-    function makePost(event) {
+    function makePost() {
         // Insert kod för ett inlägg
         setUploadStatus(true);
     }
@@ -32,7 +32,7 @@ function PostImg() {
                 PUBLICERA
             </button>
             <div style={{ width: "100%", height: "1px", backgroundColor: "black" }} />
-            <UploadImage uploadNow={uploadStatus}/>
+            <UploadImage uploadNow={uploadStatus} isPost={true}/>
         </div>
     )
 }
