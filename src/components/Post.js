@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-function Post({ profilePicture, postContent, contentIsImg }) {
+function Post({ profilePicture, postContent, imageContent }) {
     
 
     var profilePicture = <img src={profilePicture} alt='pfp'
@@ -12,13 +12,13 @@ function Post({ profilePicture, postContent, contentIsImg }) {
     var contentPreview;
 
     if(postContent == ""){
-        if (contentIsImg == "") {
+        if (imageContent == "") {
             return(null);
         }
         else{
            contentPreview =
-            <Link to={"/fullImg"}>
-                <img src={postContent} alt='pfp' style={{
+            <Link to={'/fullImg/' + imageContent}>
+                <img src={"https://flakdag.azurewebsites.net/api/data/image?id=" + imageContent} alt='pfp' style={{
                     width: "100%",
                     maxHeight: "30vh",
                     overflow: "hidden",

@@ -29,7 +29,7 @@ function App() {
         <Route path="/statistics" element={<StatisticsPage/>}/>
         <Route path="/postImg" element={<PostImg/>}/>
         <Route path="/postText" element={<PostText/>}/>
-        <Route path="/fullImg" element={<FullImg/>}/>
+        <Route path="/fullImg/:src" element={<FullImg/>}/>
         <Route path="/lobbyInfoPage" element={<LobbyInfoPage/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/choose" element={<Choose/>}/>

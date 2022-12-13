@@ -1,30 +1,28 @@
 import React from 'react'
 // In Progress, Joel
-import image from '..//images/test2.png';
 import ReturnButton from '../components/ReturnButton.js';
 import downloadSymbol from '..//images/download.png';
 import { saveAs } from 'file-saver'
+import {
+    useParams
+} from 'react-router-dom'
 
 function FullImg() {
+    const { src } = useParams()
     let img = new Image();
-    img.src = image;
+    img.src = "https://flakdag.azurewebsites.net/api/data/image?id=" + src;
     let fixedHeight = (img.height / img.width) * 100;
-    const { innerWidth, innerHeight } = window;
-    let standingDisplay = innerHeight > innerWidth;
-    if (!standingDisplay) {
-        fixedHeight = (img.width / img.height) * 100;
-    }
     const downloadImage = () => {
-        saveAs(image, 'image.jpg') // Put your image url here.
+        saveAs(img, 'image.jpg') // Put your image url here.
     }
 
     return (
         <div className="FullImg" style={{ position: "absolute", height: "100vh", width: "100vw", backgroundColor: "black", color: "white" }}>
-            <div style={{ position: "absolute", top: "1vh", left: "1vw", height: "12vw", width: "12vw", backgroundColor: "white", borderRadius: "50%", zIndex: "1" }}>
+            <div style={{ position: "absolute", left: "1vw", height: "12vw", width: "12vw", borderRadius: "50%", zIndex: "1" }}>
                 <ReturnButton
                     action='feed' />
             </div>
-            <div style={{ position: "absolute", top: "1vh", right: "1vw", height: "12vw", width: "12vw", backgroundColor: "white", borderRadius: "50%", zIndex: "1", display: "flex" }}>
+            <div style={{ position: "absolute", top: "2vh", right: "1vw", height: "12vw", width: "12vw", backgroundColor: "white", borderRadius: "50%", zIndex: "1", display: "flex" }}>
                 <img src={downloadSymbol} alt='Return' onClick={downloadImage} style={{
                     width: "8vw",
                     height: "8vw",
@@ -32,19 +30,11 @@ function FullImg() {
                 }}>
                 </img>
             </div>
-            <img src={image} alt='Failed to load' style={{
+            <img src={img.src} alt='Failed to load' style={{
                 position: "absolute",
-                ...standingDisplay
-                    ? {
-                        top: "50%",
-                        marginTop: "-" + fixedHeight / 2 + "vw",
-                        height: fixedHeight + "vw"
-                    }
-                    : {
-                        left: "50%",
-                        marginLeft: "-" + fixedHeight / 2 + "vh",
-                        width: fixedHeight + "vh"
-                    }
+                top: "50%",
+                marginTop: "-" + fixedHeight / 2 + "vw",
+                height: fixedHeight + "vw"
             }} />
         </div>
     )
