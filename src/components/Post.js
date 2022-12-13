@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 function Post({ profilePicture, postContent, contentIsImg }) {
+    
 
     var profilePicture = <img src={profilePicture} alt='pfp'
         style={{ height: "12vw", width: "12vw", objectFit: "cover", borderRadius: "50%" }} />;
@@ -36,23 +37,28 @@ function Post({ profilePicture, postContent, contentIsImg }) {
         }
     }
 
+  
+
     return (
         <div className="Post"
             style={{
-                marginRight: "20%",
-                width: "80%",
-                padding: "2%"
+                
+                
             }}>
+            <div style={{marginLeft:'20vw', color:'#5e5e5e', }}>@testperson</div>
+            <div style={{width: "80%",
+                padding: "2%",
+                display:'flex',flexDirection:'row',
+                alignItems:'center'}}>
             <div className="User" style={{ display: "inline-block", width: "20%" }}>
-                <div className="Profilepicture" style={{ display: "inline-block" }}>
+                <div className="Profilepicture" style={{ display: "inline-block", borderRadius:'50%', borderWidth:'thin', borderColor:'grey', borderStyle:'solid' }}>
                     {profilePicture}
                 </div>
-                <a>:</a>
             </div>
-            <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
+            <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word", marginLeft:'6vw' }}>
                 {contentPreview}
             </div>
-
+            </div>
 
         </div>
     );

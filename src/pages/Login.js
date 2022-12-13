@@ -50,7 +50,7 @@ return(
     <form className="createGameForm" id="createForm">
 
       <div class="enterText">
-          <div class="formText">PIN</div>
+          <div class="formText">Lobby Pin</div>
           <div class="formInput"><input onChange={event => setPin(event.target.value)} value={pin} class="form-control" name="pin" type="text" placeholder="Flakdag pin..." /></div>
         
       </div>
