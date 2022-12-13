@@ -35,8 +35,9 @@ function FeedPage() {
     return (
         <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header onpage={3} />
-            <div className="main" style={{ marginTop: "6vh" }}>
-                <div className="makingPosts" style={{ width: "fit-content", margin: "0 auto" }}>
+            
+            <div className="main" style={{ height:'94vh', marginTop: "0vh" }}>
+                <div className="makingPosts" style={{ width: "90vw", margin:'6vh auto 0'}}>
                     <UploadButton
                         text='Ta Foto'
                         buttonColor='#F9F3F3'
@@ -52,56 +53,59 @@ function FeedPage() {
                         action='postText'
                     />
                 </div>
-                <Post
-                    profilePicture={img1}
-                    postContent={"Kud vad kul det är med flakdag!"}
-                    contentIsImg={false}
-                />
-                <Post
-                    profilePicture={img1}
-                    postContent={postImg1}
-                    contentIsImg={true}
-                />
-                <Post
-                    profilePicture={img2}
-                    postContent={'"Nioende för dagen" -Teo Hedelin'}
-                    contentIsImg={false}
-                />
-                <Post
-                    profilePicture={img1}
-                    postContent={postImg2}
-                    contentIsImg={true}
-                />
-                <Post
-                    profilePicture={img1}
-                    postContent={"Lär ju lira lite fotboll och inte skada oss senare"}
-                    contentIsImg={false}
-                />
-                <Post
-                    profilePicture={img1}
-                    postContent={"#minnesluckaefter20"}
-                    contentIsImg={false}
-                />
-                <Post
-                    profilePicture={img1}
-                    postContent={postImg1}
-                    contentIsImg={true}
-                />
-                <Post
-                    profilePicture={img2}
-                    postContent={'Ja hej'}
-                    contentIsImg={false}
-                />
-                <Post
-                    profilePicture={img1}
-                    postContent={postImg2}
-                    contentIsImg={true}
-                />
-                <Post
-                    profilePicture={img1}
-                    postContent={"Hhahahahahahahahahahahhahahaha"}
-                    contentIsImg={false}
-                />
+                <div id='feedScrollDiv'>
+                    <Post
+                        profilePicture={img1}
+                        postContent={"Kud vad kul det är med flakdag!"}
+                        contentIsImg={false}
+                    />
+                    <Post
+                        profilePicture={img1}
+                        postContent={postImg1}
+                        contentIsImg={true}
+                    />
+                    <Post
+                        profilePicture={img2}
+                        postContent={'"Nioende för dagen" -Teo Hedelin'}
+                        contentIsImg={false}
+                    />
+                    <Post
+                        profilePicture={img1}
+                        postContent={postImg2}
+                        contentIsImg={true}
+                    />
+                    <Post
+                        profilePicture={img1}
+                        postContent={"Lär ju lira lite fotboll och inte skada oss senare"}
+                        contentIsImg={false}
+                    />
+                    <Post
+                        profilePicture={img1}
+                        postContent={"#minnesluckaefter20"}
+                        contentIsImg={false}
+                    />
+                    <Post
+                        profilePicture={img1}
+                        postContent={postImg1}
+                        contentIsImg={true}
+                    />
+                    <Post
+                        profilePicture={img2}
+                        postContent={'Ja hej'}
+                        contentIsImg={false}
+                    />
+                    <Post
+                        profilePicture={img1}
+                        postContent={postImg2}
+                        contentIsImg={true}
+                    />
+                    <Post
+                        profilePicture={img1}
+                        postContent={"Hhahahahahahahahahahahhahahaha"}
+                        contentIsImg={false}
+                    />  
+                </div>
+                
             </div>
         </div>
     );

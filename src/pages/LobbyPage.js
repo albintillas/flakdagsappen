@@ -164,7 +164,7 @@ function LobbyPage() {
     
 
     return (
-        <div class = 'main' onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+        <div class = 'main' style={{height:'88.4vh'}} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header onpage={2} />
             
             <div className="PFPandUnitsDisplay">
