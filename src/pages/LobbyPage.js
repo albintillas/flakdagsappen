@@ -198,7 +198,7 @@ function LobbyPage() {
                 {players.map(p => (
                     <tr>
                         <td style={{alignItems:"center", display: "flex", textAlign: "left", height: "18vw", width: "60vw", borderBottom: "1vw solid #EEEEEE", borderRight: "1vw solid #EEEEEE"}}>
-                            <img src={testimage2} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>{p.name}</td>
+                            <img src={"https://flakdag.azurewebsites.net/api/data/image?id=" + p.profileImage} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>{p.name}</td>
                         <td style={{textAlign:"center", borderBottom: "1vw solid #EEEEEE", fontSize: "5vw", fontFamily:'Merriweather Sans'}}>{p.units.length}</td>
                     </tr>
                             
