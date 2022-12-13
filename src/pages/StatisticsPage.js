@@ -73,8 +73,8 @@ function StatisticsPage() {
                             <V.VictoryLine
                                 style={{
                                     data: { stroke: p.color },
-                                    parent: { border: "1px solid #ccc" }
-
+                                    parent: { border: "1x solid #EEEEEE"},
+                                    
                                 }}
                                 data={[ // Uppdaterad varje timme. Kanske fixa så det kan läggas in när som, även mellan hela timmar?
                                     { x: time[0], y: 0 },
@@ -105,11 +105,11 @@ function StatisticsPage() {
                     </V.VictoryChart>
                 </div>
                 <div className='chartPeople'>
-                    <h1 style={{ textAlign: "center" }}>Spelare</h1>
+                    <h1 id='headers' style={{ textAlign: "center" }}>Spelare</h1>
 
                     {console.log(players)}
 
-                    <div style={{ overflowY: "scroll", height: "30vh", display: "flex", flexDirection: 'column', borderStyle: 'ridge', borderColor: 'gray' }}>
+                    <div style={{ overflowY: "scroll", height: "30vh", display: "flex", flexDirection: 'column', borderStyle: 'ridge', borderColor: '#EEEEEE' }}>
                         {players.map(p => (
 
                             <div className='individualChart' style={{ display: "flex", marginTop: "3vw" }}>
@@ -120,8 +120,8 @@ function StatisticsPage() {
                                     marginLeft: "8vw",
                                     borderRadius: '50%'
                                 }} />
-                                <h3 style={{ margin: "0 0 0 3vw" }}> - </h3>
-                                <h3 style={{ margin: "0 0 0 3vw" }}>{p.name}</h3>
+                                <h3 id='headers' style={{ margin: "0 0 0 3vw" }}> - </h3>
+                                <h3 id='headers' style={{ margin: "0 0 0 3vw" }}>{p.name}</h3>
                             </div>
                         ))
 

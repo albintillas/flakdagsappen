@@ -2,6 +2,9 @@
 
 import React from 'react'
 import logo from '../images/logo.png'
+import logo1024 from '../images/logo1024.png'
+
+
 import StartPageButton from '../components/StartPageButton.js'
 
 
@@ -11,28 +14,23 @@ function StartPage(){
     return (
 
         <body>
-        <div id='body' style={{height:'93vh'}}>
-            <div style={{ 
-            
-                marginTop:'15vw',
-                height:'50vw',
-                display:'flex'
+        <div id='body' style={{height:'95vh'}}>
+           
+                <img src={logo1024} style={{
 
-            }} >
-                <img src={logo} style={{
+                    display:'block',
+                    marginLeft:'auto',
+                    marginRight:'auto',
+                    width:'55%',
+                    marginTop:'5vh'
 
-                    marginLeft:'18vw',
-                    
-                    width:'63vw',
-                    height:'40vw',
-                    objectFit:'cover'
-                   
-                }}
-                
+                    }}
+
                 ></img>
 
+
                 
-            </div>
+            
 
             <h1 className='startMainText'>Flakdag</h1>
 
