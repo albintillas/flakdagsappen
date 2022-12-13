@@ -21,9 +21,10 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
     if (isPost) {
       // Add the file to the FormData object
       const formData = new FormData();
+      formData.append('token', userToken);
       formData.append('image', selectedImage);
       console.log(formData)
-      axios.post('https://flakdag.azurewebsites.net/api/data/addfeed', { token: userToken }, formData)
+      axios.post('https://flakdag.azurewebsites.net/api/data/addfeed', formData)
         .then((response) => {
           // Handle the successful response from the API
           if (response.data.success) {
@@ -42,9 +43,10 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
     else {
       // Add the file to the FormData object
       const formData = new FormData();
+      formData.append('token', userToken);
       formData.append('profileImage', selectedImage);
       console.log("testin")
-      axios.post('https://flakdag.azurewebsites.net/api/data/changeprofileimage', { token: userToken }, formData)
+      axios.post('https://flakdag.azurewebsites.net/api/data/changeprofileimage', formData)
         .then((response) => {
           console.log("test3")
           if (response.data.success) {
