@@ -4,6 +4,7 @@ import ReturnButton from '../components/ReturnButton';
 import Button from '../components/Button.js';
 import axios from 'axios';
 import Swal from 'sweetalert2'
+import UploadImage from '../components/UploadImage';
 
 
 //Linus 
@@ -15,6 +16,9 @@ function JoinGamePage(){
    const [pw, setPw] = useState([]);
 
    const [pin, setPin] = useState([]);
+
+   const [uploadStatus, setUploadStatus] = useState(false);
+
 
    function joinLobby(){
 
@@ -36,7 +40,8 @@ function JoinGamePage(){
         axios.post("https://flakdag.azurewebsites.net/api/lobby/signup", {pin:pin, name:name, pw:pw}).then(res => {
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
-            window.location.href= '/lobbyInfoPage';
+            setUploadStatus(true);
+            //window.location.href= '/lobbyInfoPage';
 
            
 
@@ -64,6 +69,7 @@ function JoinGamePage(){
    <p id='headers'>Gå med i lobby!</p>
 
 <form className="createGameForm" id="createForm">
+   <UploadImage uploadNow={uploadStatus} isPost={false}/>
    <div class="enterText">
       <div class='formText'>Namn:</div>
       <input onChange={event => setName(event.target.value)} value={name} className="form-control" placeholder="Namn...">

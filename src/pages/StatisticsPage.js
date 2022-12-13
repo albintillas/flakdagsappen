@@ -4,6 +4,7 @@ import React, { useState, useEffect, Profiler } from 'react';
 import axios from 'axios';
 import * as V from 'victory';
 import randomColor from 'randomcolor';
+import SwipeFunction from '../components/SwipeFunction.js';
 
 
 // Ha allt av sidans innehåll i main diven
@@ -30,25 +31,8 @@ time[12] = startTime + 12;
 
 function StatisticsPage() {
 
-    /* ----- Code below implemented for swipe function ----- */
-    const navigate = useNavigate();
-    const [touchStart, setTouchStart] = useState(null)
-    const [touchEnd, setTouchEnd] = useState(null)
-    // the required distance between touchStart and touchEnd to be detected as a swipe
-    const minSwipeDistance = 100
-    const onTouchStart = (e) => {
-        setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
-        setTouchStart(e.targetTouches[0].clientX)
-    }
-    const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return
-        const distance = touchStart - touchEnd
-        const isLeftSwipe = distance > minSwipeDistance
-        // add your conditional logic here
-        if (isLeftSwipe) navigate("/lobby")
-    }
-    /* ----- Code above implemented for swipe function ----- */
+    const swipe = SwipeFunction(1);
+
 
     const [players, setPlayers] = useState([]);
 
@@ -70,7 +54,7 @@ function StatisticsPage() {
 
 
     return (
-        <div style={{height:'95vh'}} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+        <div style={{ height: '95vh' }} onTouchStart={swipe.onTouchStart} onTouchMove={swipe.onTouchMove} onTouchEnd={swipe.onTouchEnd}>
             <Header onpage={1} />
             <div className="main" style={{ marginTop: "5vh" }}>
                 <div className="chart">
@@ -123,7 +107,7 @@ function StatisticsPage() {
 
                     {console.log(players)}
 
-                    <div style={{ overflowY: "scroll", height:"30vh", display: "flex", flexDirection: 'column', borderStyle:'ridge', borderColor:'gray'}}>
+                    <div style={{ overflowY: "scroll", height: "30vh", display: "flex", flexDirection: 'column', borderStyle: 'ridge', borderColor: 'gray' }}>
                         {players.map(p => (
 
                             <div className='individualChart' style={{ display: "flex", marginTop: "3vw" }}>

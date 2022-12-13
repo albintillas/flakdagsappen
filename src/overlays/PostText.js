@@ -71,7 +71,7 @@ function PostText({ profilePicture }) {
         <div class="MakePost">
             <ReturnButton
                 action='feed' />
-            <a style={{ fontSize: "6vw", position: "absolute", top: "1vh", marginLeft: "1vw" }}>Skriv Inlägg</a>
+            <a style={{ fontSize: "5vw", position: "absolute", top: "3vh", color: "white" }}>Skriv Inlägg</a>
             <button type='submit' onClick={makePost} style={{
                 position: "absolute",
                 top: "1vh",
@@ -116,7 +116,7 @@ function PostText({ profilePicture }) {
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-                <a style={{ width: "100%" }}>{charactersLeft} characters left to write</a>
+                <a style={{ width: "100%" }}>{charactersLeft} karaktärer kvar att skriva</a>
             </div>
         </div>
     )
