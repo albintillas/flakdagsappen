@@ -4,10 +4,12 @@ import ReturnButton from '../components/ReturnButton.js';
 import { useState } from 'react'
 import postImg2 from '..//images/test2.png';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 // In Progress, Joel
 
 function PostText({ profilePicture }) {
     const navigate = useNavigate();
+    let userToken = localStorage.getItem('token');
     const [textString, setTextString] = useState('')
     var textStringHasContent = textString.split(" ").join("").length > 0;
     var charactersLeft = 60 - textString.length
@@ -31,11 +33,24 @@ function PostText({ profilePicture }) {
 
     }
 
-    console.log("TextString has content: " + textStringHasContent)
     function makePost() {
         if (textStringHasContent) {
             // Insert kod för ett inlägg
-            navigate("/feed")
+            axios.post('https://flakdag.azurewebsites.net/api/data/addfeed', { token: userToken, text: textString })
+                .then((response) => {
+                    // Handle the successful response from the API
+                    if (response.data.success) {
+                        console.log("Upload successfull: " + response.data.success)
+                        navigate("/feed")
+                    }
+                    else {
+                        console.log("An error has occured on upload")
+                    }
+                })
+                .catch((error) => {
+                    // Handle any errors that occurred during the request
+                    console.log("An error has occured on upload, error type:\n" + error)
+                });
         }
     }
 

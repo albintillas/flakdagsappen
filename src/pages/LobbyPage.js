@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import UnitsDisplay from '../components/UnitsDisplay'
 import testimage from '../images/pfpTest.png'
+import testimage2 from '../images/Test.png'
 import axios from 'axios';
 import Swal from 'sweetalert2'
 
@@ -169,7 +170,7 @@ function LobbyPage() {
             
             <div className="PFPandUnitsDisplay">
              
-                    <img src={testimage} id='lobbyImage'></img>
+                    <img src={testimage2} id='lobbyImage'></img>
              
                     <UnitsDisplay count={units}/>
                 <div id='unitsText'>Enheter</div>
@@ -204,7 +205,7 @@ function LobbyPage() {
                 {players.map(p => (
                     <tr>
                         <td style={{alignItems:"center", display: "flex", textAlign: "left", height: "18vw", width: "60vw", borderBottom: "1vw solid #EEEEEE", borderRight: "1vw solid #EEEEEE"}}>
-                            <img src={p.profileImage} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>{p.name}</td>
+                            <img src={testimage2} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>{p.name}</td>
                         <td style={{textAlign:"center", borderBottom: "1vw solid #EEEEEE", fontSize: "5vw", fontFamily:'Merriweather Sans'}}>{p.units.length}</td>
                     </tr>
                             

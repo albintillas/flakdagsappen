@@ -3,11 +3,14 @@
 
 import '../App.css';
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
 const UploadImage = ({ size, uploadNow, isPost }) => {
 
+  const navigate = useNavigate();
+  let userToken = localStorage.getItem('token');
   const [selectedImage, setSelectedImage] = useState(null);
   useEffect(() => {
 
@@ -15,27 +18,46 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
 
   console.log("MakePost button has been hit: " + uploadNow)
   if (uploadNow) {
-    // API, based on whether image is to be profile picture or post
-    let ApiLink;
-    if (isPost) {
-      ApiLink = 'https://flakdag.azurewebsites.net/api/Data/UploadFileFormFile'
-    } else {
-      ApiLink = ''
-    }
-    // Create a FormData object to store the file
     const formData = new FormData();
-    // Add the file to the FormData object
-    formData.append('file', selectedImage);
-    // Upload the image to server
-    axios.post(ApiLink, formData)
-      .then((response) => {
-        // Handle the successful response from the API
-        console.log("Upload successfull: " + response.data.success)
-      })
-      .catch((error) => {
-        // Handle any errors that occurred during the request
-        console.log("An error has occured on upload, error type:\n" + error)
-      });
+    if (isPost) {
+      // Add the file to the FormData object
+      formData.append('image', selectedImage);
+      console.log(formData)
+      axios.post('https://flakdag.azurewebsites.net/api/data/addfeed', { token: userToken }, formData)
+        .then((response) => {
+          // Handle the successful response from the API
+          if (response.data.success) {
+            console.log("Upload successfull: " + response.data.success)
+            navigate("/feed")
+          }
+          else {
+            console.log("An error has occured on upload")
+          }
+        })
+        .catch((error) => {
+          // Handle any errors that occurred during the request
+          console.log("An error has occured on upload, error type:\n" + error)
+        });
+    }
+    else {
+      formData.append('profileImage', selectedImage);
+      console.log("testin")
+      axios.post("https://flakdag.azurewebsites.net/api/data/changeprofileimage", { token: userToken }, formData)
+        .then((response) => {
+          console.log("test3")
+          if (response.data.success) {
+            window.location.href = '/lobbyInfoPage';
+            console.log("Upload successfull: " + response.data.success)
+          }
+          else {
+            console.log("An error has occured on upload")
+          }
+        }).catch((error) => {
+          // Handle any errors that occurred during the request
+          console.log("An error has occured on upload, error type:\n" + error)
+        });
+      console.log("test2")
+    }
   }
 
   return (
