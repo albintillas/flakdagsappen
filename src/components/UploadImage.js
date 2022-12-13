@@ -69,6 +69,7 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
       backgroundColor: 'lightgray',
       borderRadius: '50%',
       display: 'inline-block',
+      position: 'absolute',
       textAlign: 'center',
 
     }}>
@@ -77,6 +78,7 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
         type="file"
         name="myImage"
         style={{
+          position: 'absolute',
           marginLeft: 'auto',
           marginRight: 'auto',
           left: '0',

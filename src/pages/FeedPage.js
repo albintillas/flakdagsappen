@@ -21,11 +21,6 @@ function FeedPage() {
 
     /* ----- Code above implemented for swipe function ----- */
 
-    const [units, setUnits] = useState(0);
-
-    const [pin, setPin] = useState(0);
-
-    const [players, setPlayers] = useState([]);
 
     const [feed, setFeed] = useState([]);
 
@@ -83,13 +78,13 @@ function FeedPage() {
 
                 <div id='feedScrollDiv'>
                 {feed.map(f => (
-
-                    <Post 
-                    profilePicture={testimage2}
-                    postContent={f.text}
-                    contentIsImg={false}
-                    />    
-
+                    <div style={{borderStyle:'groove', padding:'2vw'}}>
+                        <Post 
+                        profilePicture={testimage2}
+                        postContent={f.text}
+                        contentIsImg={false}
+                        />    
+                    </div>
                 ))
 
                 }
