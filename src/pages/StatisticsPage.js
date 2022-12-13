@@ -31,7 +31,9 @@ time[12] = startTime + 12;
 
 function StatisticsPage() {
 
+    /* ----- Code below implemented for swipe function ----- */
     const swipe = SwipeFunction(1);
+    /* ----- Code above implemented for swipe function ----- */
 
 
     const [players, setPlayers] = useState([]);
