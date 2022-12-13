@@ -6,7 +6,9 @@ import img2 from '..//images/Test.png';
 import postImg1 from '..//images/test3.png';
 import postImg2 from '..//images/test2.png';
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import testimage2 from '../images/Test.png'
 
 
 // In progress, Joel
@@ -32,6 +34,45 @@ function FeedPage() {
     }
     /* ----- Code above implemented for swipe function ----- */
 
+    const [units, setUnits] = useState(0);
+
+    const [pin, setPin] = useState(0);
+
+    const [players, setPlayers] = useState([]);
+
+    const [feed, setFeed] = useState([]);
+
+    //let token = localStorage.getItem('token'); 
+    let token = 'da4bc73b-65c6-4cb7-be0e-454bcdfbe694f260ce30-e63f-4ad0-8c94-c46aa4c40ece'; 
+
+    const WAIT_TIME = 3000;
+
+      useEffect(() => {
+            axios.post("https://flakdag.azurewebsites.net/api/data/getfeed", { token }).then(res => {
+                //console.log(res) 
+                if(res.data.success){
+                    setFeed(res.data.feed)
+                    console.log(res.data.feed)
+                }
+            })
+      }, [feed]); 
+ 
+/* 
+      useEffect(() => {
+        const id = setInterval(() => {
+            axios.post("https://flakdag.azurewebsites.net/api/data/getfeed", { token }).then(res => {
+                //console.log(res) 
+                if(res.data.success){
+                    setFeed(res.data.feed)
+                    console.log(res.data.feed)
+                }
+            })
+            
+        }, WAIT_TIME);
+        return () => clearInterval(id);
+      }, [feed]); 
+ */
+
     return (
         <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header onpage={3} />
@@ -53,57 +94,16 @@ function FeedPage() {
                         action='postText'
                     />
                 </div>
+
                 <div id='feedScrollDiv'>
-                    <Post
-                        profilePicture={img1}
-                        postContent={"Kud vad kul det är med flakdag!"}
-                        contentIsImg={false}
-                    />
-                    <Post
-                        profilePicture={img1}
-                        postContent={postImg1}
-                        contentIsImg={true}
-                    />
-                    <Post
-                        profilePicture={img2}
-                        postContent={'"Nioende för dagen" -Teo Hedelin'}
-                        contentIsImg={false}
-                    />
-                    <Post
-                        profilePicture={img1}
-                        postContent={postImg2}
-                        contentIsImg={true}
-                    />
-                    <Post
-                        profilePicture={img1}
-                        postContent={"Lär ju lira lite fotboll och inte skada oss senare"}
-                        contentIsImg={false}
-                    />
-                    <Post
-                        profilePicture={img1}
-                        postContent={"#minnesluckaefter20"}
-                        contentIsImg={false}
-                    />
-                    <Post
-                        profilePicture={img1}
-                        postContent={postImg1}
-                        contentIsImg={true}
-                    />
-                    <Post
-                        profilePicture={img2}
-                        postContent={'Ja hej'}
-                        contentIsImg={false}
-                    />
-                    <Post
-                        profilePicture={img1}
-                        postContent={postImg2}
-                        contentIsImg={true}
-                    />
-                    <Post
-                        profilePicture={img1}
-                        postContent={"Hhahahahahahahahahahahhahahaha"}
-                        contentIsImg={false}
-                    />  
+                {feed.map(f => (
+                    <tr>
+                        <td style={{alignItems:"center", display: "flex", textAlign: "left", height: "18vw", width: "60vw", borderBottom: "1vw solid #EEEEEE", borderRight: "1vw solid #EEEEEE"}}>
+                            <img src={testimage2} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>{f.text}</td>
+                    </tr>      
+                        ))
+
+                        }
                 </div>
                 
             </div>

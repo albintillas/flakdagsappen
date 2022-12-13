@@ -112,7 +112,7 @@ function LobbyPage() {
         }
         
     } 
-/* 
+
     useEffect(()=>{
         if(token) {
         
@@ -134,10 +134,10 @@ function LobbyPage() {
             })
         }
       }, [])
-  */
-      const WAIT_TIME = 300;
+  
+      const WAIT_TIME = 3000;
 
-      useEffect(() => {
+      /* useEffect(() => {
         const id = setInterval(() => {
             axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
                 //console.log(res) 
@@ -158,7 +158,7 @@ function LobbyPage() {
         }, WAIT_TIME);
         return () => clearInterval(id);
       }, [units]); 
-      
+       */
       players.map(p => (
         unitsTotal += p.units.length
     ))
