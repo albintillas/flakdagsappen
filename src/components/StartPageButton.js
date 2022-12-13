@@ -10,7 +10,10 @@ const Button = ({ text, buttonColor, textColor,textDecoration ,action }) =>{
             height: '18vw',
             width: '75vw',
             borderRadius: '15vw',
-            marginTop: '5vw'
+            marginTop: '5vw',
+            display:'flex',
+            flexDirection:'column',
+            alignItems: 'center'
             }}>
         <Link to={"/" + action} style={{
 

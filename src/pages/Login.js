@@ -43,7 +43,7 @@ function Login(){
     }
     
 return(
-    <div class='createGameContainer'>
+    <div class='createGameContainer' style={{height:'100vh'}}>
        <ReturnButton action="Choose"></ReturnButton>
        <p id='headers'>Återanslut till Flakdag</p>
 

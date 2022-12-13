@@ -59,7 +59,7 @@ function CreateGamePage(){
     
 
   return(
-  <div className="createGameContainer">
+  <div className="createGameContainer" style={{height:'99vh'}}>
     <div className="createGameReturn">
       <ReturnButton 
       text='Return' 
@@ -69,7 +69,7 @@ function CreateGamePage(){
     </div>
     <p id='headers' style={{
       fontSize:'10vw'
-    }}>Create Flakdag!</p>
+    }}>Skapa Flakdag!</p>
 
     <form className="createGameForm" id="createForm">
       <UploadImage class = "createGameImage" size = '60 %'/>

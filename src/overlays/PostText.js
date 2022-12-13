@@ -68,7 +68,7 @@ function PostText({ profilePicture }) {
     }
 
     return (
-        <div class="MakePost">
+        <div class="MakePost" style={{height:'100vh'}}>
             <ReturnButton
                 action='feed' />
             <a style={{ fontSize: "5vw", position: "absolute", top: "3vh", color: "white" }}>Skriv Inlägg</a>
@@ -90,17 +90,19 @@ function PostText({ profilePicture }) {
 
             <div className="Post"
                 style={{
-                    margin: "1vh 20% 1vh 0",
+                    margin: "7vh 20% 1vh 3vw",
                     width: "80%",
-                    padding: "2%"
+                    padding: "2%",
+                    display: 'flex',
+                    flexDirection: 'row'
                 }}>
-                <div className="User" style={{ display: "inline-block", width: "20%" }}>
+                <div className="User" style={{ display: "inline-block", width: "20%",alignSelf:'center', marginRight:'4vw' }}>
                     <div className="Profilepicture" style={{ display: "inline-block" }}>
                         <img src={profilePicture} alt='pfp'
                             style={{ height: "15vw", width: "15vw", objectFit: "cover", borderRadius: "50%" }} />
                     </div>
-                    <a>:</a>
                 </div>
+                
                 <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
                     <textarea rows='4' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
                         width: "90%",

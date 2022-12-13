@@ -63,7 +63,7 @@ function JoinGamePage(){
 
 
    return(
-<div>
+<div style={{height:'100vh'}}>
    <ReturnButton action=""></ReturnButton>
 
    <p id='headers'>Gå med i lobby!</p>

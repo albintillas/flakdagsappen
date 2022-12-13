@@ -11,7 +11,7 @@ function StartPage(){
     return (
 
         <body>
-        <div id='body'>
+        <div id='body' style={{height:'93vh'}}>
             <div style={{ 
             
                 marginTop:'15vw',
@@ -43,6 +43,7 @@ function StartPage(){
             <div style={{
                 display:'flex',
                 flexDirection:'column',
+                alignItems:'center',
                 marginLeft:'19vw',
                 marginRight:'19vw'
             }}>

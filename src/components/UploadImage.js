@@ -68,21 +68,21 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
       width: '40vw',
       backgroundColor: 'lightgray',
       borderRadius: '50%',
-      display: 'inline-block'
+      display: 'inline-block',
+      textAlign: 'center',
+
     }}>
 
       <input
         type="file"
         name="myImage"
         style={{
-          position: 'absolute',
           marginLeft: 'auto',
           marginRight: 'auto',
           left: '0',
           right: '0',
           textAlign: 'center',
           opacity: '0.0',
-          position: 'absolute',
           height: '40vw',
           width: '40vw'
         }}

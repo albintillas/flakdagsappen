@@ -9,8 +9,13 @@ function Post({ profilePicture, postContent, contentIsImg }) {
         style={{ height: "12vw", width: "12vw", objectFit: "cover", borderRadius: "50%" }} />;
 
     var contentPreview;
-    if (contentIsImg) {
-        contentPreview =
+
+    if(postContent == ""){
+        if (contentIsImg == "") {
+            return(null);
+        }
+        else{
+           contentPreview =
             <Link to={"/fullImg"}>
                 <img src={postContent} alt='pfp' style={{
                     width: "100%",
@@ -19,7 +24,8 @@ function Post({ profilePicture, postContent, contentIsImg }) {
                     objectFit: "cover",
                     borderRadius: "5%",
                 }} />
-            </Link>
+            </Link> 
+        }
     }
     else {
         if (postContent.length > 80) {

@@ -14,7 +14,7 @@ function PostImg() {
     }
 
     return (
-        <div className="MakePost">
+        <div className="MakePost" style={{height:'100vh'}}>
             <ReturnButton
                 action='feed' />
             <a style={{ fontSize: "5vw", position: "absolute", top: "3vh", color: "white" }}>Ta Foto</a>

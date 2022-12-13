@@ -9,29 +9,16 @@ import { useNavigate } from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import testimage2 from '../images/Test.png'
+import SwipeFunction from '../components/SwipeFunction.js';
+
 
 
 // In progress, Joel
 function FeedPage() {
 
     /* ----- Code below implemented for swipe function ----- */
-    const navigate = useNavigate();
-    const [touchStart, setTouchStart] = useState(null)
-    const [touchEnd, setTouchEnd] = useState(null)
-    // the required distance between touchStart and touchEnd to be detected as a swipe
-    const minSwipeDistance = 100
-    const onTouchStart = (e) => {
-        setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
-        setTouchStart(e.targetTouches[0].clientX)
-    }
-    const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return
-        const distance = touchStart - touchEnd
-        const isRightSwipe = distance < -minSwipeDistance
-        // add your conditional logic here
-        if (isRightSwipe) navigate("/lobby")
-    }
+    const swipe = SwipeFunction(3);
+
     /* ----- Code above implemented for swipe function ----- */
 
     const [units, setUnits] = useState(0);
@@ -42,12 +29,11 @@ function FeedPage() {
 
     const [feed, setFeed] = useState([]);
 
-    //let token = localStorage.getItem('token'); 
-    let token = 'da4bc73b-65c6-4cb7-be0e-454bcdfbe694f260ce30-e63f-4ad0-8c94-c46aa4c40ece'; 
+    let token = localStorage.getItem('token'); 
+    //let token = 'da4bc73b-65c6-4cb7-be0e-454bcdfbe694f260ce30-e63f-4ad0-8c94-c46aa4c40ece'; 
 
-    const WAIT_TIME = 3000;
 
-      useEffect(() => {
+    useEffect(() => {
             axios.post("https://flakdag.azurewebsites.net/api/data/getfeed", { token }).then(res => {
                 //console.log(res) 
                 if(res.data.success){
@@ -55,7 +41,7 @@ function FeedPage() {
                     console.log(res.data.feed)
                 }
             })
-      }, [feed]); 
+      }, []); 
  
 /* 
       useEffect(() => {
@@ -74,7 +60,7 @@ function FeedPage() {
  */
 
     return (
-        <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+        <div onTouchStart={swipe.onTouchStart} onTouchMove={swipe.onTouchMove} onTouchEnd={swipe.onTouchEnd}>
             <Header onpage={3} />
             
             <div className="main" style={{ height:'94vh', marginTop: "0vh" }}>
@@ -97,13 +83,16 @@ function FeedPage() {
 
                 <div id='feedScrollDiv'>
                 {feed.map(f => (
-                    <tr>
-                        <td style={{alignItems:"center", display: "flex", textAlign: "left", height: "18vw", width: "60vw", borderBottom: "1vw solid #EEEEEE", borderRight: "1vw solid #EEEEEE"}}>
-                            <img src={testimage2} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>{f.text}</td>
-                    </tr>      
-                        ))
 
-                        }
+                    <Post 
+                    profilePicture={testimage2}
+                    postContent={f.text}
+                    contentIsImg={false}
+                    />    
+
+                ))
+
+                }
                 </div>
                 
             </div>
