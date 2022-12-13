@@ -70,7 +70,7 @@ function StatisticsPage() {
 
 
     return (
-        <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+        <div style={{height:'95vh'}} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header onpage={1} />
             <div className="main" style={{ marginTop: "5vh" }}>
                 <div className="chart">
