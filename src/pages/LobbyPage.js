@@ -162,8 +162,18 @@ function LobbyPage() {
       players.map(p => (
         unitsTotal += p.units.length
     ))
-    
 
+//         const k = new Array();
+
+//     for (var i=0; i<players.length; i++ )
+// {
+//     k = i.units.length;
+// //         for (var j=0; j<units[i].length; j++ )
+// //   {
+// //     alert ( players[i][j][0] + " is a " + players[i][j][1] + " year old " + players[i][j][2] );
+// //   }
+// }
+//       console.log(k)
     return (
         <div class = 'main' onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <Header onpage={2} />
@@ -171,7 +181,7 @@ function LobbyPage() {
             <div className="PFPandUnitsDisplay">
              
                     <img src={testimage2} id='lobbyImage'></img>
-             
+                    
                     <UnitsDisplay count={units}/>
                 <div id='unitsText'>Enheter</div>
                 
