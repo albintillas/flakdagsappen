@@ -92,9 +92,7 @@ function LobbyPage() {
             return;  
         }
     } 
-    
-    const [sortedPlayers, setSortedPlayers] = useState([]);
-    const [sortedUnits, setSortedUnits] = useState([]);
+
 
    /*  useEffect(()=>{
             if(token) {
@@ -130,7 +128,7 @@ function LobbyPage() {
         }
       }, [])
   
-      const WAIT_TIME = 3000;
+      const WAIT_TIME = 1000;
 
       useEffect(() => {
         const id = setInterval(() => {
@@ -144,7 +142,7 @@ function LobbyPage() {
         return () => clearInterval(id);
       }, [units]); 
        
-      sortedPlayers.map(p => (
+      players.map(p => (
         unitsTotal += p.units.length
     ))
 
