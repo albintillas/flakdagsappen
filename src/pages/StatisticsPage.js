@@ -45,7 +45,7 @@ function StatisticsPage() {
 
         if (token) {
 
-            axios.post("https://flakdag.azurewebsites.net/api/lobby/getlobby", { token }).then(res => {
+            axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
                 console.log(res)
                 if (res.data.success) {
                     setPlayers(res.data.players)

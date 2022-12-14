@@ -44,9 +44,9 @@ function StartPage(){
 
             <h1 className='startMainText'>Flakdag</h1>
 
-            <p className='startSubText'>"Världsberömt" - Filosof</p>
+            <p className='startSubText'>"Bra härj" - Student</p>
 
-            <p className='startSubText'>09/11-2022</p>
+            <p className='startSubText'>09/10-2022</p>
 
             <div style={{
                 display:'flex',
