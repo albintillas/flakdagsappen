@@ -36,7 +36,10 @@ function PostText({ profilePicture }) {
     function makePost() {
         if (textStringHasContent) {
             // Insert kod för ett inlägg
-            axios.post('https://flakdag.azurewebsites.net/api/data/addfeed', { token: userToken, text: textString })
+            const formData = new FormData();
+            formData.append('token', userToken);
+            formData.append('text', textString);
+            axios.post('https://flakdag.azurewebsites.net/api/data/addfeed', formData)
                 .then((response) => {
                     // Handle the successful response from the API
                     if (response.data.success) {
@@ -68,7 +71,7 @@ function PostText({ profilePicture }) {
     }
 
     return (
-        <div class="MakePost" style={{height:'100vh'}}>
+        <div class="MakePost" style={{ height: '100vh' }}>
             <ReturnButton
                 action='feed' />
             <a style={{ fontSize: "5vw", position: "absolute", top: "3vh", color: "white" }}>Skriv Inlägg</a>
@@ -96,13 +99,13 @@ function PostText({ profilePicture }) {
                     display: 'flex',
                     flexDirection: 'row'
                 }}>
-                <div className="User" style={{ display: "inline-block", width: "20%",alignSelf:'center', marginRight:'4vw' }}>
+                <div className="User" style={{ display: "inline-block", width: "20%", alignSelf: 'center', marginRight: '4vw' }}>
                     <div className="Profilepicture" style={{ display: "inline-block" }}>
                         <img src={profilePicture} alt='pfp'
                             style={{ height: "15vw", width: "15vw", objectFit: "cover", borderRadius: "50%" }} />
                     </div>
                 </div>
-                
+
                 <div className="Content" style={{ display: "inline-block", width: "80%", wordWrap: "break-word" }}>
                     <textarea rows='4' placeholder='Vad gör du just nu?' onChange={changeInput} maxLength="60" style={{
                         width: "90%",
