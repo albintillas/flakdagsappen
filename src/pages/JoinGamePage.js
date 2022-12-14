@@ -41,7 +41,7 @@ function JoinGamePage(){
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
             setUploadStatus(true);
-            //window.location.href= '/lobbyInfoPage';
+            window.location.href= '/lobbyInfoPage';
 
            
 
@@ -71,7 +71,7 @@ function JoinGamePage(){
 <form className="createGameForm" id="createForm">
    <UploadImage uploadNow={uploadStatus} isPost={false}/>
    <div class="enterText">
-      <div class='formText'>Namn:</div>
+      <div class='formText'>Ditt namn:</div>
       <input onChange={event => setName(event.target.value)} value={name} className="form-control" placeholder="Namn...">
       </input>
    </div>
