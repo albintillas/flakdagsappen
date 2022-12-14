@@ -42,6 +42,8 @@ function JoinGamePage() {
             if (res.data.success) {
                localStorage.setItem('token', res.data.userToken);
                setUploadStatus(uploadStatus + 1);
+               window.location.href = '/lobby';
+
 
             } else {
 
