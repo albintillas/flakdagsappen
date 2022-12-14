@@ -57,6 +57,7 @@ function PostText({ profilePicture }) {
         }
     }
 
+    /*
     // Select the textarea and form elements
     const textarea = document.querySelector('textarea');
     if (textarea != null) {
@@ -69,6 +70,7 @@ function PostText({ profilePicture }) {
             }
         })
     }
+    */
 
     return (
         <div class="MakePost" style={{ height: '100vh' }}>
