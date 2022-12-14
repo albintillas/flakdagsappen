@@ -56,7 +56,7 @@ function StatisticsPage() {
 
     const WAIT_TIME = 1000;
 
-    useEffect(() => {
+  /*   useEffect(() => {
         const id = setInterval(() => {
             axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
                 console.log(res)
@@ -67,7 +67,7 @@ function StatisticsPage() {
         }, WAIT_TIME);
         return () => clearInterval(id);
       }, [players]); 
-
+ */
 
     return (
         <div style={{ height: '95vh' }} onTouchStart={swipe.onTouchStart} onTouchMove={swipe.onTouchMove} onTouchEnd={swipe.onTouchEnd}>
