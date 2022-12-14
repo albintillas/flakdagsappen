@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import PinInput from '../components/PinInput';
 import ReturnButton from '../components/ReturnButton';
 import Button from '../components/Button.js';
 import axios from 'axios';
 import Swal from 'sweetalert2'
 import UploadImage from '../components/UploadImage';
+import theme from '..//sound/HTTYD.mp3';
 
 
 //Linus 
@@ -61,6 +62,7 @@ function JoinGamePage() {
 
    return (
       <div style={{ height: '100vh' }}>
+         <audio src={theme} autoplay loop />
          <ReturnButton action=""></ReturnButton>
 
          <p id='headers'>Gå med i lobby!</p>

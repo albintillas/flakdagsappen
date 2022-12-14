@@ -181,7 +181,7 @@ function LobbyPage() {
             <div id='divUsers'>
            
             <table className="table">
-            <tr style={{position: 'sticky',
+            <tr style={{position: '',
                 backgroundColor:'transparent',
                 zIndex: 1,
                 top: -3}}>
