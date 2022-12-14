@@ -1,7 +1,6 @@
 // GK
 // Klicka på den gråa cirkeln för att välja bild på enhet
 
-import '../App.css';
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -17,13 +16,14 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
   }, [selectedImage])
 
   console.log("MakePost button has been hit: " + uploadNow)
-  if (uploadNow) {
+  if (uploadNow === 1) {
     if (isPost) {
       // Add the file to the FormData object
       const formData = new FormData();
       formData.append('token', userToken);
       formData.append('image', selectedImage);
       console.log(formData)
+      uploadNow++
       axios.post('https://flakdag.azurewebsites.net/api/data/addfeed', formData)
         .then((response) => {
           // Handle the successful response from the API
@@ -71,7 +71,6 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
       backgroundColor: 'lightgray',
       borderRadius: '50%',
       display: 'inline-block',
-      position: 'absolute',
       textAlign: 'center',
 
     }}>

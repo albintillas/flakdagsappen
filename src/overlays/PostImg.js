@@ -7,10 +7,10 @@ import { useNavigate } from 'react-router-dom';
 
 function PostImg() {
     const navigate = useNavigate();
-    const [uploadStatus, setUploadStatus] = useState(false);
+    const [uploadStatus, setUploadStatus] = useState(0);
     function makePost() {
         // Insert kod för ett inlägg
-        setUploadStatus(true);
+        setUploadStatus(uploadStatus + 1);
     }
 
     return (

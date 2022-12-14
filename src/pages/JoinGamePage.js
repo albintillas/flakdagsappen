@@ -17,7 +17,7 @@ function JoinGamePage(){
 
    const [pin, setPin] = useState([]);
 
-   const [uploadStatus, setUploadStatus] = useState(false);
+   const [uploadStatus, setUploadStatus] = useState(0);
 
 
    function joinLobby(){
