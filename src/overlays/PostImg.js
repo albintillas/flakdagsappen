@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import '../App.css';
 import ReturnButton from '../components/ReturnButton.js';
 import UploadImage from '../components/UploadImage';
@@ -14,7 +14,7 @@ function PostImg() {
     }
 
     return (
-        <div className="MakePost" style={{height:'100vh'}}>
+        <div className="MakePost" style={{ height: '100vh' }}>
             <ReturnButton
                 action='feed' />
             <a style={{ fontSize: "5vw", position: "absolute", top: "3vh", color: "white" }}>Ta Foto</a>
@@ -32,7 +32,11 @@ function PostImg() {
                 PUBLICERA
             </button>
             <div style={{ width: "100%", height: "1px", backgroundColor: "black" }} />
-            <UploadImage uploadNow={uploadStatus} isPost={true}/>
+            <div style={{ textAlign: "center", marginTop: "2vh" }}>
+                <UploadImage uploadNow={uploadStatus} isPost={true} />
+                <br></br>
+                <h1 style={{ color: "white" }}>Klicka på cirkeln</h1>
+            </div>
         </div>
     )
 }
