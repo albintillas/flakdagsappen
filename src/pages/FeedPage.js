@@ -32,7 +32,7 @@ function FeedPage() {
         axios.post("https://flakdag.azurewebsites.net/api/data/getfeed", { token }).then(res => {
             //console.log(res) 
             if (res.data.success) {
-                setFeed(res.data.feed)
+                setFeed(res.data.feed.sort(res.data.feed.entryDate))
                 console.log(res.data.feed)
             }
         })

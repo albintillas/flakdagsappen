@@ -13,7 +13,7 @@ function FullImg() {
     img.src = "https://flakdag.azurewebsites.net/api/data/image?id=" + src;
     let fixedHeight = (img.height / img.width) * 100;
     const downloadImage = () => {
-        saveAs(img, 'image.jpg') // Put your image url here.
+        saveAs(downloadSymbol, src + '.jpg') // Put your image url here.
     }
 
     return (
