@@ -18,7 +18,7 @@ function Post({ profilePicture, postContent, imageContent }) {
         else{
            contentPreview =
             <Link to={'/fullImg/' + imageContent}>
-                <img src={"https://flakdag.azurewebsites.net/api/data/image?id=" + imageContent} alt='pfp' style={{
+                <img src={"https://flakdag.azurewebsites.net/api/data/image?id=" + imageContent} alt='failed to load' style={{
                     width: "100%",
                     maxHeight: "30vh",
                     overflow: "hidden",

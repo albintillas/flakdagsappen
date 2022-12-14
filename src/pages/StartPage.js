@@ -20,7 +20,7 @@ function StartPage(){
                 cancelButtonText: 'Nej'
               }).then((result) => {  
                 if (!result.isConfirmed) { 
-                window.location = "white";
+                window.location = "https://www.youtube.com/channel/UChGJGhZ9SOOHvBB0Y4DOO_w";
                 
              };     
         })
