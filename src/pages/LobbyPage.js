@@ -92,9 +92,7 @@ function LobbyPage() {
             return;  
         }
     } 
-    
-    const [sortedPlayers, setSortedPlayers] = useState([]);
-    const [sortedUnits, setSortedUnits] = useState([]);
+
 
    /*  useEffect(()=>{
             if(token) {
@@ -130,7 +128,7 @@ function LobbyPage() {
         }
       }, [])
   
-      const WAIT_TIME = 3000;
+      const WAIT_TIME = 1000;
 
       useEffect(() => {
         const id = setInterval(() => {
@@ -144,7 +142,7 @@ function LobbyPage() {
         return () => clearInterval(id);
       }, [units]); 
        
-      sortedPlayers.map(p => (
+      players.map(p => (
         unitsTotal += p.units.length
     ))
 
@@ -179,7 +177,7 @@ function LobbyPage() {
             <div id='divUsers'>
            
             <table className="table">
-            <tr style={{position: 'sticky',
+            <tr style={{position: '',
                 backgroundColor:'transparent',
                 zIndex: 1,
                 top: -3}}>
