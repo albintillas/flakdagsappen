@@ -35,11 +35,11 @@ function StatisticsPage() {
     const swipe = SwipeFunction(1);
     /* ----- Code above implemented for swipe function ----- */
 
+    let token = localStorage.getItem('token');    //Ej hårdkodad
 
     const [players, setPlayers] = useState([]);
 
     useEffect(() => {
-        let token = localStorage.getItem('token');    //Ej hårdkodad
 
         //let token = "4a617950-3811-4367-b986-d94097132ece"
 
@@ -53,6 +53,20 @@ function StatisticsPage() {
             })
         }
     }, [])
+
+    const WAIT_TIME = 1000;
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
+                console.log(res)
+                if (res.data.success) {
+                    setPlayers(res.data.players)
+                }
+            })
+        }, WAIT_TIME);
+        return () => clearInterval(id);
+      }, [players]); 
 
 
     return (

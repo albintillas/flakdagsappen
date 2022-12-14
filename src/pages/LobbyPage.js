@@ -41,13 +41,15 @@ function LobbyPage() {
             cancelButtonText: 'Nej'
           }).then((result) => {  
               if (result.isConfirmed) {    
-                axios.post("https://flakdag.azurewebsites.net/api/data/undounit", { token }).then(res => {})
+                axios.post("https://flakdag.azurewebsites.net/api/data/undounit", { token }).then(res => {}).then(res => {
+                    axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
+                        if(res.data.success){
+                            setUnits(res.data.units.length);
+                        }
+                    })  
+                })
                 
-                axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
-                    if(res.data.success){
-                        setUnits(res.data.units.length);
-                    }
-                })  
+                
                }
           });
     }
@@ -56,13 +58,15 @@ function LobbyPage() {
         if(units < 23){
             if(token) {
         
-                axios.post("https://flakdag.azurewebsites.net/api/data/addunit", { token }).then(res => {})
-                
-                axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
-                    if(res.data.success){
-                        setUnits(res.data.units.length);
-                    }
+                axios.post("https://flakdag.azurewebsites.net/api/data/addunit", { token }).then(res => {}).then(res => {
+                    axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
+                        if(res.data.success){
+                            setUnits(res.data.units.length);
+                        }
+                    })
                 })
+                
+                
             }
         }
         else if (units == 23){
