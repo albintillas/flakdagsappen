@@ -14,6 +14,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import LobbyInfoPage from './pages/LobbyInfoPage';
 import Login from './pages/Login';
 import Choose from './pages/Choose';
+import White from './pages/White';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/lobbyInfoPage" element={<LobbyInfoPage/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/choose" element={<Choose/>}/>
+        <Route path="/white" element={<White/>}/>
       </Routes>
     </BrowserRouter>
   );
