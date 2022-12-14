@@ -146,17 +146,8 @@ function LobbyPage() {
         unitsTotal += p.units.length
     ))
 
-//         const k = new Array();
+    
 
-//     for (var i=0; i<players.length; i++ )
-// {
-//     k = i.units.length;
-// //         for (var j=0; j<units[i].length; j++ )
-// //   {
-// //     alert ( players[i][j][0] + " is a " + players[i][j][1] + " year old " + players[i][j][2] );
-// //   }
-// }
-//       console.log(k)
     return (
         <div class = 'main' style={{height:'88.4vh'}} onTouchStart={swipe.onTouchStart} onTouchMove={swipe.onTouchMove} onTouchEnd={swipe.onTouchEnd}>
             <Header onpage={2} />
@@ -206,7 +197,7 @@ function LobbyPage() {
                         ))
 
                         }
-            
+
 
                 
             </table>
