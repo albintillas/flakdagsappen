@@ -41,7 +41,7 @@ function JoinGamePage(){
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
             setUploadStatus(true);
-            window.location.href= '/lobbyInfoPage';
+            //window.location.href= '/lobbyInfoPage';
 
            
 
