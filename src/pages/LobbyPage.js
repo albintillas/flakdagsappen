@@ -120,7 +120,7 @@ function LobbyPage() {
   
       const WAIT_TIME = 3000;
 
-      /* useEffect(() => {
+      useEffect(() => {
         const id = setInterval(() => {
             axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
                 //console.log(res) 
@@ -128,20 +128,10 @@ function LobbyPage() {
                     setPlayers(res.data.players)
                 }
             })
-            axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
-                if(res.data.success){
-                    setUnits(res.data.units.length);
-                }
-            })
-            axios.post("https://flakdag.azurewebsites.net/api/data/getflakdagmeta", { id: token }).then(res => {
-                if(res.data.success){
-                    setPin(res.data.flakmeta.pin);
-                }
-            })
         }, WAIT_TIME);
         return () => clearInterval(id);
       }, [units]); 
-       */
+       
       players.map(p => (
         unitsTotal += p.units.length
     ))

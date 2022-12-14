@@ -40,8 +40,8 @@ function JoinGamePage(){
         axios.post("https://flakdag.azurewebsites.net/api/lobby/signup", {pin:pin, name:name, pw:pw}).then(res => {
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
-            setUploadStatus(uploadStatus + 1);
-            //window.location.href= '/lobbyInfoPage';
+            setUploadStatus(true);
+            window.location.href= '/lobbyInfoPage';
 
            
 
@@ -71,7 +71,7 @@ function JoinGamePage(){
 <form className="createGameForm" id="createForm">
    <UploadImage uploadNow={uploadStatus} isPost={false}/>
    <div class="enterText">
-      <div class='formText'>Namn:</div>
+      <div class='formText'>Ditt namn:</div>
       <input onChange={event => setName(event.target.value)} value={name} className="form-control" placeholder="Namn...">
       </input>
    </div>
