@@ -17,6 +17,9 @@ function CreateGamePage(){
 
   const [password, setPassword] = useState([]);
 
+  const [uploadStatus, setUploadStatus] = useState(false);
+
+
   const current = new Date();
   const date = `${current.getFullYear()}-${current.getMonth()+1}-${current.getDate()}`;
 
@@ -41,8 +44,7 @@ function CreateGamePage(){
         axios.post("https://flakdag.azurewebsites.net/api/lobby/createflakdag", {flakdagname: "flakdag", pin: pin, pw: password, fddate: date, name: name}).then(res => {
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
-            window.location.href= '/lobbyInfoPage';
-
+            setUploadStatus(true);
           }
           else {
             Swal.fire({
@@ -72,7 +74,7 @@ function CreateGamePage(){
     }}>Skapa Flakdag!</p>
 
     <form className="createGameForm" id="createForm">
-      <UploadImage class = "createGameImage" size = '60 %'/>
+      <UploadImage size = '60 %' uploadNow={uploadStatus} isPost={false}/>
 
       
 
