@@ -15,20 +15,17 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
 
   }, [selectedImage])
 
-  console.log("MakePost button has been hit: " + uploadNow)
   if (uploadNow === 1) {
     if (isPost) {
       // Add the file to the FormData object
       const formData = new FormData();
       formData.append('token', userToken);
       formData.append('image', selectedImage);
-      console.log(formData)
       uploadNow++
       axios.post('https://flakdag.azurewebsites.net/api/data/addfeed', formData)
         .then((response) => {
           // Handle the successful response from the API
           if (response.data.success) {
-            console.log("Upload successfull: " + response.data.success)
             navigate("/feed")
           }
           else {
@@ -45,13 +42,11 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
       const formData = new FormData();
       formData.append('token', userToken);
       formData.append('profileImage', selectedImage);
-      console.log("testin")
       axios.post('https://flakdag.azurewebsites.net/api/data/changeprofileimage', formData)
         .then((response) => {
           console.log("test3")
           if (response.data.success) {
             window.location.href = '/lobby';
-            console.log("Upload successfull: " + response.data.success)
           }
           else {
             console.log("An error has occured on upload")
@@ -60,7 +55,6 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
           // Handle any errors that occurred during the request
           console.log("An error has occured on upload, error type:\n" + error)
         });
-      console.log("test2")
     }
   }
 
