@@ -45,6 +45,8 @@ function CreateGamePage(){
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
             setUploadStatus(uploadStatus + 1);
+            window.location.href = '/lobby';
+
           }
           else {
             Swal.fire({
@@ -98,7 +100,7 @@ function CreateGamePage(){
 
       {/* <button class = "createGameInput" id="submitButton" text="Create Game" onclick={createLobby} value="Create game" type='submit' buttonColor='#17D930' textDecoration='none' textColor='#F9F3F3' fontSize='7vw'>Create Game</button> */}
             
-      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={createLobby}>Create Game</button>
+      <button type="button" className = "createGameInput" id="submitButton" action='lobby' onClick={createLobby}>Skapa lobby</button>
 
         
   </form>
