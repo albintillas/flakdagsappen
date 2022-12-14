@@ -1,16 +1,30 @@
 // Albin
 
-import React from 'react'
+import React, {useEffect, useState} from 'react';
 import logo from '../images/logo.png'
 import logo1024 from '../images/logo1024.png'
 
 
 import StartPageButton from '../components/StartPageButton.js'
+import Swal from 'sweetalert2'
 
 
 
 function StartPage(){
-
+   
+    useEffect(()=>{
+            Swal.fire({  
+                title: 'Är du över 20 år gammal?',  
+                showCancelButton: true,  
+                confirmButtonText: `Ja`,  
+                cancelButtonText: 'Nej'
+              }).then((result) => {  
+                if (!result.isConfirmed) { 
+                window.location = "https://www.youtube.com/channel/UChGJGhZ9SOOHvBB0Y4DOO_w";
+                
+             };     
+        })
+    })
     return (
 
         <body>
@@ -28,15 +42,11 @@ function StartPage(){
 
                 ></img>
 
-
-                
-            
-
             <h1 className='startMainText'>Flakdag</h1>
 
-            <p className='startSubText'>"Världsberömt" - Filosof</p>
+            <p className='startSubText'>"Bra härj" - Student</p>
 
-            <p className='startSubText'>09/11-2022</p>
+            <p className='startSubText'>09/10-2022</p>
 
             <div style={{
                 display:'flex',

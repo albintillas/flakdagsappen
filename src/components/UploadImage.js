@@ -50,7 +50,7 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
         .then((response) => {
           console.log("test3")
           if (response.data.success) {
-            window.location.href = '/lobbyInfoPage';
+            window.location.href = '/lobby';
             console.log("Upload successfull: " + response.data.success)
           }
           else {
