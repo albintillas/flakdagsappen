@@ -17,7 +17,7 @@ const UploadImage = ({ size, uploadNow, isPost }) => {
   }, [selectedImage])
 
   console.log("MakePost button has been hit: " + uploadNow)
-  if (uploadNow) {
+  if (uploadNow === 1) {
     if (isPost) {
       // Add the file to the FormData object
       const formData = new FormData();

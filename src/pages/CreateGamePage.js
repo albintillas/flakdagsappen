@@ -17,7 +17,7 @@ function CreateGamePage(){
 
   const [password, setPassword] = useState([]);
 
-  const [uploadStatus, setUploadStatus] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState(0);
 
 
   const current = new Date();
@@ -44,7 +44,7 @@ function CreateGamePage(){
         axios.post("https://flakdag.azurewebsites.net/api/lobby/createflakdag", {flakdagname: "flakdag", pin: pin, pw: password, fddate: date, name: name}).then(res => {
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
-            setUploadStatus(true);
+            setUploadStatus(uploadStatus + 1);
           }
           else {
             Swal.fire({

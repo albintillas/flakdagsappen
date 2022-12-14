@@ -17,7 +17,7 @@ function JoinGamePage(){
 
    const [pin, setPin] = useState([]);
 
-   const [uploadStatus, setUploadStatus] = useState(false);
+   const [uploadStatus, setUploadStatus] = useState(0);
 
 
    function joinLobby(){
@@ -40,7 +40,7 @@ function JoinGamePage(){
         axios.post("https://flakdag.azurewebsites.net/api/lobby/signup", {pin:pin, name:name, pw:pw}).then(res => {
           if(res.data.success){
             localStorage.setItem('token', res.data.userToken);
-            setUploadStatus(true);
+            setUploadStatus(uploadStatus + 1);
             //window.location.href= '/lobbyInfoPage';
 
            
