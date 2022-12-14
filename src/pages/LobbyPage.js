@@ -92,11 +92,9 @@ function LobbyPage() {
             return;  
         }
     } 
-    
-    const [sortedPlayers, setSortedPlayers] = useState([]);
-    const [sortedUnits, setSortedUnits] = useState([]);
 
-    useEffect(()=>{
+
+   /*  useEffect(()=>{
             if(token) {
                 axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
                 //console.log(res) 
@@ -106,7 +104,7 @@ function LobbyPage() {
             })
             //setSortedUnits(res.data.players.sort((p1, p2) => (p1.units.length < p2.units.length) ? 1 : (p1.units.length > p2.units.length) ? -1 : 0)); 
         }
-        },[units])
+        },[units]) */
    
      useEffect(()=>{
         if(token) {
@@ -114,7 +112,7 @@ function LobbyPage() {
             axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
                 //console.log(res) 
                 if(res.data.success){
-                    setPlayers(res.data.players)
+                    setPlayers(res.data.players.sort((p1, p2) => (p1.units.length < p2.units.length) ? 1 : (p1.units.length > p2.units.length) ? -1 : 0)); 
                 }
             })
             axios.post("https://flakdag.azurewebsites.net/api/data/getunits", { token }).then(res => {
@@ -130,21 +128,21 @@ function LobbyPage() {
         }
       }, [])
   
-      const WAIT_TIME = 3000;
+      const WAIT_TIME = 1000;
 
       useEffect(() => {
         const id = setInterval(() => {
             axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
                 //console.log(res) 
                 if(res.data.success){
-                    setPlayers(res.data.players)
+                    setPlayers(res.data.players.sort((p1, p2) => (p1.units.length < p2.units.length) ? 1 : (p1.units.length > p2.units.length) ? -1 : 0)); 
                 }
             })
         }, WAIT_TIME);
         return () => clearInterval(id);
       }, [units]); 
        
-      sortedPlayers.map(p => (
+      players.map(p => (
         unitsTotal += p.units.length
     ))
 
@@ -179,7 +177,7 @@ function LobbyPage() {
             <div id='divUsers'>
            
             <table className="table">
-            <tr style={{position: 'sticky',
+            <tr style={{position: '',
                 backgroundColor:'transparent',
                 zIndex: 1,
                 top: -3}}>
@@ -188,7 +186,7 @@ function LobbyPage() {
             </tr>
             
 
-                {sortedPlayers.map(p => (
+                {players.map(p => (
                     <tr>
                         <td style={{alignItems:"center", display: "flex", textAlign: "left", height: "18vw", width: "60vw", borderBottom: "1vw solid #EEEEEE", borderRight: "1vw solid #EEEEEE"}}>
                             <img src={"https://flakdag.azurewebsites.net/api/data/image?id=" + p.profileImage} className='lobbyInfoPageImage' style={{marginLeft: "0%", marginRight:"10%", borderRadius:'50%'}}/>{p.name}</td>
