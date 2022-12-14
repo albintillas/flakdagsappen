@@ -14,7 +14,9 @@ function StartPage(){
    
     useEffect(()=>{
             Swal.fire({  
-                title: 'Är du över 20 år gammal?',  
+                title: 'Har du fyllt 20 år?', 
+                text:'För att bruka denna app måste du vara 20 år eller äldre',
+                icon: 'question',
                 showCancelButton: true,  
                 confirmButtonText: `Ja`,  
                 cancelButtonText: 'Nej'
