@@ -31,6 +31,9 @@ const SwipeFunction = (onpage) => {
             case 3:
                 if (isRightSwipe) navigate("/lobby");
                 break;
+            case 4:
+                if (isRightSwipe) navigate("/feed");
+                break;
         }
     };
 
