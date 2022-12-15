@@ -38,7 +38,8 @@ function FeedPage() {
         })
     }, []);
 
-    /* 
+    const WAIT_TIME = 2000;
+    
           useEffect(() => {
             const id = setInterval(() => {
                 axios.post("https://flakdag.azurewebsites.net/api/data/getfeed", { token }).then(res => {
@@ -52,7 +53,7 @@ function FeedPage() {
             }, WAIT_TIME);
             return () => clearInterval(id);
           }, [feed]); 
-     */
+    
 
     return (
         <div onTouchStart={swipe.onTouchStart} onTouchMove={swipe.onTouchMove} onTouchEnd={swipe.onTouchEnd}>
