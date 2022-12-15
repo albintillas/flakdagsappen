@@ -5,10 +5,10 @@ import Button from '../components/Button.js';
 import axios from 'axios';
 import Swal from 'sweetalert2'
 import UploadImage from '../components/UploadImage';
-import theme from '..//sound/HTTYD.mp3';
-
-
+import Cookies from 'js-cookie';
 //Linus 
+
+const theme = require('..//sound/HTTYD.mp3');
 
 function JoinGamePage() {
 
@@ -20,11 +20,11 @@ function JoinGamePage() {
 
    const [uploadStatus, setUploadStatus] = useState(0);
 
-
    function joinLobby() {
 
       //let token = "3a1b3206-0f04-448e-b480-eca9054f141d46185bb3-405e-4dea-92c6-fef5bf6b9ebf"  //Hårdkodad
-
+      const expirationDate = new Date();
+      expirationDate.setHours(expirationDate.getHours() + 24);
 
       if (pin == "" ||
          name == "" ||
@@ -42,6 +42,8 @@ function JoinGamePage() {
             if (res.data.success) {
                localStorage.setItem('token', res.data.userToken);
                setUploadStatus(uploadStatus + 1);
+               Cookies.set('userPassword', pw, { expires: expirationDate });
+               Cookies.set('lobbyPincode', pin, { expires: expirationDate });
                window.location.href = '/lobby';
 
 
