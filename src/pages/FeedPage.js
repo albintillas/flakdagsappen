@@ -18,7 +18,6 @@ function FeedPage() {
 
     /* ----- Code below implemented for swipe function ----- */
     const swipe = SwipeFunction(3);
-
     /* ----- Code above implemented for swipe function ----- */
 
 
