@@ -29,8 +29,9 @@ function Post({ profilePicture, postContent, imageContent }) {
         }
     }
     else {
-        if (postContent.length > 80) {
-            contentPreview = <a>{postContent.slice(0, 80) + "..."}</a>;
+        if (postContent.length > 60) {
+            //contentPreview = <a>{postContent.slice(0, 80) + "..."}</a>;
+            contentPreview = "Jag luktar bajs"
         }
         else {
             contentPreview = <a>{postContent}</a>;
