@@ -38,3 +38,6 @@ package.json
 package-lock.json
 *.json
 *.json
+.firebase/hosting.YnVpbGQ.cache
+package-lock.json
+package.json
