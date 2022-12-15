@@ -23,25 +23,34 @@ function Login() {
             });
             return;
         }
+        else {
+            const expirationDate = new Date();
+            expirationDate.setHours(expirationDate.getHours() + 24);
+            Cookies.set('userPassword', password, { expires: expirationDate });
+            Cookies.set('lobbyPincode', pin, { expires: expirationDate });
+            onPageLoad();
+        }
     }
+    function onPageLoad() {
+        if (password !== undefined &&
+            pin !== undefined) {
 
-    if (password !== undefined &&
-        pin !== undefined) {
-
-        axios.post("https://flakdag.azurewebsites.net/api/lobby/login", { pin: pin, pw: password }).then(res => {
-            if (res.data.success) {
-                localStorage.setItem('token', res.data.userToken);
-                window.location.href = '/lobby';
-            }
-            else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Flakdag finns ej',
-                    text: res.message
-                });
-            }
-        })
+            axios.post("https://flakdag.azurewebsites.net/api/lobby/login", { pin: pin, pw: password }).then(res => {
+                if (res.data.success) {
+                    localStorage.setItem('token', res.data.userToken);
+                    window.location.href = '/lobby';
+                }
+                else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Flakdag finns ej',
+                        text: res.message
+                    });
+                }
+            })
+        }
     }
+    window.addEventListener('load', onPageLoad);
 
     return (
         <div class='createGameContainer' style={{ height: '100vh' }}>
