@@ -10,10 +10,11 @@ import Cookies from 'js-cookie';
 
 function Login() {
 
+    const [isPageRefreshed, setIsPageRefreshed] = useState(true);
     const [pin, setPin] = useState(Cookies.get('lobbyPincode'));
     const [password, setPassword] = useState(Cookies.get('userPassword'));
 
-    function Reconnect() {
+    function ReconnectRequested() {
         if (pin == "" ||
             password == "") {
             Swal.fire({
@@ -28,10 +29,11 @@ function Login() {
             expirationDate.setHours(expirationDate.getHours() + 24);
             Cookies.set('userPassword', password, { expires: expirationDate });
             Cookies.set('lobbyPincode', pin, { expires: expirationDate });
-            onPageLoad();
+            Reconnect();
         }
     }
-    function onPageLoad() {
+
+    function Reconnect() {
         if (password !== undefined &&
             pin !== undefined) {
 
@@ -50,7 +52,11 @@ function Login() {
             })
         }
     }
-    window.addEventListener('load', onPageLoad);
+
+    if (isPageRefreshed) {
+        Reconnect()
+        setIsPageRefreshed(false)
+    }
 
     return (
         <div class='createGameContainer' style={{ height: '100vh' }}>
@@ -69,7 +75,7 @@ function Login() {
                     <div class="formText">Personligt lösenord</div>
                     <div class="formInput"><input onChange={event => setPassword(event.target.value)} value={password} class="form-control" name="pw" type="password" placeholder="Lösenord..." /></div>
                 </div>
-                <button type="button" className="createGameInput" id="submitButton" action='lobby' onClick={Reconnect} textDecoration='none' textColor='#EEEEEE' fontSize='7vw'>Återanslut</button>
+                <button type="button" className="createGameInput" id="submitButton" action='lobby' onClick={ReconnectRequested} textDecoration='none' textColor='#EEEEEE' fontSize='7vw'>Återanslut</button>
             </form>
         </div>
     )
