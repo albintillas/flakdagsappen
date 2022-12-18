@@ -6,7 +6,7 @@ import img2 from '..//images/Test.png';
 import postImg1 from '..//images/test3.png';
 import postImg2 from '..//images/test2.png';
 import { useNavigate } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
 import testimage2 from '../images/Test.png'
 import SwipeFunction from '../components/SwipeFunction.js';
@@ -31,28 +31,28 @@ function FeedPage() {
         axios.post("https://flakdag.azurewebsites.net/api/data/getfeed", { token }).then(res => {
             //console.log(res) 
             if (res.data.success) {
-                setFeed(res.data.feed.sort(res.data.feed.entryDate))
+                setFeed(res.data.feed.sort(res.data.feed.entryDate).reverse())
                 console.log(res.data.feed)
             }
         })
     }, []);
 
     const WAIT_TIME = 2000;
-    
-          useEffect(() => {
-            const id = setInterval(() => {
-                axios.post("https://flakdag.azurewebsites.net/api/data/getfeed", { token }).then(res => {
-                    //console.log(res) 
-                    if(res.data.success){
-                        setFeed(res.data.feed)
-                        console.log(res.data.feed)
-                    }
-                })
-                
-            }, WAIT_TIME);
-            return () => clearInterval(id);
-          }, [feed]); 
-    
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            axios.post("https://flakdag.azurewebsites.net/api/data/getfeed", { token }).then(res => {
+                //console.log(res) 
+                if (res.data.success) {
+                    setFeed(res.data.feed.sort(res.data.feed.entryDate).reverse())
+                    console.log(res.data.feed)
+                }
+            })
+
+        }, WAIT_TIME);
+        return () => clearInterval(id);
+    }, [feed]);
+
 
     return (
         <div onTouchStart={swipe.onTouchStart} onTouchMove={swipe.onTouchMove} onTouchEnd={swipe.onTouchEnd}>
@@ -79,10 +79,10 @@ function FeedPage() {
                 <div id='feedScrollDiv'>
                     {feed.map(f => (
                         <div style={{ borderStyle: 'groove', padding: '2vw' }}>
-                                 <Post
-                                    profilePicture={testimage2}
-                                    postContent={f.text}
-                                    imageContent={f.imageId}/>
+                            <Post
+                                profilePicture={testimage2}
+                                postContent={f.text}
+                                imageContent={f.imageId} />
                         </div>
                     ))
 
