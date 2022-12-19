@@ -6,7 +6,7 @@ import testimage from '../images/pfpTest.png'
 import testimage2 from '../images/Test.png'
 import axios from 'axios';
 import Swal from 'sweetalert2'
-import SwipeFunction from '../components/SwipeFunction.js';
+import SwipeFunction from '../functions/SwipeFunction.js';
 import defaultPicture from '..//images/pfpTest.png';
 
 
@@ -17,7 +17,7 @@ import defaultPicture from '..//images/pfpTest.png';
 function LobbyPage() {
 
     /* ----- Code below implemented for swipe function ----- */
-    const swipe = SwipeFunction(2);
+    const swipe = SwipeFunction('/statistics', '/feed');
     /* ----- Code above implemented for swipe function ----- */
 
     const [units, setUnits] = useState(0);

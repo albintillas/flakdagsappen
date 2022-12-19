@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import React, { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
 import testimage2 from '../images/Test.png'
-import SwipeFunction from '../components/SwipeFunction.js';
+import SwipeFunction from '../functions/SwipeFunction.js';
 
 
 
@@ -17,7 +17,7 @@ import SwipeFunction from '../components/SwipeFunction.js';
 function FeedPage() {
 
     /* ----- Code below implemented for swipe function ----- */
-    const swipe = SwipeFunction(3);
+    const swipe = SwipeFunction('/lobby', '');
     /* ----- Code above implemented for swipe function ----- */
 
 
