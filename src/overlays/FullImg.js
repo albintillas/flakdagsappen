@@ -3,14 +3,14 @@ import React, { useState } from 'react'
 import ReturnButton from '../components/ReturnButton.js';
 // import downloadSymbol from '..//images/download.png';
 // import { saveAs } from 'file-saver'
-import SwipeFunction from '../components/SwipeFunction.js';
+import SwipeFunction from '../functions/SwipeFunction.js';
 import {
     useParams
 } from 'react-router-dom'
 
 function FullImg() {
     /* ----- Code below implemented for swipe function ----- */
-    const swipe = SwipeFunction(4);
+    const swipe = SwipeFunction('/feed', '');
     /* ----- Code above implemented for swipe function ----- */
     const [showReturn, setShowReturn] = useState(true);
     const { src } = useParams()
