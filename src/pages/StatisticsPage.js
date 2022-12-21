@@ -4,7 +4,7 @@ import React, { useState, useEffect, Profiler } from 'react';
 import axios from 'axios';
 import * as V from 'victory';
 import randomColor from 'randomcolor';
-import SwipeFunction from '../components/SwipeFunction.js';
+import SwipeFunction from '../functions/SwipeFunction.js';
 
 
 // Ha allt av sidans innehåll i main diven
@@ -32,7 +32,7 @@ time[12] = startTime + 12;
 function StatisticsPage() {
 
     /* ----- Code below implemented for swipe function ----- */
-    const swipe = SwipeFunction(1);
+    const swipe = SwipeFunction('', '/lobby');
     /* ----- Code above implemented for swipe function ----- */
 
     let token = localStorage.getItem('token');    //Ej hårdkodad
@@ -56,18 +56,18 @@ function StatisticsPage() {
 
     const WAIT_TIME = 1000;
 
-  /*   useEffect(() => {
-        const id = setInterval(() => {
-            axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
-                console.log(res)
-                if (res.data.success) {
-                    setPlayers(res.data.players)
-                }
-            })
-        }, WAIT_TIME);
-        return () => clearInterval(id);
-      }, [players]); 
- */
+    /*   useEffect(() => {
+          const id = setInterval(() => {
+              axios.post("https://flakdag.azurewebsites.net/api/data/getflakflow", { token }).then(res => {
+                  console.log(res)
+                  if (res.data.success) {
+                      setPlayers(res.data.players)
+                  }
+              })
+          }, WAIT_TIME);
+          return () => clearInterval(id);
+        }, [players]); 
+   */
 
     return (
         <div style={{ height: '95vh' }} onTouchStart={swipe.onTouchStart} onTouchMove={swipe.onTouchMove} onTouchEnd={swipe.onTouchEnd}>
@@ -87,8 +87,8 @@ function StatisticsPage() {
                             <V.VictoryLine
                                 style={{
                                     data: { stroke: p.color },
-                                    parent: { border: "1x solid #EEEEEE"},
-                                    
+                                    parent: { border: "1x solid #EEEEEE" },
+
                                 }}
                                 data={[ // Uppdaterad varje timme. Kanske fixa så det kan läggas in när som, även mellan hela timmar?
                                     { x: time[0], y: 0 },
